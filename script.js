@@ -1282,11 +1282,21 @@ function hideTypingIndicator() {
 function processQuery(query) {
     const lowerQuery = query.toLowerCase();
 
+    // Check if data is loaded
+    if (!inventoryData) {
+        return `<p>⏳ Data is still loading... Please wait a moment and try again!</p>`;
+    }
+
     // Get data
     const connectionData = inventoryData['Connection Data by Item'] || [];
     const prosysData = inventoryData['prosys report - by kit'] || [];
     const totalsData = inventoryData['inventory totals'] || [];
     const procurementData = inventoryData['REMO Case Procurement Data'] || [];
+
+    // Check if we have data
+    if (connectionData.length === 0) {
+        return `<p>❌ No inventory data found. Please check that the data file is loaded correctly.</p>`;
+    }
 
     // Calculate total inventory
     const calculateTotal = (items, field) => {

@@ -1,0 +1,8105 @@
+{
+  "Spare Pool Legend": [
+    {
+      "Pool Type ": "Depot Pool",
+      "Definition": "Depot stock held at A/E vendor specifically designated for A/E use"
+    },
+    {
+      "Pool Type ": "Deployment Pool",
+      "Definition": "Stock moving through Prosys or Connection that has been assigned a final store destination"
+    },
+    {
+      "Pool Type ": "New/Remodel Pool",
+      "Definition": "Stock moving through Prosys or Connection that has been assigned a final store destination.  Future commitment"
+    },
+    {
+      "Pool Type ": "Safety Pool",
+      "Definition": "Golden Stock - reserved for emergent needs in Depot, Deployment or New/Remodel Pool (T-Mobile Owned)"
+    },
+    {
+      "Pool Type ": "Total Count",
+      "Definition": "Includes the sum of all pools except for Vendor Owned"
+    },
+    {
+      "Pool Type ": "Vendor Owned",
+      "Definition": "Equipment that has yet to be purchased and is not allocated to a team/project"
+    }
+  ],
+  "Connection Depot On Hand": [
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD E235",
+      "Total On Hand": 443,
+      "Total On Order": 680,
+      "Depot On Hand": 397,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 333,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 46,
+      "Saftey On Order": 372,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 308,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD Case Gen 2",
+      "Total On Hand": 4692,
+      "Total On Order": 0,
+      "Depot On Hand": 672,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 760,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 4020,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 3",
+      "Total On Hand": 648,
+      "Total On Order": 0,
+      "Depot On Hand": 549,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 99,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 4",
+      "Total On Hand": 699,
+      "Total On Order": 0,
+      "Depot On Hand": 597,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 128,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 102,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Air M2",
+      "Total On Hand": 4213,
+      "Total On Order": 0,
+      "Depot On Hand": 241,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 203,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 3972,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Air M3",
+      "Total On Hand": 8992,
+      "Total On Order": 0,
+      "Depot On Hand": 150,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 208,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 8492,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 350,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 3",
+      "Total On Hand": 978,
+      "Total On Order": 0,
+      "Depot On Hand": 807,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 129,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 171,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 4",
+      "Total On Hand": 15409,
+      "Total On Order": 0,
+      "Depot On Hand": 323,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 375,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 12956,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 2130,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Belt Clip",
+      "Total On Hand": 2096,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 331,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 346,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 1750,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Stylus",
+      "Total On Hand": 16709,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 331,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 15466,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 1243,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Tech Sling",
+      "Total On Hand": 4281,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 40,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 4241,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Fanny Pack",
+      "Total On Hand": 1185,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 1185,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone SE V3",
+      "Total On Hand": 322,
+      "Total On Order": 0,
+      "Depot On Hand": 322,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone SE V2",
+      "Total On Hand": 146,
+      "Total On Order": 0,
+      "Depot On Hand": 132,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 14,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone 16",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 120,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner SE",
+      "Total On Hand": 1156,
+      "Total On Order": 0,
+      "Depot On Hand": 123,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 35,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1033,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner 16",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 120,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner Case SE",
+      "Total On Hand": 1375,
+      "Total On Order": 0,
+      "Depot On Hand": 100,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 50,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1275,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner Case 16",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 120,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Charger Dock SE",
+      "Total On Hand": 1389,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 11,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1389,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Charger Dock 16",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 120,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Mac Mini M4",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 HC",
+      "Total On Hand": 676,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 24,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 676,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 Cabinet ",
+      "Total On Hand": 106,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 106,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 2-Drawer Cart ",
+      "Total On Hand": 41,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 41,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 3-Drawer Cart ",
+      "Total On Hand": 66,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 66,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "iPad Cable Gen 1",
+      "Total On Hand": 13667,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 13465,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 202,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "iPad Cable Gen 2",
+      "Total On Hand": 213,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 58,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 155,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "SSR",
+      "Device": "SSR Tablet iPad Air G3",
+      "Total On Hand": 85,
+      "Total On Order": 0,
+      "Depot On Hand": 85,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 7,
+      "Device #s": 9
+    },
+    {
+      "Bundle /Kit": "HSI",
+      "Device": "HSI iPad Gen 9",
+      "Total On Hand": 242,
+      "Total On Order": 0,
+      "Depot On Hand": 242,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 7,
+      "Device #s": 9
+    }
+  ],
+  "Prosys Spare Pool": [
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD CL1",
+      "Total On Hand": 85,
+      "Total On Order": 0,
+      "Depot On Hand": 85,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD CL2",
+      "Total On Hand": 1,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD E235",
+      "Total On Hand": 3775,
+      "Total On Order": 0,
+      "Depot On Hand": 1983,
+      "Depot On Order": 0,
+      "Deployment On Hand": 1792,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD Battery",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD Case",
+      "Total On Hand": 113,
+      "Total On Order": 0,
+      "Depot On Hand": 113,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD Case Gen 2",
+      "Total On Hand": 9173,
+      "Total On Order": 0,
+      "Depot On Hand": 2266,
+      "Depot On Order": 0,
+      "Deployment On Hand": 6907,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 1",
+      "Total On Hand": 6,
+      "Total On Order": 0,
+      "Depot On Hand": 6,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 2",
+      "Total On Hand": 32,
+      "Total On Order": 0,
+      "Depot On Hand": 32,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 3",
+      "Total On Hand": 243,
+      "Total On Order": 0,
+      "Depot On Hand": 132,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 111,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 4",
+      "Total On Hand": 826,
+      "Total On Order": 0,
+      "Depot On Hand": 638,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 188,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Air Gen4",
+      "Total On Hand": 2403,
+      "Total On Order": 0,
+      "Depot On Hand": 1822,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 578,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Air Gen5",
+      "Total On Hand": 1,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 1",
+      "Total On Hand": 25,
+      "Total On Order": 0,
+      "Depot On Hand": 25,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 2",
+      "Total On Hand": 246,
+      "Total On Order": 0,
+      "Depot On Hand": 246,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 3",
+      "Total On Hand": 5056,
+      "Total On Order": 0,
+      "Depot On Hand": 3934,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1122,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 4",
+      "Total On Hand": 2293,
+      "Total On Order": 0,
+      "Depot On Hand": 1778,
+      "Depot On Order": 0,
+      "Deployment On Hand": 4,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 511,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Metronet iPad Air Gen5",
+      "Total On Hand": 43,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 4,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 39,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 2,
+      "Device #s": 4
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MetronetiPad Case M3",
+      "Total On Hand": 41,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 4,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 37,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 2,
+      "Device #s": 4
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Belt Clip",
+      "Total On Hand": 735,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 732,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Stylus",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Tech Sling",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Fanny Pack",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone 16",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 3700,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone SE V3",
+      "Total On Hand": 6624,
+      "Total On Order": 0,
+      "Depot On Hand": 702,
+      "Depot On Order": 0,
+      "Deployment On Hand": 603,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 5319,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone SE V2",
+      "Total On Hand": 551,
+      "Total On Order": 0,
+      "Depot On Hand": 499,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 52,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone 8",
+      "Total On Hand": 10,
+      "Total On Order": 0,
+      "Depot On Hand": 10,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner",
+      "Total On Hand": 10126,
+      "Total On Order": 0,
+      "Depot On Hand": 1841,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 8282,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner Case",
+      "Total On Hand": 8819,
+      "Total On Order": 0,
+      "Depot On Hand": 2978,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 5838,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Charger Dock",
+      "Total On Hand": 7454,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 7451,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner V2",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 3700,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner Case V2",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 3700,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Charger Dock V2",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 3700,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Mac Mini M2",
+      "Total On Hand": 209,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 1,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 208,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Mac Mini 2020",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Mac Mini 2018",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 1 HC",
+      "Total On Hand": 61,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 2,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 59,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 HC",
+      "Total On Hand": 422,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 2,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 420,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": " Gen 1 Cabinet",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 Cabinet",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 1 2-Drawer Cart",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 2-Drawer Cart",
+      "Total On Hand": 3,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 3,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 1 3-Drawer Cart",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 3-drawer Cart",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "iPad Cable Gen 1",
+      "Total On Hand": 5664,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 5664,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "iPad Cable Gen 2",
+      "Total On Hand": 1,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "MPD Cable Gen 1",
+      "Total On Hand": 32,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 32,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "CDC Full Kit",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "Drawer JB554-CW1820",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "Drawer T441-7-CW1616",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "RASPPI3B+",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "RASPPIOLED",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "RASPPISMOKEBASE",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "RASPPIPS5V",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "SDCS2/32GB",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "Cable x2 - 28103",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "CDC",
+      "Device": "Cable - 31342",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 6,
+      "Device #s": 8
+    },
+    {
+      "Bundle /Kit": "SSR",
+      "Device": "SSR Tablet iPad Air G3",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 7,
+      "Device #s": 9
+    },
+    {
+      "Bundle /Kit": "HSI",
+      "Device": "HSI iPad Gen 9",
+      "Total On Hand": 351,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 351,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 7,
+      "Device #s": 9
+    }
+  ],
+  "REMO Case Procurement Data": [
+    {
+      "Number": 16676601,
+      "PO": 4903677960,
+      "Date": "2023-10-20 00:00:00",
+      "Qty": 5,
+      "Store #": "500F"
+    },
+    {
+      "Number": 16676541,
+      "PO": 4903674718,
+      "Date": "2023-10-20 00:00:00",
+      "Qty": 2,
+      "Store #": 7790
+    },
+    {
+      "Number": 16676483,
+      "PO": 4903669702,
+      "Date": "2023-10-20 00:00:00",
+      "Qty": 2,
+      "Store #": 9243
+    },
+    {
+      "Number": 16683874,
+      "PO": 4903681583,
+      "Date": "2023-10-24 00:00:00",
+      "Qty": 4,
+      "Store #": 9080
+    },
+    {
+      "Number": 16692813,
+      "PO": 4903689388,
+      "Date": "2023-10-27 00:00:00",
+      "Qty": 3,
+      "Store #": 8028
+    },
+    {
+      "Number": 16707724,
+      "PO": 4903701676,
+      "Date": "2023-11-02 00:00:00",
+      "Qty": 4,
+      "Store #": "1SLB"
+    },
+    {
+      "Number": 16718438,
+      "PO": 4903704665,
+      "Date": "2023-11-07 00:00:00",
+      "Qty": 3,
+      "Store #": "484F"
+    },
+    {
+      "Number": 16721717,
+      "PO": 4903712094,
+      "Date": "2023-11-08 00:00:00",
+      "Qty": 1,
+      "Store #": "4SLB"
+    },
+    {
+      "Number": 16741121,
+      "PO": 4903733785,
+      "Date": "2023-11-16 00:00:00",
+      "Qty": 7,
+      "Store #": "2SBG"
+    },
+    {
+      "Number": 16741073,
+      "PO": 4903730851,
+      "Date": "2023-11-16 00:00:00",
+      "Qty": 2,
+      "Store #": 3811
+    },
+    {
+      "Number": 16755867,
+      "PO": 4903751653,
+      "Date": "2023-11-22 00:00:00",
+      "Qty": 1,
+      "Store #": "411G"
+    },
+    {
+      "Number": 16755700,
+      "PO": 4903740814,
+      "Date": "2023-11-22 00:00:00",
+      "Qty": 4,
+      "Store #": 1283
+    },
+    {
+      "Number": 16765882,
+      "PO": 4903751983,
+      "Date": "2023-11-29 00:00:00",
+      "Qty": 4,
+      "Store #": 430
+    },
+    {
+      "Number": 16765881,
+      "PO": 4903753687,
+      "Date": "2023-11-29 00:00:00",
+      "Qty": 7,
+      "Store #": "2SBG"
+    },
+    {
+      "Number": 16770128,
+      "PO": 4903764280,
+      "Date": "2023-11-30 00:00:00",
+      "Qty": 2,
+      "Store #": "3SAM"
+    },
+    {
+      "Number": 16770075,
+      "PO": 4903763822,
+      "Date": "2023-11-30 00:00:00",
+      "Qty": 6,
+      "Store #": 1477
+    },
+    {
+      "Number": 16769749,
+      "PO": 4903759661,
+      "Date": "2023-11-30 00:00:00",
+      "Qty": 1,
+      "Store #": 1098
+    },
+    {
+      "Number": 16789971,
+      "PO": 4903771293,
+      "Date": "2023-12-07 00:00:00",
+      "Qty": 4,
+      "Store #": 3828
+    },
+    {
+      "Number": 16789969,
+      "PO": 4903772350,
+      "Date": "2023-12-07 00:00:00",
+      "Qty": 5,
+      "Store #": "1SMO"
+    },
+    {
+      "Number": 16802326,
+      "PO": 4903778708,
+      "Date": "2023-12-13 00:00:00",
+      "Qty": 9,
+      "Store #": 9403
+    },
+    {
+      "Number": 16802313,
+      "PO": 4903778336,
+      "Date": "2023-12-13 00:00:00",
+      "Qty": 1,
+      "Store #": "734F"
+    },
+    {
+      "Number": 16806932,
+      "PO": 4903785434,
+      "Date": "2023-12-14 00:00:00",
+      "Qty": 3,
+      "Store #": "606F"
+    },
+    {
+      "Number": 16806838,
+      "PO": 4903782646,
+      "Date": "2023-12-14 00:00:00",
+      "Qty": 4,
+      "Store #": "385F"
+    },
+    {
+      "Number": 16823911,
+      "PO": 4903801365,
+      "Date": "2023-12-22 00:00:00",
+      "Qty": 1,
+      "Store #": 8359
+    },
+    {
+      "Number": 16823744,
+      "PO": 4903798757,
+      "Date": "2023-12-22 00:00:00",
+      "Qty": 2,
+      "Store #": 9804
+    },
+    {
+      "Number": 16823702,
+      "PO": 4903798569,
+      "Date": "2023-12-22 00:00:00",
+      "Qty": 5,
+      "Store #": 8762
+    },
+    {
+      "Number": 16831183,
+      "PO": 4903810368,
+      "Date": "2023-12-28 00:00:00",
+      "Qty": 14,
+      "Store #": "3SBQ"
+    },
+    {
+      "Number": 16831048,
+      "PO": 4903812527,
+      "Date": "2023-12-28 00:00:00",
+      "Qty": 1,
+      "Store #": "3SMF"
+    },
+    {
+      "Number": 16837788,
+      "PO": 4903819073,
+      "Date": "2024-01-02 00:00:00",
+      "Qty": 5,
+      "Store #": "1SIP"
+    },
+    {
+      "Number": 16836452,
+      "PO": 4903816849,
+      "Date": "2024-01-02 00:00:00",
+      "Qty": 4,
+      "Store #": 7785
+    },
+    {
+      "Number": 16841087,
+      "PO": 4903823618,
+      "Date": "2024-01-03 00:00:00",
+      "Qty": 2,
+      "Store #": 8763
+    },
+    {
+      "Number": 16840990,
+      "PO": 4903823430,
+      "Date": "2024-01-03 00:00:00",
+      "Qty": 3,
+      "Store #": 9510
+    },
+    {
+      "Number": 16847132,
+      "PO": 4903826484,
+      "Date": "2024-01-05 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNJ"
+    },
+    {
+      "Number": 16846562,
+      "PO": 4903823680,
+      "Date": "2024-01-05 00:00:00",
+      "Qty": 4,
+      "Store #": "2SCW"
+    },
+    {
+      "Number": 16856975,
+      "PO": 4903838406,
+      "Date": "2024-01-09 00:00:00",
+      "Qty": 1,
+      "Store #": "4SFQ"
+    },
+    {
+      "Number": 16860003,
+      "PO": 4903838434,
+      "Date": "2024-01-10 00:00:00",
+      "Qty": 1,
+      "Store #": "362F"
+    },
+    {
+      "Number": 16871862,
+      "PO": 4903834696,
+      "Date": "2024-01-16 00:00:00",
+      "Qty": 1,
+      "Store #": "2SLF"
+    },
+    {
+      "Number": 16889139,
+      "PO": 4903858325,
+      "Date": "2024-01-23 00:00:00",
+      "Qty": 1,
+      "Store #": "3SOL"
+    },
+    {
+      "Number": 16900294,
+      "PO": 4903863247,
+      "Date": "2024-01-26 00:00:00",
+      "Qty": 5,
+      "Store #": "4SBS"
+    },
+    {
+      "Number": 16904780,
+      "PO": 4903874951,
+      "Date": "2024-01-29 00:00:00",
+      "Qty": 2,
+      "Store #": "358G"
+    },
+    {
+      "Number": 16904065,
+      "PO": 4903871058,
+      "Date": "2024-01-29 00:00:00",
+      "Qty": 4,
+      "Store #": "2SDP"
+    },
+    {
+      "Number": 16902466,
+      "PO": 4903863408,
+      "Date": "2024-01-29 00:00:00",
+      "Qty": 1,
+      "Store #": "334F"
+    },
+    {
+      "Number": 16912001,
+      "PO": 4903875401,
+      "Date": "2024-01-31 00:00:00",
+      "Qty": 1,
+      "Store #": 9376
+    },
+    {
+      "Number": 16915213,
+      "PO": 4903878767,
+      "Date": "2024-02-01 00:00:00",
+      "Qty": 4,
+      "Store #": "2SNJ"
+    },
+    {
+      "Number": 16916062,
+      "PO": 4903876637,
+      "Date": "2024-02-02 00:00:00",
+      "Qty": 3,
+      "Store #": 326
+    },
+    {
+      "Number": 16921872,
+      "PO": 4903888397,
+      "Date": "2024-02-05 00:00:00",
+      "Qty": 4,
+      "Store #": "3SJB"
+    },
+    {
+      "Number": 16921741,
+      "PO": 4903886909,
+      "Date": "2024-02-05 00:00:00",
+      "Qty": 1,
+      "Store #": "580F"
+    },
+    {
+      "Number": 16926061,
+      "PO": 4903891733,
+      "Date": "2024-02-06 00:00:00",
+      "Qty": 2,
+      "Store #": 7774
+    },
+    {
+      "Number": 16926044,
+      "PO": 4903890886,
+      "Date": "2024-02-06 00:00:00",
+      "Qty": 3,
+      "Store #": 1283
+    },
+    {
+      "Number": 16926028,
+      "PO": 4903887600,
+      "Date": "2024-02-06 00:00:00",
+      "Qty": 3,
+      "Store #": "2SBL"
+    },
+    {
+      "Number": 16924074,
+      "PO": 4903891104,
+      "Date": "2024-02-06 00:00:00",
+      "Qty": 2,
+      "Store #": 9884
+    },
+    {
+      "Number": 16928021,
+      "PO": 4903894058,
+      "Date": "2024-02-07 00:00:00",
+      "Qty": 1,
+      "Store #": "383F"
+    },
+    {
+      "Number": 16928008,
+      "PO": 4903893556,
+      "Date": "2024-02-07 00:00:00",
+      "Qty": 3,
+      "Store #": 8440
+    },
+    {
+      "Number": 16927958,
+      "PO": 4903893621,
+      "Date": "2024-02-07 00:00:00",
+      "Qty": 1,
+      "Store #": 8408
+    },
+    {
+      "Number": 16931160,
+      "PO": 4903896027,
+      "Date": "2024-02-08 00:00:00",
+      "Qty": 1,
+      "Store #": "411F"
+    },
+    {
+      "Number": 16931143,
+      "PO": 4903894830,
+      "Date": "2024-02-08 00:00:00",
+      "Qty": 2,
+      "Store #": 7684
+    },
+    {
+      "Number": 16931107,
+      "PO": 4903894437,
+      "Date": "2024-02-08 00:00:00",
+      "Qty": 3,
+      "Store #": 5990
+    },
+    {
+      "Number": 16935471,
+      "PO": 4903896256,
+      "Date": "2024-02-09 00:00:00",
+      "Qty": 1,
+      "Store #": 1312
+    },
+    {
+      "Number": 16938580,
+      "PO": 4903900830,
+      "Date": "2024-02-12 00:00:00",
+      "Qty": 5,
+      "Store #": "625F"
+    },
+    {
+      "Number": 16938438,
+      "PO": 4903901781,
+      "Date": "2024-02-12 00:00:00",
+      "Qty": 1,
+      "Store #": "770F"
+    },
+    {
+      "Number": 16938375,
+      "PO": 4903901098,
+      "Date": "2024-02-12 00:00:00",
+      "Qty": 1,
+      "Store #": "598G"
+    },
+    {
+      "Number": 16938088,
+      "PO": 4903898109,
+      "Date": "2024-02-12 00:00:00",
+      "Qty": 2,
+      "Store #": "1SIL"
+    },
+    {
+      "Number": 16938049,
+      "PO": 4903897488,
+      "Date": "2024-02-12 00:00:00",
+      "Qty": 1,
+      "Store #": "678F"
+    },
+    {
+      "Number": 16937321,
+      "PO": 4903894659,
+      "Date": "2024-02-12 00:00:00",
+      "Qty": 9,
+      "Store #": 9984
+    },
+    {
+      "Number": 16937303,
+      "PO": 4903896182,
+      "Date": "2024-02-12 00:00:00",
+      "Qty": 1,
+      "Store #": "1SBD"
+    },
+    {
+      "Number": 16942384,
+      "PO": 4903900871,
+      "Date": "2024-02-13 00:00:00",
+      "Qty": 3,
+      "Store #": "1SFD"
+    },
+    {
+      "Number": 16942368,
+      "PO": 4903903429,
+      "Date": "2024-02-13 00:00:00",
+      "Qty": 5,
+      "Store #": 7805
+    },
+    {
+      "Number": 16942360,
+      "PO": 4903903423,
+      "Date": "2024-02-13 00:00:00",
+      "Qty": 2,
+      "Store #": "602F"
+    },
+    {
+      "Number": 16942337,
+      "PO": 4903903278,
+      "Date": "2024-02-13 00:00:00",
+      "Qty": 2,
+      "Store #": "1SDH"
+    },
+    {
+      "Number": 16946231,
+      "PO": 4903905079,
+      "Date": "2024-02-14 00:00:00",
+      "Qty": 1,
+      "Store #": 4520
+    },
+    {
+      "Number": 16947793,
+      "PO": 4903906579,
+      "Date": "2024-02-15 00:00:00",
+      "Qty": 4,
+      "Store #": 9392
+    },
+    {
+      "Number": 16947753,
+      "PO": 4903906044,
+      "Date": "2024-02-15 00:00:00",
+      "Qty": 1,
+      "Store #": "1SMW"
+    },
+    {
+      "Number": 16952417,
+      "PO": 4903907040,
+      "Date": "2024-02-16 00:00:00",
+      "Qty": 1,
+      "Store #": 4233
+    },
+    {
+      "Number": 16954647,
+      "PO": 4903910526,
+      "Date": "2024-02-19 00:00:00",
+      "Qty": 2,
+      "Store #": 7617
+    },
+    {
+      "Number": 16954572,
+      "PO": 4903908986,
+      "Date": "2024-02-19 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNX"
+    },
+    {
+      "Number": 16954561,
+      "PO": 4903908792,
+      "Date": "2024-02-19 00:00:00",
+      "Qty": 1,
+      "Store #": 7841
+    },
+    {
+      "Number": 16954540,
+      "PO": 4903908774,
+      "Date": "2024-02-19 00:00:00",
+      "Qty": 2,
+      "Store #": "1SDG"
+    },
+    {
+      "Number": 16954520,
+      "PO": 4903906880,
+      "Date": "2024-02-19 00:00:00",
+      "Qty": 3,
+      "Store #": "2SOA"
+    },
+    {
+      "Number": 16954494,
+      "PO": 4903908432,
+      "Date": "2024-02-19 00:00:00",
+      "Qty": 1,
+      "Store #": 8693
+    },
+    {
+      "Number": 16957284,
+      "PO": 4903913082,
+      "Date": "2024-02-20 00:00:00",
+      "Qty": 1,
+      "Store #": 8328
+    },
+    {
+      "Number": 16957211,
+      "PO": 4903913294,
+      "Date": "2024-02-20 00:00:00",
+      "Qty": 4,
+      "Store #": 4608
+    },
+    {
+      "Number": 16961966,
+      "PO": 4903916268,
+      "Date": "2024-02-21 00:00:00",
+      "Qty": 2,
+      "Store #": 8699
+    },
+    {
+      "Number": 16962718,
+      "PO": 4903919286,
+      "Date": "2024-02-22 00:00:00",
+      "Qty": 3,
+      "Store #": 5659
+    },
+    {
+      "Number": 16962713,
+      "PO": 4903922272,
+      "Date": "2024-02-22 00:00:00",
+      "Qty": 8,
+      "Store #": "2SAX"
+    },
+    {
+      "Number": 16962664,
+      "PO": 4903921363,
+      "Date": "2024-02-22 00:00:00",
+      "Qty": 1,
+      "Store #": 7850
+    },
+    {
+      "Number": 16962655,
+      "PO": 4903921365,
+      "Date": "2024-02-22 00:00:00",
+      "Qty": 3,
+      "Store #": 7850
+    },
+    {
+      "Number": 16962617,
+      "PO": 4903919939,
+      "Date": "2024-02-22 00:00:00",
+      "Qty": 5,
+      "Store #": "116E"
+    },
+    {
+      "Number": 16966815,
+      "PO": 4903929062,
+      "Date": "2024-02-23 00:00:00",
+      "Qty": 1,
+      "Store #": 5450
+    },
+    {
+      "Number": 16966015,
+      "PO": 4903925897,
+      "Date": "2024-02-23 00:00:00",
+      "Qty": 2,
+      "Store #": 4387
+    },
+    {
+      "Number": 16971880,
+      "PO": 4903931915,
+      "Date": "2024-02-26 00:00:00",
+      "Qty": 2,
+      "Store #": 3826
+    },
+    {
+      "Number": 16969623,
+      "PO": 4903927290,
+      "Date": "2024-02-26 00:00:00",
+      "Qty": 1,
+      "Store #": "4SEC"
+    },
+    {
+      "Number": 16974389,
+      "PO": 4903933781,
+      "Date": "2024-02-27 00:00:00",
+      "Qty": 3,
+      "Store #": 8624
+    },
+    {
+      "Number": 16973591,
+      "PO": 4903931886,
+      "Date": "2024-02-27 00:00:00",
+      "Qty": 1,
+      "Store #": "1C99"
+    },
+    {
+      "Number": 16973586,
+      "PO": 4903934171,
+      "Date": "2024-02-27 00:00:00",
+      "Qty": 2,
+      "Store #": 8608
+    },
+    {
+      "Number": 16973533,
+      "PO": 4903933103,
+      "Date": "2024-02-27 00:00:00",
+      "Qty": 1,
+      "Store #": "4SFC"
+    },
+    {
+      "Number": 16986638,
+      "PO": 4903949805,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 1,
+      "Store #": 5049
+    },
+    {
+      "Number": 16986574,
+      "PO": 4903948778,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 1,
+      "Store #": 8837
+    },
+    {
+      "Number": 16986571,
+      "PO": 4903947895,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 1,
+      "Store #": 2885
+    },
+    {
+      "Number": 16986559,
+      "PO": 4903948302,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 1,
+      "Store #": "858E"
+    },
+    {
+      "Number": 16986513,
+      "PO": 4903940432,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 3,
+      "Store #": "1SIR"
+    },
+    {
+      "Number": 16985458,
+      "PO": 4903945012,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 2,
+      "Store #": 8920
+    },
+    {
+      "Number": 16985179,
+      "PO": 4903942689,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 2,
+      "Store #": "4SHG"
+    },
+    {
+      "Number": 16985095,
+      "PO": 4903944653,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 3,
+      "Store #": "734F"
+    },
+    {
+      "Number": 16985041,
+      "PO": 4903935151,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 3,
+      "Store #": 8588
+    },
+    {
+      "Number": 16984144,
+      "PO": 4903936620,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 2,
+      "Store #": "650F"
+    },
+    {
+      "Number": 16984127,
+      "PO": 4903934690,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 3,
+      "Store #": "640F"
+    },
+    {
+      "Number": 16984048,
+      "PO": 4903936210,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 3,
+      "Store #": "4SLO"
+    },
+    {
+      "Number": 16983978,
+      "PO": 4903934856,
+      "Date": "2024-03-01 00:00:00",
+      "Qty": 2,
+      "Store #": 1312
+    },
+    {
+      "Number": 16995660,
+      "PO": 4903949473,
+      "Date": "2024-03-06 00:00:00",
+      "Qty": 7,
+      "Store #": "448F"
+    },
+    {
+      "Number": 16999774,
+      "PO": 4903950866,
+      "Date": "2024-03-07 00:00:00",
+      "Qty": 1,
+      "Store #": "2SDI"
+    },
+    {
+      "Number": 16999765,
+      "PO": 4903950372,
+      "Date": "2024-03-07 00:00:00",
+      "Qty": 4,
+      "Store #": 7788
+    },
+    {
+      "Number": 16999750,
+      "PO": 4903951762,
+      "Date": "2024-03-07 00:00:00",
+      "Qty": 1,
+      "Store #": 8228
+    },
+    {
+      "Number": 16999749,
+      "PO": 4903951859,
+      "Date": "2024-03-07 00:00:00",
+      "Qty": 3,
+      "Store #": 9422
+    },
+    {
+      "Number": 16999717,
+      "PO": 4903951387,
+      "Date": "2024-03-07 00:00:00",
+      "Qty": 5,
+      "Store #": "2SPX"
+    },
+    {
+      "Number": 16999583,
+      "PO": 4903950547,
+      "Date": "2024-03-07 00:00:00",
+      "Qty": 2,
+      "Store #": 9222
+    },
+    {
+      "Number": 17004485,
+      "PO": 4903958224,
+      "Date": "2024-03-08 00:00:00",
+      "Qty": 1,
+      "Store #": "570G"
+    },
+    {
+      "Number": 17004432,
+      "PO": 4903957034,
+      "Date": "2024-03-08 00:00:00",
+      "Qty": 3,
+      "Store #": 2958
+    },
+    {
+      "Number": 17004420,
+      "PO": 4903956130,
+      "Date": "2024-03-08 00:00:00",
+      "Qty": 6,
+      "Store #": "1SDC"
+    },
+    {
+      "Number": 17004398,
+      "PO": 4903955132,
+      "Date": "2024-03-08 00:00:00",
+      "Qty": 1,
+      "Store #": "336G"
+    },
+    {
+      "Number": 17003748,
+      "PO": 4903954760,
+      "Date": "2024-03-08 00:00:00",
+      "Qty": 1,
+      "Store #": "3SRN"
+    },
+    {
+      "Number": 17003706,
+      "PO": 4903954428,
+      "Date": "2024-03-08 00:00:00",
+      "Qty": 1,
+      "Store #": 8958
+    },
+    {
+      "Number": 17003673,
+      "PO": 4903951933,
+      "Date": "2024-03-08 00:00:00",
+      "Qty": 2,
+      "Store #": "597F"
+    },
+    {
+      "Number": 17003669,
+      "PO": 4903952662,
+      "Date": "2024-03-08 00:00:00",
+      "Qty": 2,
+      "Store #": 1108
+    },
+    {
+      "Number": 17013003,
+      "PO": 4903958913,
+      "Date": "2024-03-12 00:00:00",
+      "Qty": 1,
+      "Store #": 2469
+    },
+    {
+      "Number": 17016303,
+      "PO": 4903965509,
+      "Date": "2024-03-13 00:00:00",
+      "Qty": 2,
+      "Store #": "498F"
+    },
+    {
+      "Number": 17016301,
+      "PO": 4903964280,
+      "Date": "2024-03-13 00:00:00",
+      "Qty": 4,
+      "Store #": 8935
+    },
+    {
+      "Number": 17016245,
+      "PO": 4903963755,
+      "Date": "2024-03-13 00:00:00",
+      "Qty": 1,
+      "Store #": 338
+    },
+    {
+      "Number": 17014320,
+      "PO": 4903962972,
+      "Date": "2024-03-13 00:00:00",
+      "Qty": 4,
+      "Store #": 9225
+    },
+    {
+      "Number": 17014266,
+      "PO": 4903959983,
+      "Date": "2024-03-13 00:00:00",
+      "Qty": 1,
+      "Store #": "3SPN"
+    },
+    {
+      "Number": 17018168,
+      "PO": 4903967413,
+      "Date": "2024-03-14 00:00:00",
+      "Qty": 3,
+      "Store #": "253F"
+    },
+    {
+      "Number": 17017887,
+      "PO": 4903965197,
+      "Date": "2024-03-14 00:00:00",
+      "Qty": 1,
+      "Store #": 7686
+    },
+    {
+      "Number": 17022416,
+      "PO": 4903972185,
+      "Date": "2024-03-15 00:00:00",
+      "Qty": 1,
+      "Store #": "756F"
+    },
+    {
+      "Number": 17022370,
+      "PO": 4903973432,
+      "Date": "2024-03-15 00:00:00",
+      "Qty": 2,
+      "Store #": "4SBJ"
+    },
+    {
+      "Number": 17025428,
+      "PO": 4903971004,
+      "Date": "2024-03-18 00:00:00",
+      "Qty": 3,
+      "Store #": 9556
+    },
+    {
+      "Number": 17025440,
+      "PO": 4903970954,
+      "Date": "2024-03-18 00:00:00",
+      "Qty": 4,
+      "Store #": "784F"
+    },
+    {
+      "Number": 17025452,
+      "PO": 4903971420,
+      "Date": "2024-03-18 00:00:00",
+      "Qty": 1,
+      "Store #": 8958
+    },
+    {
+      "Number": 17026537,
+      "PO": 4903978376,
+      "Date": "2024-03-18 00:00:00",
+      "Qty": 1,
+      "Store #": "504F"
+    },
+    {
+      "Number": 17026596,
+      "PO": 4903979732,
+      "Date": "2024-03-18 00:00:00",
+      "Qty": 1,
+      "Store #": 5787
+    },
+    {
+      "Number": 17026925,
+      "PO": 4903981070,
+      "Date": "2024-03-18 00:00:00",
+      "Qty": 3,
+      "Store #": 9724
+    },
+    {
+      "Number": 17027002,
+      "PO": 4903981289,
+      "Date": "2024-03-18 00:00:00",
+      "Qty": 1,
+      "Store #": 8778
+    },
+    {
+      "Number": 17027120,
+      "PO": 4903981292,
+      "Date": "2024-03-18 00:00:00",
+      "Qty": 2,
+      "Store #": 8501
+    },
+    {
+      "Number": 17035313,
+      "PO": 4903981661,
+      "Date": "2024-03-21 00:00:00",
+      "Qty": 3,
+      "Store #": "464F"
+    },
+    {
+      "Number": 17035415,
+      "PO": 4903983304,
+      "Date": "2024-03-21 00:00:00",
+      "Qty": 1,
+      "Store #": 4790
+    },
+    {
+      "Number": 17035477,
+      "PO": 4903983698,
+      "Date": "2024-03-21 00:00:00",
+      "Qty": 2,
+      "Store #": "4SDV"
+    },
+    {
+      "Number": 17042782,
+      "PO": 4903984976,
+      "Date": "2024-03-25 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNI"
+    },
+    {
+      "Number": 17042790,
+      "PO": 4903985505,
+      "Date": "2024-03-25 00:00:00",
+      "Qty": 1,
+      "Store #": 5649
+    },
+    {
+      "Number": 17045763,
+      "PO": 4903990842,
+      "Date": "2024-03-26 00:00:00",
+      "Qty": 5,
+      "Store #": 8092
+    },
+    {
+      "Number": 17045797,
+      "PO": 4903992066,
+      "Date": "2024-03-26 00:00:00",
+      "Qty": 2,
+      "Store #": "759F"
+    },
+    {
+      "Number": 17045878,
+      "PO": 4903993108,
+      "Date": "2024-03-26 00:00:00",
+      "Qty": 4,
+      "Store #": "282F"
+    },
+    {
+      "Number": 17045914,
+      "PO": 4903993313,
+      "Date": "2024-03-26 00:00:00",
+      "Qty": 2,
+      "Store #": "2SPS"
+    },
+    {
+      "Number": 17045934,
+      "PO": 4903992491,
+      "Date": "2024-03-26 00:00:00",
+      "Qty": 3,
+      "Store #": "1SLC"
+    },
+    {
+      "Number": 17045947,
+      "PO": 4903994108,
+      "Date": "2024-03-26 00:00:00",
+      "Qty": 2,
+      "Store #": "4SFR"
+    },
+    {
+      "Number": 17048683,
+      "PO": 4903995249,
+      "Date": "2024-03-27 00:00:00",
+      "Qty": 1,
+      "Store #": 4566
+    },
+    {
+      "Number": 17048711,
+      "PO": 4903996006,
+      "Date": "2024-03-27 00:00:00",
+      "Qty": 2,
+      "Store #": 7782
+    },
+    {
+      "Number": 17048757,
+      "PO": 4903994873,
+      "Date": "2024-03-27 00:00:00",
+      "Qty": 2,
+      "Store #": "2SNR"
+    },
+    {
+      "Number": 17048769,
+      "PO": 4903996299,
+      "Date": "2024-03-27 00:00:00",
+      "Qty": 1,
+      "Store #": 5787
+    },
+    {
+      "Number": 17049082,
+      "PO": 4903998604,
+      "Date": "2024-03-27 00:00:00",
+      "Qty": 1,
+      "Store #": 9283
+    },
+    {
+      "Number": 17049231,
+      "PO": 4903999153,
+      "Date": "2024-03-27 00:00:00",
+      "Qty": 3,
+      "Store #": 5652
+    },
+    {
+      "Number": 17052720,
+      "PO": 4904002170,
+      "Date": "2024-03-28 00:00:00",
+      "Qty": 1,
+      "Store #": 324
+    },
+    {
+      "Number": 17055974,
+      "PO": 4904003847,
+      "Date": "2024-03-29 00:00:00",
+      "Qty": 1,
+      "Store #": 9917
+    },
+    {
+      "Number": 17062132,
+      "PO": 4904008350,
+      "Date": "2024-04-02 00:00:00",
+      "Qty": 1,
+      "Store #": "383F"
+    },
+    {
+      "Number": 17067076,
+      "PO": 4904012211,
+      "Date": "2024-04-03 00:00:00",
+      "Qty": 1,
+      "Store #": 8045
+    },
+    {
+      "Number": 17067113,
+      "PO": 4904010386,
+      "Date": "2024-04-03 00:00:00",
+      "Qty": 1,
+      "Store #": 2941
+    },
+    {
+      "Number": 17067156,
+      "PO": 4904012561,
+      "Date": "2024-04-03 00:00:00",
+      "Qty": 2,
+      "Store #": 9092
+    },
+    {
+      "Number": 17067183,
+      "PO": 4904013540,
+      "Date": "2024-04-03 00:00:00",
+      "Qty": 2,
+      "Store #": "4SCV"
+    },
+    {
+      "Number": 17067205,
+      "PO": 4904013632,
+      "Date": "2024-04-03 00:00:00",
+      "Qty": 3,
+      "Store #": "280F"
+    },
+    {
+      "Number": 17071624,
+      "PO": 4904015305,
+      "Date": "2024-04-05 00:00:00",
+      "Qty": 1,
+      "Store #": "779F"
+    },
+    {
+      "Number": 17071683,
+      "PO": 4904011848,
+      "Date": "2024-04-05 00:00:00",
+      "Qty": 3,
+      "Store #": 9627
+    },
+    {
+      "Number": 17071687,
+      "PO": 4904015226,
+      "Date": "2024-04-05 00:00:00",
+      "Qty": 1,
+      "Store #": 7544
+    },
+    {
+      "Number": 17071693,
+      "PO": 4904015261,
+      "Date": "2024-04-05 00:00:00",
+      "Qty": 2,
+      "Store #": 9281
+    },
+    {
+      "Number": 17071712,
+      "PO": 4904014137,
+      "Date": "2024-04-05 00:00:00",
+      "Qty": 2,
+      "Store #": 7374
+    },
+    {
+      "Number": 17071831,
+      "PO": 4904017602,
+      "Date": "2024-04-05 00:00:00",
+      "Qty": 3,
+      "Store #": "2SBU"
+    },
+    {
+      "Number": 17071842,
+      "PO": 4904017173,
+      "Date": "2024-04-05 00:00:00",
+      "Qty": 3,
+      "Store #": 106
+    },
+    {
+      "Number": 17071900,
+      "PO": 4904017837,
+      "Date": "2024-04-05 00:00:00",
+      "Qty": 1,
+      "Store #": 8884
+    },
+    {
+      "Number": 17075084,
+      "PO": 4904021197,
+      "Date": "2024-04-08 00:00:00",
+      "Qty": 2,
+      "Store #": 6001
+    },
+    {
+      "Number": 17075094,
+      "PO": 4904020195,
+      "Date": "2024-04-08 00:00:00",
+      "Qty": 1,
+      "Store #": 8528
+    },
+    {
+      "Number": 17078325,
+      "PO": 4904022660,
+      "Date": "2024-04-09 00:00:00",
+      "Qty": 1,
+      "Store #": "3SJH"
+    },
+    {
+      "Number": 17082161,
+      "PO": 4904022479,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 2,
+      "Store #": 7619
+    },
+    {
+      "Number": 17082249,
+      "PO": 4904024157,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 1,
+      "Store #": 4055
+    },
+    {
+      "Number": 17082267,
+      "PO": 4904024668,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 4,
+      "Store #": "3SOC"
+    },
+    {
+      "Number": 17082282,
+      "PO": 4904024700,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 1,
+      "Store #": 8408
+    },
+    {
+      "Number": 17082316,
+      "PO": 4904025385,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 1,
+      "Store #": "2SPD"
+    },
+    {
+      "Number": 17082319,
+      "PO": 4904026403,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 1,
+      "Store #": 3801
+    },
+    {
+      "Number": 17082328,
+      "PO": 4904026522,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 2,
+      "Store #": 8925
+    },
+    {
+      "Number": 17082344,
+      "PO": 4904026668,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 1,
+      "Store #": "4SEJ"
+    },
+    {
+      "Number": 17082386,
+      "PO": 4904026461,
+      "Date": "2024-04-10 00:00:00",
+      "Qty": 5,
+      "Store #": "220E"
+    },
+    {
+      "Number": 17094247,
+      "PO": 4904030235,
+      "Date": "2024-04-15 00:00:00",
+      "Qty": 2,
+      "Store #": "539F"
+    },
+    {
+      "Number": 17094272,
+      "PO": 4904032623,
+      "Date": "2024-04-15 00:00:00",
+      "Qty": 1,
+      "Store #": "429F"
+    },
+    {
+      "Number": 17094293,
+      "PO": 4904032386,
+      "Date": "2024-04-15 00:00:00",
+      "Qty": 1,
+      "Store #": "2SRF"
+    },
+    {
+      "Number": 17094301,
+      "PO": 4904030288,
+      "Date": "2024-04-15 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNO"
+    },
+    {
+      "Number": 17094316,
+      "PO": 4904034471,
+      "Date": "2024-04-15 00:00:00",
+      "Qty": 1,
+      "Store #": 7374
+    },
+    {
+      "Number": 17095201,
+      "PO": 4904034347,
+      "Date": "2024-04-16 00:00:00",
+      "Qty": 2,
+      "Store #": "2SQO"
+    },
+    {
+      "Number": 17095247,
+      "PO": 4904034941,
+      "Date": "2024-04-16 00:00:00",
+      "Qty": 3,
+      "Store #": 7351
+    },
+    {
+      "Number": 17100833,
+      "PO": 4904035910,
+      "Date": "2024-04-17 00:00:00",
+      "Qty": 8,
+      "Store #": "1SDZ"
+    },
+    {
+      "Number": 17100862,
+      "PO": 4904036423,
+      "Date": "2024-04-17 00:00:00",
+      "Qty": 2,
+      "Store #": "525F"
+    },
+    {
+      "Number": 17100865,
+      "PO": 4904037239,
+      "Date": "2024-04-17 00:00:00",
+      "Qty": 2,
+      "Store #": "877C"
+    },
+    {
+      "Number": 17102000,
+      "PO": 4904038203,
+      "Date": "2024-04-18 00:00:00",
+      "Qty": 2,
+      "Store #": 9883
+    },
+    {
+      "Number": 17102018,
+      "PO": 4904038409,
+      "Date": "2024-04-18 00:00:00",
+      "Qty": 1,
+      "Store #": 9318
+    },
+    {
+      "Number": 17102042,
+      "PO": 4904038677,
+      "Date": "2024-04-18 00:00:00",
+      "Qty": 4,
+      "Store #": "3SOC"
+    },
+    {
+      "Number": 17102056,
+      "PO": 4904038930,
+      "Date": "2024-04-18 00:00:00",
+      "Qty": 1,
+      "Store #": 9418
+    },
+    {
+      "Number": 17102622,
+      "PO": 4904040089,
+      "Date": "2024-04-18 00:00:00",
+      "Qty": 1,
+      "Store #": 6834
+    },
+    {
+      "Number": 17102662,
+      "PO": 4904036039,
+      "Date": "2024-04-18 00:00:00",
+      "Qty": 2,
+      "Store #": 5421
+    },
+    {
+      "Number": 17104684,
+      "PO": 4904042769,
+      "Date": "2024-04-19 00:00:00",
+      "Qty": 6,
+      "Store #": "567F"
+    },
+    {
+      "Number": 17104857,
+      "PO": 4904046697,
+      "Date": "2024-04-19 00:00:00",
+      "Qty": 3,
+      "Store #": 9714
+    },
+    {
+      "Number": 17104865,
+      "PO": 4904047060,
+      "Date": "2024-04-19 00:00:00",
+      "Qty": 2,
+      "Store #": "654F"
+    },
+    {
+      "Number": 17104871,
+      "PO": 4904047947,
+      "Date": "2024-04-19 00:00:00",
+      "Qty": 1,
+      "Store #": "2SFB"
+    },
+    {
+      "Number": 17104887,
+      "PO": 4904047951,
+      "Date": "2024-04-19 00:00:00",
+      "Qty": 5,
+      "Store #": "489F"
+    },
+    {
+      "Number": 17113736,
+      "PO": 4904049372,
+      "Date": "2024-04-23 00:00:00",
+      "Qty": 1,
+      "Store #": "2SFB"
+    },
+    {
+      "Number": 17113786,
+      "PO": 4904050356,
+      "Date": "2024-04-23 00:00:00",
+      "Qty": 1,
+      "Store #": 324
+    },
+    {
+      "Number": 17113981,
+      "PO": 4904051108,
+      "Date": "2024-04-23 00:00:00",
+      "Qty": 4,
+      "Store #": "1SRU"
+    },
+    {
+      "Number": 17113992,
+      "PO": 4904048592,
+      "Date": "2024-04-23 00:00:00",
+      "Qty": 1,
+      "Store #": 8156
+    },
+    {
+      "Number": 17117431,
+      "PO": 4904051547,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 3,
+      "Store #": "2SMA"
+    },
+    {
+      "Number": 17117435,
+      "PO": 4904051907,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 2,
+      "Store #": 7870
+    },
+    {
+      "Number": 17117447,
+      "PO": 4904053077,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 1,
+      "Store #": 5476
+    },
+    {
+      "Number": 17117462,
+      "PO": 4904053640,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 3,
+      "Store #": "220E"
+    },
+    {
+      "Number": 17117470,
+      "PO": 4904053992,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 3,
+      "Store #": "1SRS"
+    },
+    {
+      "Number": 17117506,
+      "PO": 4904053989,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 5,
+      "Store #": 9170
+    },
+    {
+      "Number": 17117560,
+      "PO": 4904054456,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 2,
+      "Store #": "2SNR"
+    },
+    {
+      "Number": 17117589,
+      "PO": 4904051175,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 1,
+      "Store #": 9139
+    },
+    {
+      "Number": 17117652,
+      "PO": 4904056567,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 1,
+      "Store #": "125G"
+    },
+    {
+      "Number": 17117690,
+      "PO": 4904055660,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 3,
+      "Store #": "2SCA"
+    },
+    {
+      "Number": 17117711,
+      "PO": 4904057162,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 1,
+      "Store #": 7886
+    },
+    {
+      "Number": 17117756,
+      "PO": 4904057198,
+      "Date": "2024-04-24 00:00:00",
+      "Qty": 1,
+      "Store #": 9916
+    },
+    {
+      "Number": 17121140,
+      "PO": 4904058945,
+      "Date": "2024-04-25 00:00:00",
+      "Qty": 1,
+      "Store #": 1298
+    },
+    {
+      "Number": 17124703,
+      "PO": 4904060622,
+      "Date": "2024-04-26 00:00:00",
+      "Qty": 1,
+      "Store #": 3803
+    },
+    {
+      "Number": 17124719,
+      "PO": 4904061649,
+      "Date": "2024-04-26 00:00:00",
+      "Qty": 4,
+      "Store #": "691F"
+    },
+    {
+      "Number": 17124723,
+      "PO": 4904061815,
+      "Date": "2024-04-26 00:00:00",
+      "Qty": 1,
+      "Store #": "676F"
+    },
+    {
+      "Number": 17126427,
+      "PO": 4904064214,
+      "Date": "2024-04-26 00:00:00",
+      "Qty": 1,
+      "Store #": 5787
+    },
+    {
+      "Number": 17132756,
+      "PO": 4904065237,
+      "Date": "2024-04-30 00:00:00",
+      "Qty": 1,
+      "Store #": "365G"
+    },
+    {
+      "Number": 17132949,
+      "PO": 4904066210,
+      "Date": "2024-04-30 00:00:00",
+      "Qty": 4,
+      "Store #": 4744
+    },
+    {
+      "Number": 17132968,
+      "PO": 4904066216,
+      "Date": "2024-04-30 00:00:00",
+      "Qty": 4,
+      "Store #": "819F"
+    },
+    {
+      "Number": 17140558,
+      "PO": 4904066597,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 2,
+      "Store #": "583F"
+    },
+    {
+      "Number": 17140580,
+      "PO": 4904067767,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNM"
+    },
+    {
+      "Number": 17140602,
+      "PO": 4904067961,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 2,
+      "Store #": 8989
+    },
+    {
+      "Number": 17140616,
+      "PO": 4904066432,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 1,
+      "Store #": 4047
+    },
+    {
+      "Number": 17140627,
+      "PO": 4904066437,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 5,
+      "Store #": 1305
+    },
+    {
+      "Number": 17140681,
+      "PO": 4904068831,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 3,
+      "Store #": 7711
+    },
+    {
+      "Number": 17140721,
+      "PO": 4904069611,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 1,
+      "Store #": 3803
+    },
+    {
+      "Number": 17140771,
+      "PO": 4904069879,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 2,
+      "Store #": 7611
+    },
+    {
+      "Number": 17140772,
+      "PO": 4904069619,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 3,
+      "Store #": "207F"
+    },
+    {
+      "Number": 17140846,
+      "PO": 4904072663,
+      "Date": "2024-05-02 00:00:00",
+      "Qty": 1,
+      "Store #": "4SFW"
+    },
+    {
+      "Number": 17154450,
+      "PO": 4904076222,
+      "Date": "2024-05-07 00:00:00",
+      "Qty": 2,
+      "Store #": 4724
+    },
+    {
+      "Number": 17154531,
+      "PO": 4904077307,
+      "Date": "2024-05-07 00:00:00",
+      "Qty": 1,
+      "Store #": 8059
+    },
+    {
+      "Number": 17156091,
+      "PO": 4904078350,
+      "Date": "2024-05-08 00:00:00",
+      "Qty": 5,
+      "Store #": "424F"
+    },
+    {
+      "Number": 17160947,
+      "PO": 4904079157,
+      "Date": "2024-05-09 00:00:00",
+      "Qty": 1,
+      "Store #": 9133
+    },
+    {
+      "Number": 17161111,
+      "PO": 4904079051,
+      "Date": "2024-05-09 00:00:00",
+      "Qty": 1,
+      "Store #": "776F"
+    },
+    {
+      "Number": 17161214,
+      "PO": 4904078673,
+      "Date": "2024-05-09 00:00:00",
+      "Qty": 1,
+      "Store #": 8173
+    },
+    {
+      "Number": 17161236,
+      "PO": 4904079197,
+      "Date": "2024-05-09 00:00:00",
+      "Qty": 4,
+      "Store #": "4SBM"
+    },
+    {
+      "Number": 17161275,
+      "PO": 4904078099,
+      "Date": "2024-05-09 00:00:00",
+      "Qty": 3,
+      "Store #": 5543
+    },
+    {
+      "Number": 17162419,
+      "PO": 4904079823,
+      "Date": "2024-05-09 00:00:00",
+      "Qty": 1,
+      "Store #": 9139
+    },
+    {
+      "Number": 17162442,
+      "PO": 4904081216,
+      "Date": "2024-05-09 00:00:00",
+      "Qty": 5,
+      "Store #": 8981
+    },
+    {
+      "Number": 17163075,
+      "PO": 4904081388,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 1,
+      "Store #": "777F"
+    },
+    {
+      "Number": 17163139,
+      "PO": 4904083276,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 3,
+      "Store #": 1015
+    },
+    {
+      "Number": 17163141,
+      "PO": 4904083725,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 4,
+      "Store #": 8763
+    },
+    {
+      "Number": 17163170,
+      "PO": 4904083872,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 5,
+      "Store #": 8136
+    },
+    {
+      "Number": 17163206,
+      "PO": 4904084908,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 4,
+      "Store #": 4829
+    },
+    {
+      "Number": 17163208,
+      "PO": 4904085088,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 3,
+      "Store #": "424F"
+    },
+    {
+      "Number": 17163233,
+      "PO": 4904085431,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 1,
+      "Store #": 7390
+    },
+    {
+      "Number": 17163237,
+      "PO": 4904085657,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNU"
+    },
+    {
+      "Number": 17163286,
+      "PO": 4904087804,
+      "Date": "2024-05-10 00:00:00",
+      "Qty": 2,
+      "Store #": 7841
+    },
+    {
+      "Number": 17169809,
+      "PO": 4904088906,
+      "Date": "2024-05-13 00:00:00",
+      "Qty": 2,
+      "Store #": 2883
+    },
+    {
+      "Number": 17169848,
+      "PO": 4904088889,
+      "Date": "2024-05-13 00:00:00",
+      "Qty": 7,
+      "Store #": "4SBL"
+    },
+    {
+      "Number": 17169880,
+      "PO": 4904090167,
+      "Date": "2024-05-13 00:00:00",
+      "Qty": 5,
+      "Store #": "411F"
+    },
+    {
+      "Number": 17171686,
+      "PO": 4904091517,
+      "Date": "2024-05-14 00:00:00",
+      "Qty": 3,
+      "Store #": "1SHS"
+    },
+    {
+      "Number": 17171780,
+      "PO": 4904091575,
+      "Date": "2024-05-14 00:00:00",
+      "Qty": 1,
+      "Store #": 362
+    },
+    {
+      "Number": 17177063,
+      "PO": 4904092001,
+      "Date": "2024-05-15 00:00:00",
+      "Qty": 5,
+      "Store #": 8609
+    },
+    {
+      "Number": 17177436,
+      "PO": 4904094360,
+      "Date": "2024-05-15 00:00:00",
+      "Qty": 1,
+      "Store #": 9761
+    },
+    {
+      "Number": 17177609,
+      "PO": 4904094681,
+      "Date": "2024-05-15 00:00:00",
+      "Qty": 4,
+      "Store #": 8933
+    },
+    {
+      "Number": 17177631,
+      "PO": 4904093048,
+      "Date": "2024-05-15 00:00:00",
+      "Qty": 2,
+      "Store #": 9982
+    },
+    {
+      "Number": 17178129,
+      "PO": 4904095070,
+      "Date": "2024-05-15 00:00:00",
+      "Qty": 2,
+      "Store #": "1C19"
+    },
+    {
+      "Number": 17181331,
+      "PO": 4904098384,
+      "Date": "2024-05-16 00:00:00",
+      "Qty": 2,
+      "Store #": "877C"
+    },
+    {
+      "Number": 17181464,
+      "PO": 4904099064,
+      "Date": "2024-05-16 00:00:00",
+      "Qty": 4,
+      "Store #": 8269
+    },
+    {
+      "Number": 17188939,
+      "PO": 4904101617,
+      "Date": "2024-05-20 00:00:00",
+      "Qty": 2,
+      "Store #": 1312
+    },
+    {
+      "Number": 17188960,
+      "PO": 4904102704,
+      "Date": "2024-05-20 00:00:00",
+      "Qty": 1,
+      "Store #": 7819
+    },
+    {
+      "Number": 17188991,
+      "PO": 4904102874,
+      "Date": "2024-05-20 00:00:00",
+      "Qty": 2,
+      "Store #": 8059
+    },
+    {
+      "Number": 17191248,
+      "PO": 4904104048,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 1,
+      "Store #": 7611
+    },
+    {
+      "Number": 17191276,
+      "PO": 4904105305,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 2,
+      "Store #": 7629
+    },
+    {
+      "Number": 17191289,
+      "PO": 4904105345,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 2,
+      "Store #": "1SDG"
+    },
+    {
+      "Number": 17191325,
+      "PO": 4904105914,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 1,
+      "Store #": 8932
+    },
+    {
+      "Number": 17191437,
+      "PO": 4904106058,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 1,
+      "Store #": "777F"
+    },
+    {
+      "Number": 17191449,
+      "PO": 4904107171,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 2,
+      "Store #": "695F"
+    },
+    {
+      "Number": 17192715,
+      "PO": 4904106443,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 5,
+      "Store #": 9018
+    },
+    {
+      "Number": 17192759,
+      "PO": 4904106341,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 5,
+      "Store #": 8718
+    },
+    {
+      "Number": 17193659,
+      "PO": 4904108216,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 2,
+      "Store #": "1SDH"
+    },
+    {
+      "Number": 17193669,
+      "PO": 4904108179,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 1,
+      "Store #": "738E"
+    },
+    {
+      "Number": 17193716,
+      "PO": 4904107926,
+      "Date": "2024-05-21 00:00:00",
+      "Qty": 3,
+      "Store #": 3811
+    },
+    {
+      "Number": 17201598,
+      "PO": 4904113192,
+      "Date": "2024-05-24 00:00:00",
+      "Qty": 2,
+      "Store #": "1SGN"
+    },
+    {
+      "Number": 17201638,
+      "PO": 4904115166,
+      "Date": "2024-05-24 00:00:00",
+      "Qty": 6,
+      "Store #": "4SDM"
+    },
+    {
+      "Number": 17201722,
+      "PO": 4904118146,
+      "Date": "2024-05-24 00:00:00",
+      "Qty": 1,
+      "Store #": "1SRD"
+    },
+    {
+      "Number": 17201846,
+      "PO": 4904120022,
+      "Date": "2024-05-24 00:00:00",
+      "Qty": 2,
+      "Store #": "1SER"
+    },
+    {
+      "Number": 17203340,
+      "PO": 4904121844,
+      "Date": "2024-05-24 00:00:00",
+      "Qty": 1,
+      "Store #": 8521
+    },
+    {
+      "Number": 17203420,
+      "PO": 4904122275,
+      "Date": "2024-05-24 00:00:00",
+      "Qty": 1,
+      "Store #": "3SRN"
+    },
+    {
+      "Number": 17208864,
+      "PO": 4904122928,
+      "Date": "2024-05-28 00:00:00",
+      "Qty": 2,
+      "Store #": "4SGD"
+    },
+    {
+      "Number": 17208952,
+      "PO": 4904122947,
+      "Date": "2024-05-28 00:00:00",
+      "Qty": 4,
+      "Store #": "3SJW"
+    },
+    {
+      "Number": 17211497,
+      "PO": 4904122969,
+      "Date": "2024-05-29 00:00:00",
+      "Qty": 6,
+      "Store #": 7683
+    },
+    {
+      "Number": 17217970,
+      "PO": 4904124496,
+      "Date": "2024-05-31 00:00:00",
+      "Qty": 5,
+      "Store #": "1SOG"
+    },
+    {
+      "Number": 17217972,
+      "PO": 4904123896,
+      "Date": "2024-05-31 00:00:00",
+      "Qty": 5,
+      "Store #": 8410
+    },
+    {
+      "Number": 17218079,
+      "PO": 4904124882,
+      "Date": "2024-05-31 00:00:00",
+      "Qty": 3,
+      "Store #": "1SRD"
+    },
+    {
+      "Number": 17218112,
+      "PO": 4904126618,
+      "Date": "2024-05-31 00:00:00",
+      "Qty": 4,
+      "Store #": 5356
+    },
+    {
+      "Number": 17218284,
+      "PO": 4904127749,
+      "Date": "2024-05-31 00:00:00",
+      "Qty": 1,
+      "Store #": 7629
+    },
+    {
+      "Number": 17218512,
+      "PO": 4904129542,
+      "Date": "2024-05-31 00:00:00",
+      "Qty": 10,
+      "Store #": 9408
+    },
+    {
+      "Number": 17218558,
+      "PO": 4904129088,
+      "Date": "2024-05-31 00:00:00",
+      "Qty": 2,
+      "Store #": 7394
+    },
+    {
+      "Number": 17218577,
+      "PO": 4904131237,
+      "Date": "2024-05-31 00:00:00",
+      "Qty": 1,
+      "Store #": 4636
+    },
+    {
+      "Number": 17224762,
+      "PO": 4904136429,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 1,
+      "Store #": 7518
+    },
+    {
+      "Number": 17224723,
+      "PO": 4904136039,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 1,
+      "Store #": "500F"
+    },
+    {
+      "Number": 17224698,
+      "PO": 4904134286,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 1,
+      "Store #": 9221
+    },
+    {
+      "Number": 17223670,
+      "PO": 4904134604,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 1,
+      "Store #": "745F"
+    },
+    {
+      "Number": 17223665,
+      "PO": 4904134603,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 2,
+      "Store #": "745F"
+    },
+    {
+      "Number": 17223629,
+      "PO": 4904133882,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 1,
+      "Store #": 8166
+    },
+    {
+      "Number": 17223534,
+      "PO": 4904121843,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 1,
+      "Store #": 8536
+    },
+    {
+      "Number": 17223467,
+      "PO": 4904132867,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 4,
+      "Store #": "290F"
+    },
+    {
+      "Number": 17223419,
+      "PO": 4904132378,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 2,
+      "Store #": 1283
+    },
+    {
+      "Number": 17223414,
+      "PO": 4904132959,
+      "Date": "2024-06-03 00:00:00",
+      "Qty": 1,
+      "Store #": "270G"
+    },
+    {
+      "Number": 17231001,
+      "PO": 4904137911,
+      "Date": "2024-06-05 00:00:00",
+      "Qty": 11,
+      "Store #": 6844
+    },
+    {
+      "Number": 17230989,
+      "PO": 4904137910,
+      "Date": "2024-06-05 00:00:00",
+      "Qty": 2,
+      "Store #": "118E"
+    },
+    {
+      "Number": 17234578,
+      "PO": 4904138745,
+      "Date": "2024-06-06 00:00:00",
+      "Qty": 2,
+      "Store #": "528F"
+    },
+    {
+      "Number": 17234536,
+      "PO": 4904138516,
+      "Date": "2024-06-06 00:00:00",
+      "Qty": 3,
+      "Store #": 8763
+    },
+    {
+      "Number": 17234533,
+      "PO": 4904134496,
+      "Date": "2024-06-06 00:00:00",
+      "Qty": 1,
+      "Store #": 9916
+    },
+    {
+      "Number": 17234531,
+      "PO": 4904138071,
+      "Date": "2024-06-06 00:00:00",
+      "Qty": 2,
+      "Store #": "207F"
+    },
+    {
+      "Number": 17234497,
+      "PO": 4904138447,
+      "Date": "2024-06-06 00:00:00",
+      "Qty": 1,
+      "Store #": "1SJS"
+    },
+    {
+      "Number": 17234474,
+      "PO": 4904138433,
+      "Date": "2024-06-06 00:00:00",
+      "Qty": 1,
+      "Store #": 9754
+    },
+    {
+      "Number": 17234473,
+      "PO": 4904138428,
+      "Date": "2024-06-06 00:00:00",
+      "Qty": 2,
+      "Store #": 8299
+    },
+    {
+      "Number": 17234452,
+      "PO": 4904138016,
+      "Date": "2024-06-06 00:00:00",
+      "Qty": 1,
+      "Store #": 7813
+    },
+    {
+      "Number": 17237920,
+      "PO": 4904142255,
+      "Date": "2024-06-07 00:00:00",
+      "Qty": 1,
+      "Store #": "536F"
+    },
+    {
+      "Number": 17237918,
+      "PO": 4904142944,
+      "Date": "2024-06-07 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNU"
+    },
+    {
+      "Number": 17237908,
+      "PO": 4904142580,
+      "Date": "2024-06-07 00:00:00",
+      "Qty": 1,
+      "Store #": 8705
+    },
+    {
+      "Number": 17242745,
+      "PO": 4904145706,
+      "Date": "2024-06-10 00:00:00",
+      "Qty": 3,
+      "Store #": "2SQL"
+    },
+    {
+      "Number": 17242744,
+      "PO": 4904145543,
+      "Date": "2024-06-10 00:00:00",
+      "Qty": 1,
+      "Store #": 7780
+    },
+    {
+      "Number": 17242740,
+      "PO": 4904145201,
+      "Date": "2024-06-10 00:00:00",
+      "Qty": 1,
+      "Store #": "696F"
+    },
+    {
+      "Number": 17242726,
+      "PO": 4904145527,
+      "Date": "2024-06-10 00:00:00",
+      "Qty": 4,
+      "Store #": 8542
+    },
+    {
+      "Number": 17242689,
+      "PO": 4904144394,
+      "Date": "2024-06-10 00:00:00",
+      "Qty": 1,
+      "Store #": 480
+    },
+    {
+      "Number": 17244572,
+      "PO": 4904147662,
+      "Date": "2024-06-10 00:00:00",
+      "Qty": 1,
+      "Store #": 8778
+    },
+    {
+      "Number": 17244625,
+      "PO": 4904146301,
+      "Date": "2024-06-10 00:00:00",
+      "Qty": 1,
+      "Store #": "647F"
+    },
+    {
+      "Number": 17246495,
+      "PO": 4904146787,
+      "Date": "2024-06-11 00:00:00",
+      "Qty": 1,
+      "Store #": "405F"
+    },
+    {
+      "Number": 17246671,
+      "PO": 4904148414,
+      "Date": "2024-06-11 00:00:00",
+      "Qty": 1,
+      "Store #": 7850
+    },
+    {
+      "Number": 17246685,
+      "PO": 4904147961,
+      "Date": "2024-06-11 00:00:00",
+      "Qty": 3,
+      "Store #": 9320
+    },
+    {
+      "Number": 17248627,
+      "PO": 4904146138,
+      "Date": "2024-06-11 00:00:00",
+      "Qty": 1,
+      "Store #": "856D"
+    },
+    {
+      "Number": 17248664,
+      "PO": 4904146872,
+      "Date": "2024-06-11 00:00:00",
+      "Qty": 3,
+      "Store #": "2SOV"
+    },
+    {
+      "Number": 17248687,
+      "PO": 4904148824,
+      "Date": "2024-06-11 00:00:00",
+      "Qty": 1,
+      "Store #": "4SFA"
+    },
+    {
+      "Number": 17250035,
+      "PO": 4904149045,
+      "Date": "2024-06-12 00:00:00",
+      "Qty": 3,
+      "Store #": "1SGB"
+    },
+    {
+      "Number": 17254793,
+      "PO": 4904154142,
+      "Date": "2024-06-13 00:00:00",
+      "Qty": 1,
+      "Store #": "3SAY"
+    },
+    {
+      "Number": 17259289,
+      "PO": 4904157231,
+      "Date": "2024-06-14 00:00:00",
+      "Qty": 1,
+      "Store #": "465F"
+    },
+    {
+      "Number": 17259478,
+      "PO": 4904158915,
+      "Date": "2024-06-14 00:00:00",
+      "Qty": 1,
+      "Store #": 6000
+    },
+    {
+      "Number": 17265943,
+      "PO": 4904160247,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 1,
+      "Store #": "534F"
+    },
+    {
+      "Number": 17265948,
+      "PO": 4904160096,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 1,
+      "Store #": "756F"
+    },
+    {
+      "Number": 17265953,
+      "PO": 4904160425,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNO"
+    },
+    {
+      "Number": 17265965,
+      "PO": 4904160511,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 1,
+      "Store #": "1SJA"
+    },
+    {
+      "Number": 17266328,
+      "PO": 4904161148,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 1,
+      "Store #": "3SRV"
+    },
+    {
+      "Number": 17266380,
+      "PO": 4904161584,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 2,
+      "Store #": "754F"
+    },
+    {
+      "Number": 17266491,
+      "PO": 4904163032,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 2,
+      "Store #": "403D"
+    },
+    {
+      "Number": 17266497,
+      "PO": 4904163103,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 5,
+      "Store #": 9470
+    },
+    {
+      "Number": 17266510,
+      "PO": 4904163479,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 3,
+      "Store #": "646F"
+    },
+    {
+      "Number": 17266523,
+      "PO": 4904163076,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 2,
+      "Store #": "755F"
+    },
+    {
+      "Number": 17267468,
+      "PO": 4904165156,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 1,
+      "Store #": "3SJU"
+    },
+    {
+      "Number": 17267475,
+      "PO": 4904166245,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 1,
+      "Store #": "3SAY"
+    },
+    {
+      "Number": 17268641,
+      "PO": 4904166649,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 2,
+      "Store #": 8536
+    },
+    {
+      "Number": 17268868,
+      "PO": 4904167332,
+      "Date": "2024-06-18 00:00:00",
+      "Qty": 4,
+      "Store #": 8974
+    },
+    {
+      "Number": 17271427,
+      "PO": 4904167579,
+      "Date": "2024-06-20 00:00:00",
+      "Qty": 2,
+      "Store #": 8308
+    },
+    {
+      "Number": 17271434,
+      "PO": 4904167338,
+      "Date": "2024-06-20 00:00:00",
+      "Qty": 2,
+      "Store #": 362
+    },
+    {
+      "Number": 17271467,
+      "PO": 4904166290,
+      "Date": "2024-06-20 00:00:00",
+      "Qty": 1,
+      "Store #": 7815
+    },
+    {
+      "Number": 17276483,
+      "PO": 4904168657,
+      "Date": "2024-06-21 00:00:00",
+      "Qty": 4,
+      "Store #": "1SBD"
+    },
+    {
+      "Number": 17276528,
+      "PO": 4904169621,
+      "Date": "2024-06-21 00:00:00",
+      "Qty": 2,
+      "Store #": "2PSE"
+    },
+    {
+      "Number": 17277134,
+      "PO": 4904171684,
+      "Date": "2024-06-21 00:00:00",
+      "Qty": 1,
+      "Store #": 8298
+    },
+    {
+      "Number": 17277689,
+      "PO": 4904172386,
+      "Date": "2024-06-21 00:00:00",
+      "Qty": 2,
+      "Store #": 1098
+    },
+    {
+      "Number": 17281134,
+      "PO": 4904172789,
+      "Date": "2024-06-24 00:00:00",
+      "Qty": 1,
+      "Store #": 7373
+    },
+    {
+      "Number": 17281143,
+      "PO": 4904172936,
+      "Date": "2024-06-24 00:00:00",
+      "Qty": 1,
+      "Store #": 8778
+    },
+    {
+      "Number": 17281153,
+      "PO": 4904173036,
+      "Date": "2024-06-24 00:00:00",
+      "Qty": 2,
+      "Store #": "1SBD"
+    },
+    {
+      "Number": 17281162,
+      "PO": 4904172472,
+      "Date": "2024-06-24 00:00:00",
+      "Qty": 2,
+      "Store #": "760F"
+    },
+    {
+      "Number": 17281170,
+      "PO": 4904173040,
+      "Date": "2024-06-24 00:00:00",
+      "Qty": 2,
+      "Store #": "760F"
+    },
+    {
+      "Number": 17283738,
+      "PO": 4904174260,
+      "Date": "2024-06-25 00:00:00",
+      "Qty": 2,
+      "Store #": "4SFH"
+    },
+    {
+      "Number": 17283765,
+      "PO": 4904174397,
+      "Date": "2024-06-25 00:00:00",
+      "Qty": 1,
+      "Store #": 8751
+    },
+    {
+      "Number": 17283776,
+      "PO": 4904174491,
+      "Date": "2024-06-25 00:00:00",
+      "Qty": 3,
+      "Store #": 470
+    },
+    {
+      "Number": 17283825,
+      "PO": 4904175158,
+      "Date": "2024-06-25 00:00:00",
+      "Qty": 3,
+      "Store #": "4SDB"
+    },
+    {
+      "Number": 17283843,
+      "PO": 4904174909,
+      "Date": "2024-06-25 00:00:00",
+      "Qty": 1,
+      "Store #": "4SAX"
+    },
+    {
+      "Number": 17294482,
+      "PO": 4904179511,
+      "Date": "2024-06-28 00:00:00",
+      "Qty": 3,
+      "Store #": 8269
+    },
+    {
+      "Number": 17294522,
+      "PO": 4904181462,
+      "Date": "2024-06-28 00:00:00",
+      "Qty": 1,
+      "Store #": "497F"
+    },
+    {
+      "Number": 17299237,
+      "PO": 4904186561,
+      "Date": "2024-07-01 00:00:00",
+      "Qty": 1,
+      "Store #": "585F"
+    },
+    {
+      "Number": 17299295,
+      "PO": 4904188852,
+      "Date": "2024-07-01 00:00:00",
+      "Qty": 1,
+      "Store #": "4SJL"
+    },
+    {
+      "Number": 17299310,
+      "PO": 4904190832,
+      "Date": "2024-07-01 00:00:00",
+      "Qty": 3,
+      "Store #": "1SFW"
+    },
+    {
+      "Number": 17303685,
+      "PO": 4904189865,
+      "Date": "2024-07-02 00:00:00",
+      "Qty": 1,
+      "Store #": 8952
+    },
+    {
+      "Number": 17303761,
+      "PO": 4904191595,
+      "Date": "2024-07-02 00:00:00",
+      "Qty": 1,
+      "Store #": 8837
+    },
+    {
+      "Number": 17303788,
+      "PO": 4904193086,
+      "Date": "2024-07-02 00:00:00",
+      "Qty": 1,
+      "Store #": 7358
+    },
+    {
+      "Number": 17306611,
+      "PO": 4904194330,
+      "Date": "2024-07-03 00:00:00",
+      "Qty": 1,
+      "Store #": "2SNU"
+    },
+    {
+      "Number": 17306613,
+      "PO": 4904194528,
+      "Date": "2024-07-03 00:00:00",
+      "Qty": 1,
+      "Store #": 9106
+    },
+    {
+      "Number": 17306655,
+      "PO": 4904195316,
+      "Date": "2024-07-03 00:00:00",
+      "Qty": 4,
+      "Store #": "618F"
+    },
+    {
+      "Number": 17306667,
+      "PO": 4904194851,
+      "Date": "2024-07-03 00:00:00",
+      "Qty": 2,
+      "Store #": 7518
+    },
+    {
+      "Number": 17310697,
+      "PO": 4904195992,
+      "Date": "2024-07-05 00:00:00",
+      "Qty": 1,
+      "Store #": 8029
+    },
+    {
+      "Number": 17310719,
+      "PO": 4904197247,
+      "Date": "2024-07-05 00:00:00",
+      "Qty": 1,
+      "Store #": "553G"
+    },
+    {
+      "Number": 17310732,
+      "PO": 4904197635,
+      "Date": "2024-07-05 00:00:00",
+      "Qty": 3,
+      "Store #": "2SBP"
+    },
+    {
+      "Number": 17311402,
+      "PO": 4904200185,
+      "Date": "2024-07-05 00:00:00",
+      "Qty": 1,
+      "Store #": "638F"
+    },
+    {
+      "Number": 17312068,
+      "PO": 4904201138,
+      "Date": "2024-07-05 00:00:00",
+      "Qty": 1,
+      "Store #": "1SEJ"
+    },
+    {
+      "Number": 17314242,
+      "PO": 4904202103,
+      "Date": "2024-07-08 00:00:00",
+      "Qty": 1,
+      "Store #": 8572
+    },
+    {
+      "Number": 17314253,
+      "PO": 4904202409,
+      "Date": "2024-07-08 00:00:00",
+      "Qty": 1,
+      "Store #": 317
+    },
+    {
+      "Number": 17315668,
+      "PO": 4904203151,
+      "Date": "2024-07-08 00:00:00",
+      "Qty": 2,
+      "Store #": "4SBJ"
+    },
+    {
+      "Number": 17315837,
+      "PO": 4904204894,
+      "Date": "2024-07-08 00:00:00",
+      "Qty": 10,
+      "Store #": "3SNJ"
+    },
+    {
+      "Number": 17319007,
+      "PO": 4904206634,
+      "Date": "2024-07-09 00:00:00",
+      "Qty": 1,
+      "Store #": "1SQP"
+    },
+    {
+      "Number": 17324737,
+      "PO": 4904208296,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 3,
+      "Store #": 7684
+    },
+    {
+      "Number": 17324741,
+      "PO": 4904208530,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 1,
+      "Store #": 9023
+    },
+    {
+      "Number": 17324763,
+      "PO": 4904208543,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 3,
+      "Store #": "401D"
+    },
+    {
+      "Number": 17324779,
+      "PO": 4904208459,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 3,
+      "Store #": "577F"
+    },
+    {
+      "Number": 17324792,
+      "PO": 4904208717,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 1,
+      "Store #": 9898
+    },
+    {
+      "Number": 17324810,
+      "PO": 4904208750,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 2,
+      "Store #": "4SDV"
+    },
+    {
+      "Number": 17324830,
+      "PO": 4904210908,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 2,
+      "Store #": "4SCD"
+    },
+    {
+      "Number": 17324831,
+      "PO": 4904210867,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 2,
+      "Store #": 5337
+    },
+    {
+      "Number": 17324837,
+      "PO": 4904210901,
+      "Date": "2024-07-11 00:00:00",
+      "Qty": 5,
+      "Store #": 9063
+    },
+    {
+      "Number": 17330549,
+      "PO": 4904213802,
+      "Date": "2024-07-12 00:00:00",
+      "Qty": 4,
+      "Store #": 8910
+    },
+    {
+      "Number": 17331029,
+      "PO": 4904214571,
+      "Date": "2024-07-12 00:00:00",
+      "Qty": 7,
+      "Store #": "2SAN"
+    },
+    {
+      "Number": 17336869,
+      "PO": 4904216814,
+      "Date": "2024-07-16 00:00:00",
+      "Qty": 4,
+      "Store #": "503F"
+    },
+    {
+      "Number": 17336929,
+      "PO": 4904216881,
+      "Date": "2024-07-16 00:00:00",
+      "Qty": 3,
+      "Store #": "364F"
+    },
+    {
+      "Number": 17336953,
+      "PO": 4904217515,
+      "Date": "2024-07-16 00:00:00",
+      "Qty": 2,
+      "Store #": "1SGN"
+    },
+    {
+      "Number": 17338115,
+      "PO": 4904221153,
+      "Date": "2024-07-16 00:00:00",
+      "Qty": 1,
+      "Store #": "780F"
+    },
+    {
+      "Number": 17338131,
+      "PO": 4904221937,
+      "Date": "2024-07-16 00:00:00",
+      "Qty": 1,
+      "Store #": 4055
+    },
+    {
+      "Number": 17343589,
+      "PO": 4904222785,
+      "Date": "2024-07-17 00:00:00",
+      "Qty": 2,
+      "Store #": 8940
+    },
+    {
+      "Number": 17354037,
+      "PO": 4904223198,
+      "Date": "2024-07-22 00:00:00",
+      "Qty": 4,
+      "Store #": 8894
+    },
+    {
+      "Number": 17356271,
+      "PO": 4904232729,
+      "Date": "2024-07-23 00:00:00",
+      "Qty": 1,
+      "Store #": 422
+    },
+    {
+      "Number": 17362736,
+      "PO": 4904241085,
+      "Date": "2024-07-25 00:00:00",
+      "Qty": 2,
+      "Store #": "1C24"
+    },
+    {
+      "Number": 17366044,
+      "PO": 4904242794,
+      "Date": "2024-07-26 00:00:00",
+      "Qty": 1,
+      "Store #": 9761
+    },
+    {
+      "Number": 17366046,
+      "PO": 4904244334,
+      "Date": "2024-07-26 00:00:00",
+      "Qty": 1,
+      "Store #": 7792
+    },
+    {
+      "Number": 17367273,
+      "PO": 4904244551,
+      "Date": "2024-07-26 00:00:00",
+      "Qty": 2,
+      "Store #": "788F"
+    },
+    {
+      "Number": 17370640,
+      "PO": 4904244593,
+      "Date": "2024-07-29 00:00:00",
+      "Qty": 1,
+      "Store #": "4SFC"
+    },
+    {
+      "Number": 17370653,
+      "PO": 4904246354,
+      "Date": "2024-07-29 00:00:00",
+      "Qty": 1,
+      "Store #": 7908
+    },
+    {
+      "Number": 17370663,
+      "PO": 4904246639,
+      "Date": "2024-07-29 00:00:00",
+      "Qty": 1,
+      "Store #": "2SPM"
+    },
+    {
+      "Number": 17373971,
+      "PO": 4904247403,
+      "Date": "2024-07-30 00:00:00",
+      "Qty": 2,
+      "Store #": 5543
+    },
+    {
+      "Number": 17374013,
+      "PO": 4904248172,
+      "Date": "2024-07-30 00:00:00",
+      "Qty": 1,
+      "Store #": 8837
+    },
+    {
+      "Number": 17374053,
+      "PO": 4904249179,
+      "Date": "2024-07-30 00:00:00",
+      "Qty": 2,
+      "Store #": 8606
+    },
+    {
+      "Number": 17374160,
+      "PO": 4904247663,
+      "Date": "2024-07-30 00:00:00",
+      "Qty": 3,
+      "Store #": "421F"
+    },
+    {
+      "Number": 17374166,
+      "PO": 4904247674,
+      "Date": "2024-07-30 00:00:00",
+      "Qty": 7,
+      "Store #": "4SFQ"
+    },
+    {
+      "Number": 17377372,
+      "PO": 4904252724,
+      "Date": "2024-07-31 00:00:00",
+      "Qty": 4,
+      "Store #": 4020
+    },
+    {
+      "Number": 17377397,
+      "PO": 4904253034,
+      "Date": "2024-07-31 00:00:00",
+      "Qty": 1,
+      "Store #": 7908
+    },
+    {
+      "Number": 17394419,
+      "PO": 4904260637,
+      "Date": "2024-08-06 00:00:00",
+      "Qty": 1,
+      "Store #": 8528
+    },
+    {
+      "Number": 17394440,
+      "PO": 4904261877,
+      "Date": "2024-08-06 00:00:00",
+      "Qty": 2,
+      "Store #": "490F"
+    },
+    {
+      "Number": 17394476,
+      "PO": 4904261455,
+      "Date": "2024-08-06 00:00:00",
+      "Qty": 2,
+      "Store #": 5048
+    },
+    {
+      "Number": 17394546,
+      "PO": 4904262410,
+      "Date": "2024-08-06 00:00:00",
+      "Qty": 1,
+      "Store #": 9109
+    },
+    {
+      "Number": 17397993,
+      "PO": 4904262266,
+      "Date": "2024-08-07 00:00:00",
+      "Qty": 1,
+      "Store #": 8765
+    },
+    {
+      "Number": 17398038,
+      "PO": 4904264016,
+      "Date": "2024-08-07 00:00:00",
+      "Qty": 3,
+      "Store #": 9905
+    },
+    {
+      "Number": 17401441,
+      "PO": 4904269712,
+      "Date": "2024-08-08 00:00:00",
+      "Qty": 3,
+      "Store #": "516E"
+    },
+    {
+      "Number": 17401447,
+      "PO": 4904268194,
+      "Date": "2024-08-08 00:00:00",
+      "Qty": 1,
+      "Store #": "3SOT"
+    },
+    {
+      "Number": 17404778,
+      "PO": 4904269698,
+      "Date": "2024-08-09 00:00:00",
+      "Qty": 1,
+      "Store #": "4B07"
+    },
+    {
+      "Number": 17404791,
+      "PO": 4904271321,
+      "Date": "2024-08-09 00:00:00",
+      "Qty": 1,
+      "Store #": 9334
+    },
+    {
+      "Number": 17404800,
+      "PO": 4904269090,
+      "Date": "2024-08-09 00:00:00",
+      "Qty": 1,
+      "Store #": "2SCL"
+    },
+    {
+      "Number": 17410638,
+      "PO": 4904273184,
+      "Date": "2024-08-12 00:00:00",
+      "Qty": 2,
+      "Store #": "4SAB"
+    },
+    {
+      "Number": 17410708,
+      "PO": 4904272097,
+      "Date": "2024-08-12 00:00:00",
+      "Qty": 2,
+      "Store #": "2SNU"
+    },
+    {
+      "Number": 17410786,
+      "PO": 4904274605,
+      "Date": "2024-08-12 00:00:00",
+      "Qty": 3,
+      "Store #": 8253
+    },
+    {
+      "Number": 17410805,
+      "PO": 4904274518,
+      "Date": "2024-08-12 00:00:00",
+      "Qty": 1,
+      "Store #": "515F"
+    },
+    {
+      "Number": 17410880,
+      "PO": 4904276137,
+      "Date": "2024-08-12 00:00:00",
+      "Qty": 1,
+      "Store #": 8837
+    },
+    {
+      "Number": 17414599,
+      "PO": 4904277100,
+      "Date": "2024-08-13 00:00:00",
+      "Qty": 1,
+      "Store #": "3SAQ"
+    },
+    {
+      "Number": 17417903,
+      "PO": 4904278892,
+      "Date": "2024-08-14 00:00:00",
+      "Qty": 1,
+      "Store #": 9277
+    },
+    {
+      "Number": 17419768,
+      "PO": 4904280419,
+      "Date": "2024-08-14 00:00:00",
+      "Qty": 2,
+      "Store #": 5897
+    },
+    {
+      "Number": 17422137,
+      "PO": 4904281914,
+      "Date": "2024-08-15 00:00:00",
+      "Qty": 3,
+      "Store #": 303
+    },
+    {
+      "Number": 17422139,
+      "PO": 4904281926,
+      "Date": "2024-08-15 00:00:00",
+      "Qty": 2,
+      "Store #": 8934
+    },
+    {
+      "Number": 17422190,
+      "PO": 4904282685,
+      "Date": "2024-08-15 00:00:00",
+      "Qty": 1,
+      "Store #": 9521
+    },
+    {
+      "Number": 17425477,
+      "PO": 4904285428,
+      "Date": "2024-08-16 00:00:00",
+      "Qty": 1,
+      "Store #": 9318
+    },
+    {
+      "Number": 17425489,
+      "PO": 4904284299,
+      "Date": "2024-08-16 00:00:00",
+      "Qty": 2,
+      "Store #": "458F"
+    },
+    {
+      "Number": 17430716,
+      "PO": 4904288948,
+      "Date": "2024-08-19 00:00:00",
+      "Qty": 3,
+      "Store #": "2SQB"
+    },
+    {
+      "Number": 17431032,
+      "PO": 4904287055,
+      "Date": "2024-08-19 00:00:00",
+      "Qty": 1,
+      "Store #": "1SRL"
+    },
+    {
+      "Number": 17433802,
+      "PO": 4904292106,
+      "Date": "2024-08-20 00:00:00",
+      "Qty": 1,
+      "Store #": 7856
+    },
+    {
+      "Number": 17437921,
+      "PO": 4904296072,
+      "Date": "2024-08-21 00:00:00",
+      "Qty": 3,
+      "Store #": "2SBP"
+    },
+    {
+      "Number": 17441568,
+      "PO": 4904303486,
+      "Date": "2024-08-22 00:00:00",
+      "Qty": 2,
+      "Store #": 7886
+    },
+    {
+      "Number": 17441573,
+      "PO": 4904302030,
+      "Date": "2024-08-22 00:00:00",
+      "Qty": 2,
+      "Store #": 1047
+    },
+    {
+      "Number": 17444748,
+      "PO": 4904305652,
+      "Date": "2024-08-23 00:00:00",
+      "Qty": 3,
+      "Store #": 8031
+    },
+    {
+      "Number": 17444758,
+      "PO": 4904305881,
+      "Date": "2024-08-23 00:00:00",
+      "Qty": 2,
+      "Store #": 7395
+    },
+    {
+      "Number": 17446594,
+      "PO": 4904303386,
+      "Date": "2024-08-23 00:00:00",
+      "Qty": 1,
+      "Store #": "488F"
+    },
+    {
+      "Number": 17449283,
+      "PO": 4904309290,
+      "Date": "2024-08-26 00:00:00",
+      "Qty": 3,
+      "Store #": 7394
+    },
+    {
+      "Number": 17449356,
+      "PO": 4904312731,
+      "Date": "2024-08-26 00:00:00",
+      "Qty": 1,
+      "Store #": "3SPZ"
+    },
+    {
+      "Number": 17450480,
+      "PO": 4904313249,
+      "Date": "2024-08-26 00:00:00",
+      "Qty": 1,
+      "Store #": "2SQG"
+    },
+    {
+      "Number": 17450483,
+      "PO": 4904313739,
+      "Date": "2024-08-26 00:00:00",
+      "Qty": 1,
+      "Store #": "4SCN"
+    },
+    {
+      "Number": 17450694,
+      "PO": 4904314150,
+      "Date": "2024-08-26 00:00:00",
+      "Qty": 2,
+      "Store #": 9164
+    },
+    {
+      "Number": 17460470,
+      "PO": 4904322502,
+      "Date": "2024-08-28 00:00:00",
+      "Qty": 8,
+      "Store #": "1SHG"
+    },
+    {
+      "Number": 17460478,
+      "PO": 4904322673,
+      "Date": "2024-08-28 00:00:00",
+      "Qty": 3,
+      "Store #": 9561
+    },
+    {
+      "Number": 17463084,
+      "PO": 4904323963,
+      "Date": "2024-08-29 00:00:00",
+      "Qty": 4,
+      "Store #": "421F"
+    },
+    {
+      "Number": 17466158,
+      "PO": 4904326512,
+      "Date": "2024-08-30 00:00:00",
+      "Qty": 1,
+      "Store #": 1278
+    },
+    {
+      "Number": 17466528,
+      "PO": 4904326996,
+      "Date": "2024-08-30 00:00:00",
+      "Qty": 1,
+      "Store #": "498F"
+    },
+    {
+      "Number": 17475033,
+      "PO": 4904329544,
+      "Date": "2024-09-04 00:00:00",
+      "Qty": 2,
+      "Store #": "4SBJ"
+    },
+    {
+      "Number": 17477185,
+      "PO": 4904332201,
+      "Date": "2024-09-05 00:00:00",
+      "Qty": 5,
+      "Store #": "2SQL"
+    },
+    {
+      "Number": 17477242,
+      "PO": 4904332657,
+      "Date": "2024-09-05 00:00:00",
+      "Qty": 1,
+      "Store #": "1C90"
+    },
+    {
+      "Number": 17480514,
+      "PO": 4904338732,
+      "Date": "2024-09-06 00:00:00",
+      "Qty": 2,
+      "Store #": 203
+    },
+    {
+      "Number": 17482670,
+      "PO": 4904342908,
+      "Date": "2024-09-06 00:00:00",
+      "Qty": 1,
+      "Store #": "445F"
+    },
+    {
+      "Number": 17485482,
+      "PO": 4904343644,
+      "Date": "2024-09-09 00:00:00",
+      "Qty": 1,
+      "Store #": 6002
+    },
+    {
+      "Number": 17485547,
+      "PO": 4904344705,
+      "Date": "2024-09-09 00:00:00",
+      "Qty": 2,
+      "Store #": "693F"
+    },
+    {
+      "Number": 17485559,
+      "PO": 4904344131,
+      "Date": "2024-09-09 00:00:00",
+      "Qty": 1,
+      "Store #": 8606
+    },
+    {
+      "Number": 17485570,
+      "PO": 4904344138,
+      "Date": "2024-09-09 00:00:00",
+      "Qty": 2,
+      "Store #": 8606
+    },
+    {
+      "Number": 17489376,
+      "PO": 4904348090,
+      "Date": "2024-09-10 00:00:00",
+      "Qty": 1,
+      "Store #": 7376
+    },
+    {
+      "Number": 17489410,
+      "PO": 4904348513,
+      "Date": "2024-09-10 00:00:00",
+      "Qty": 1,
+      "Store #": "3SLC"
+    },
+    {
+      "Number": 17493173,
+      "PO": 4904348711,
+      "Date": "2024-09-11 00:00:00",
+      "Qty": 2,
+      "Store #": "259F"
+    },
+    {
+      "Number": 17493218,
+      "PO": 4904349931,
+      "Date": "2024-09-11 00:00:00",
+      "Qty": 2,
+      "Store #": 4413
+    },
+    {
+      "Number": 17496755,
+      "PO": 4904356055,
+      "Date": "2024-09-12 00:00:00",
+      "Qty": 1,
+      "Store #": "779F"
+    },
+    {
+      "Number": 17500147,
+      "PO": 4904357191,
+      "Date": "2024-09-13 00:00:00",
+      "Qty": 1,
+      "Store #": "523G"
+    },
+    {
+      "Number": 17500212,
+      "PO": 4904358975,
+      "Date": "2024-09-13 00:00:00",
+      "Qty": 1,
+      "Store #": "3SRY"
+    },
+    {
+      "Number": 17502479,
+      "PO": 4904361043,
+      "Date": "2024-09-13 00:00:00",
+      "Qty": 1,
+      "Store #": "4SEO"
+    },
+    {
+      "Number": 17505067,
+      "PO": 4904362383,
+      "Date": "2024-09-16 00:00:00",
+      "Qty": 1,
+      "Store #": 8408
+    },
+    {
+      "Number": 17505100,
+      "PO": 4904362519,
+      "Date": "2024-09-16 00:00:00",
+      "Qty": 2,
+      "Store #": 8624
+    },
+    {
+      "Number": 17508614,
+      "PO": 4904364871,
+      "Date": "2024-09-17 00:00:00",
+      "Qty": 1,
+      "Store #": "1SMR"
+    },
+    {
+      "Number": 17508676,
+      "PO": 4904366242,
+      "Date": "2024-09-17 00:00:00",
+      "Qty": 1,
+      "Store #": 4559
+    },
+    {
+      "Number": 17509928,
+      "PO": 4904368272,
+      "Date": "2024-09-17 00:00:00",
+      "Qty": 1,
+      "Store #": 5659
+    },
+    {
+      "Number": 17515973,
+      "PO": 4904371366,
+      "Date": "2024-09-19 00:00:00",
+      "Qty": 2,
+      "Store #": 1296
+    },
+    {
+      "Number": 17521312,
+      "PO": 4904383122,
+      "Date": "2024-09-20 00:00:00",
+      "Qty": 1,
+      "Store #": 8720
+    },
+    {
+      "Number": 17524446,
+      "PO": 4904381835,
+      "Date": "2024-09-23 00:00:00",
+      "Qty": 1,
+      "Store #": 8695
+    },
+    {
+      "Number": 17524499,
+      "PO": 4904383758,
+      "Date": "2024-09-23 00:00:00",
+      "Qty": 1,
+      "Store #": "539F"
+    },
+    {
+      "Number": 17524748,
+      "PO": 4904385309,
+      "Date": "2024-09-23 00:00:00",
+      "Qty": 1,
+      "Store #": 1312
+    },
+    {
+      "Number": 17527989,
+      "PO": 4904385471,
+      "Date": "2024-09-24 00:00:00",
+      "Qty": 1,
+      "Store #": 7696
+    },
+    {
+      "Number": 17528047,
+      "PO": 4904386344,
+      "Date": "2024-09-24 00:00:00",
+      "Qty": 1,
+      "Store #": "678F"
+    },
+    {
+      "Number": 17531427,
+      "PO": 4904391288,
+      "Date": "2024-09-25 00:00:00",
+      "Qty": 1,
+      "Store #": 7559
+    },
+    {
+      "Number": 17533490,
+      "PO": 4904393430,
+      "Date": "2024-09-25 00:00:00",
+      "Qty": 2,
+      "Store #": 7845
+    },
+    {
+      "Number": 17540786,
+      "PO": 4904397437,
+      "Date": "2024-09-27 00:00:00",
+      "Qty": 2,
+      "Store #": "3SRN"
+    },
+    {
+      "Number": 17541091,
+      "PO": 4904398809,
+      "Date": "2024-09-27 00:00:00",
+      "Qty": 1,
+      "Store #": "2SJR"
+    },
+    {
+      "Number": 17543378,
+      "PO": 4904402993,
+      "Date": "2024-09-30 00:00:00",
+      "Qty": 5,
+      "Store #": 7976
+    },
+    {
+      "Number": 17544212,
+      "PO": 4904400077,
+      "Date": "2024-09-30 00:00:00",
+      "Qty": 4,
+      "Store #": "680F"
+    },
+    {
+      "Number": 17546457,
+      "PO": 4904404964,
+      "Date": "2024-09-30 00:00:00",
+      "Qty": 1,
+      "Store #": "253F"
+    },
+    {
+      "Number": 17546459,
+      "PO": 4904404442,
+      "Date": "2024-09-30 00:00:00",
+      "Qty": 2,
+      "Store #": "716F"
+    },
+    {
+      "Number": 17546470,
+      "PO": 4904405264,
+      "Date": "2024-09-30 00:00:00",
+      "Qty": 5,
+      "Store #": "3SQS"
+    },
+    {
+      "Number": 17546485,
+      "PO": 4904406133,
+      "Date": "2024-09-30 00:00:00",
+      "Qty": 2,
+      "Store #": 686
+    },
+    {
+      "Number": 17550735,
+      "PO": 4904409214,
+      "Date": "2024-10-02 00:00:00",
+      "Qty": 1,
+      "Store #": 8328
+    },
+    {
+      "Number": 17550736,
+      "PO": 4904409248,
+      "Date": "2024-10-02 00:00:00",
+      "Qty": 1,
+      "Store #": 7855
+    },
+    {
+      "Number": 17553001,
+      "PO": 4904410641,
+      "Date": "2024-10-02 00:00:00",
+      "Qty": 2,
+      "Store #": "4SJD"
+    },
+    {
+      "Number": 17553045,
+      "PO": 4904410666,
+      "Date": "2024-10-02 00:00:00",
+      "Qty": 3,
+      "Store #": 1301
+    },
+    {
+      "Number": 17553103,
+      "PO": 4904411035,
+      "Date": "2024-10-02 00:00:00",
+      "Qty": 2,
+      "Store #": "206F"
+    },
+    {
+      "Number": 17554438,
+      "PO": 4904410550,
+      "Date": "2024-10-03 00:00:00",
+      "Qty": 1,
+      "Store #": 9133
+    },
+    {
+      "Number": 17557190,
+      "PO": 4904414063,
+      "Date": "2024-10-03 00:00:00",
+      "Qty": 3,
+      "Store #": 8899
+    },
+    {
+      "Number": 17559402,
+      "PO": 4904418062,
+      "Date": "2024-10-04 00:00:00",
+      "Qty": 2,
+      "Store #": 9282
+    },
+    {
+      "Number": 17569442,
+      "PO": 4904421314,
+      "Date": "2024-10-08 00:00:00",
+      "Qty": 1,
+      "Store #": 277
+    },
+    {
+      "Number": 17569453,
+      "PO": 4904420579,
+      "Date": "2024-10-08 00:00:00",
+      "Qty": 1,
+      "Store #": 412
+    },
+    {
+      "Number": 17569494,
+      "PO": 4904421902,
+      "Date": "2024-10-08 00:00:00",
+      "Qty": 2,
+      "Store #": 5915
+    },
+    {
+      "Number": 17569522,
+      "PO": 4904422903,
+      "Date": "2024-10-08 00:00:00",
+      "Qty": 5,
+      "Store #": 7402
+    },
+    {
+      "Number": 17569567,
+      "PO": 4904424022,
+      "Date": "2024-10-08 00:00:00",
+      "Qty": 3,
+      "Store #": 9243
+    },
+    {
+      "Number": 17569578,
+      "PO": 4904424662,
+      "Date": "2024-10-08 00:00:00",
+      "Qty": 1,
+      "Store #": "1SMR"
+    },
+    {
+      "Number": 17570294,
+      "PO": 4904427442,
+      "Date": "2024-10-09 00:00:00",
+      "Qty": 3,
+      "Store #": 9684
+    },
+    {
+      "Number": 17570299,
+      "PO": 4904426196,
+      "Date": "2024-10-09 00:00:00",
+      "Qty": 2,
+      "Store #": 8020
+    },
+    {
+      "Number": 17574063,
+      "PO": 4904432752,
+      "Date": "2024-10-10 00:00:00",
+      "Qty": 2,
+      "Store #": "4SEY"
+    },
+    {
+      "Number": 17582608,
+      "PO": 4904438276,
+      "Date": "2024-10-14 00:00:00",
+      "Qty": 5,
+      "Store #": 7591
+    },
+    {
+      "Number": 17587529,
+      "PO": 4904442718,
+      "Date": "2024-10-15 00:00:00",
+      "Qty": 4,
+      "Store #": 9308
+    },
+    {
+      "Number": 17587538,
+      "PO": 4904442573,
+      "Date": "2024-10-15 00:00:00",
+      "Qty": 1,
+      "Store #": "3C26"
+    },
+    {
+      "Number": 17588165,
+      "PO": 4904444403,
+      "Date": "2024-10-15 00:00:00",
+      "Qty": 1,
+      "Store #": "621F"
+    },
+    {
+      "Number": 17589352,
+      "PO": 4904444479,
+      "Date": "2024-10-15 00:00:00",
+      "Qty": 1,
+      "Store #": "545F"
+    },
+    {
+      "Number": 17600209,
+      "PO": 4904453984,
+      "Date": "2024-10-18 00:00:00",
+      "Qty": 1,
+      "Store #": "3SRX"
+    },
+    {
+      "Number": 17603402,
+      "PO": 4904455425,
+      "Date": "2024-10-21 00:00:00",
+      "Qty": 1,
+      "Store #": 9784
+    },
+    {
+      "Number": 17603462,
+      "PO": 4904455343,
+      "Date": "2024-10-21 00:00:00",
+      "Qty": 1,
+      "Store #": "2SCV"
+    },
+    {
+      "Number": 17603494,
+      "PO": 4904455742,
+      "Date": "2024-10-21 00:00:00",
+      "Qty": 1,
+      "Store #": "4SIX"
+    },
+    {
+      "Number": 17603543,
+      "PO": 4904455396,
+      "Date": "2024-10-21 00:00:00",
+      "Qty": 1,
+      "Store #": "539F"
+    },
+    {
+      "Number": 17605129,
+      "PO": 4904455920,
+      "Date": "2024-10-21 00:00:00",
+      "Qty": 2,
+      "Store #": "4SLM"
+    },
+    {
+      "Number": 17605150,
+      "PO": 4904456810,
+      "Date": "2024-10-21 00:00:00",
+      "Qty": 1,
+      "Store #": 7818
+    },
+    {
+      "Number": 17605712,
+      "PO": 4904458604,
+      "Date": "2024-10-22 00:00:00",
+      "Qty": 1,
+      "Store #": "3SAQ"
+    },
+    {
+      "Number": 17607938,
+      "PO": 4904463741,
+      "Date": "2024-10-22 00:00:00",
+      "Qty": 1,
+      "Store #": "698F"
+    },
+    {
+      "Number": 17611517,
+      "PO": 4904470139,
+      "Date": "2024-10-23 00:00:00",
+      "Qty": 1,
+      "Store #": "497F"
+    },
+    {
+      "Number": 17612253,
+      "PO": 4904470438,
+      "Date": "2024-10-23 00:00:00",
+      "Qty": 4,
+      "Store #": 9308
+    },
+    {
+      "Number": 17624823,
+      "PO": 4904478631,
+      "Date": "2024-10-28 00:00:00",
+      "Qty": 2,
+      "Store #": "253G"
+    },
+    {
+      "Number": 17624932,
+      "PO": 4904478188,
+      "Date": "2024-10-28 00:00:00",
+      "Qty": 2,
+      "Store #": 9125
+    },
+    {
+      "Number": 17624939,
+      "PO": 4904478917,
+      "Date": "2024-10-28 00:00:00",
+      "Qty": 1,
+      "Store #": "2SDO"
+    },
+    {
+      "Number": 17625556,
+      "PO": 4904480322,
+      "Date": "2024-10-29 00:00:00",
+      "Qty": 4,
+      "Store #": "3SOS"
+    },
+    {
+      "Number": 17627257,
+      "PO": 4904485367,
+      "Date": "2024-10-29 00:00:00",
+      "Qty": 1,
+      "Store #": 8086
+    },
+    {
+      "Number": 17627339,
+      "PO": 4904485956,
+      "Date": "2024-10-29 00:00:00",
+      "Qty": 1,
+      "Store #": 4435
+    },
+    {
+      "Number": 17627355,
+      "PO": 4904486348,
+      "Date": "2024-10-29 00:00:00",
+      "Qty": 1,
+      "Store #": "253F"
+    },
+    {
+      "Number": 17633316,
+      "PO": 4904491244,
+      "Date": "2024-10-31 00:00:00",
+      "Qty": 1,
+      "Store #": "598F"
+    },
+    {
+      "Number": 17636925,
+      "PO": 4904494072,
+      "Date": "2024-11-01 00:00:00",
+      "Qty": 1,
+      "Store #": 108
+    },
+    {
+      "Number": 17639042,
+      "PO": 4904496928,
+      "Date": "2024-11-01 00:00:00",
+      "Qty": 1,
+      "Store #": "4SCV"
+    },
+    {
+      "Number": 17644212,
+      "PO": 4904498823,
+      "Date": "2024-11-05 00:00:00",
+      "Qty": 2,
+      "Store #": 8914
+    },
+    {
+      "Number": 17647814,
+      "PO": 4904503870,
+      "Date": "2024-11-06 00:00:00",
+      "Qty": 3,
+      "Store #": 4567
+    },
+    {
+      "Number": 17647815,
+      "PO": 4904504706,
+      "Date": "2024-11-06 00:00:00",
+      "Qty": 1,
+      "Store #": "814F"
+    },
+    {
+      "Number": 17647829,
+      "PO": 4904504176,
+      "Date": "2024-11-06 00:00:00",
+      "Qty": 4,
+      "Store #": "1SPY"
+    },
+    {
+      "Number": 17651338,
+      "PO": 4904504041,
+      "Date": "2024-11-07 00:00:00",
+      "Qty": 4,
+      "Store #": "597F"
+    },
+    {
+      "Number": 17651398,
+      "PO": 4904510963,
+      "Date": "2024-11-07 00:00:00",
+      "Qty": 1,
+      "Store #": "4SIB"
+    },
+    {
+      "Number": 17655075,
+      "PO": 4904515921,
+      "Date": "2024-11-08 00:00:00",
+      "Qty": 1,
+      "Store #": "3SIQ"
+    },
+    {
+      "Number": 17655086,
+      "PO": 4904516252,
+      "Date": "2024-11-08 00:00:00",
+      "Qty": 2,
+      "Store #": 5910
+    },
+    {
+      "Number": 17655108,
+      "PO": 4904516321,
+      "Date": "2024-11-08 00:00:00",
+      "Qty": 1,
+      "Store #": 108
+    },
+    {
+      "Number": 17657291,
+      "PO": 4904518028,
+      "Date": "2024-11-08 00:00:00",
+      "Qty": 8,
+      "Store #": 9596
+    },
+    {
+      "Number": 17665067,
+      "PO": 4904523145,
+      "Date": "2024-11-13 00:00:00",
+      "Qty": 2,
+      "Store #": 8720
+    },
+    {
+      "Number": 17668548,
+      "PO": 4904524383,
+      "Date": "2024-11-14 00:00:00",
+      "Qty": 3,
+      "Store #": 9105
+    },
+    {
+      "Number": 17673101,
+      "PO": 4904525774,
+      "Date": "2024-11-15 00:00:00",
+      "Qty": 1,
+      "Store #": "779F"
+    },
+    {
+      "Number": 17673119,
+      "PO": 4904525591,
+      "Date": "2024-11-15 00:00:00",
+      "Qty": 1,
+      "Store #": 9741
+    },
+    {
+      "Number": 17673127,
+      "PO": 4904525601,
+      "Date": "2024-11-15 00:00:00",
+      "Qty": 2,
+      "Store #": "2SAZ"
+    },
+    {
+      "Number": 17674778,
+      "PO": 4904527559,
+      "Date": "2024-11-15 00:00:00",
+      "Qty": 2,
+      "Store #": 9306
+    },
+    {
+      "Number": 17677282,
+      "PO": 4904528410,
+      "Date": "2024-11-18 00:00:00",
+      "Qty": 1,
+      "Store #": "1SLV"
+    },
+    {
+      "Number": 17680688,
+      "PO": 4904534211,
+      "Date": "2024-11-19 00:00:00",
+      "Qty": 1,
+      "Store #": 8395
+    },
+    {
+      "Number": 17684102,
+      "PO": 4904538940,
+      "Date": "2024-11-20 00:00:00",
+      "Qty": 3,
+      "Store #": 8031
+    },
+    {
+      "Number": 17687621,
+      "PO": 4904543018,
+      "Date": "2024-11-21 00:00:00",
+      "Qty": 1,
+      "Store #": 9197
+    },
+    {
+      "Number": 17687595,
+      "PO": 4904539856,
+      "Date": "2024-11-21 00:00:00",
+      "Qty": 1,
+      "Store #": "2SCA"
+    },
+    {
+      "Number": 17699179,
+      "PO": 4904548883,
+      "Date": "2024-11-26 00:00:00",
+      "Qty": 2,
+      "Store #": "1SMR"
+    },
+    {
+      "Number": 17699177,
+      "PO": 4904549596,
+      "Date": "2024-11-26 00:00:00",
+      "Qty": 1,
+      "Store #": 8014
+    },
+    {
+      "Number": 17699161,
+      "PO": 4904553434,
+      "Date": "2024-11-26 00:00:00",
+      "Qty": 1,
+      "Store #": 386
+    },
+    {
+      "Number": 17699122,
+      "PO": 4904552170,
+      "Date": "2024-11-26 00:00:00",
+      "Qty": 1,
+      "Store #": "1SEJ"
+    },
+    {
+      "Number": 17699088,
+      "PO": 4904548813,
+      "Date": "2024-11-26 00:00:00",
+      "Qty": 1,
+      "Store #": "4SEB"
+    },
+    {
+      "Number": 17699028,
+      "PO": 4904547780,
+      "Date": "2024-11-26 00:00:00",
+      "Qty": 1,
+      "Store #": "591F"
+    },
+    {
+      "Number": 17699009,
+      "PO": 4904547657,
+      "Date": "2024-11-26 00:00:00",
+      "Qty": 2,
+      "Store #": 9034
+    },
+    {
+      "Number": 17702548,
+      "PO": 4904558474,
+      "Date": "2024-11-27 00:00:00",
+      "Qty": 2,
+      "Store #": "551F"
+    },
+    {
+      "Number": 17711452,
+      "PO": 4904562028,
+      "Date": "2024-12-02 00:00:00",
+      "Qty": 1,
+      "Store #": 7952
+    },
+    {
+      "Number": 17711361,
+      "PO": 4904561261,
+      "Date": "2024-12-02 00:00:00",
+      "Qty": 1,
+      "Store #": 449
+    },
+    {
+      "Number": 17715503,
+      "PO": 4904562904,
+      "Date": "2024-12-03 00:00:00",
+      "Qty": 1,
+      "Store #": 382
+    },
+    {
+      "Number": 17715259,
+      "PO": 4904562520,
+      "Date": "2024-12-03 00:00:00",
+      "Qty": 1,
+      "Store #": "583F"
+    },
+    {
+      "Number": 17716870,
+      "PO": 4904567959,
+      "Date": "2024-12-04 00:00:00",
+      "Qty": 1,
+      "Store #": "2C62"
+    },
+    {
+      "Number": 17716849,
+      "PO": 4904567732,
+      "Date": "2024-12-04 00:00:00",
+      "Qty": 2,
+      "Store #": 9515
+    },
+    {
+      "Number": 17716783,
+      "PO": 4904564180,
+      "Date": "2024-12-04 00:00:00",
+      "Qty": 2,
+      "Store #": "1SAC"
+    },
+    {
+      "Number": 17716724,
+      "PO": 4904554180,
+      "Date": "2024-12-04 00:00:00",
+      "Qty": 3,
+      "Store #": 5128
+    },
+    {
+      "Number": 17730112,
+      "PO": 4904579843,
+      "Date": "2024-12-09 00:00:00",
+      "Qty": 1,
+      "Store #": "708F"
+    },
+    {
+      "Number": 17735250,
+      "PO": 4904583206,
+      "Date": "2024-12-11 00:00:00",
+      "Qty": 1,
+      "Store #": 9290
+    },
+    {
+      "Number": 17735286,
+      "PO": 4904583065,
+      "Date": "2024-12-11 00:00:00",
+      "Qty": 1,
+      "Store #": "4SIR"
+    },
+    {
+      "Number": 17735290,
+      "PO": 4904584296,
+      "Date": "2024-12-11 00:00:00",
+      "Qty": 1,
+      "Store #": "4SJV"
+    },
+    {
+      "Number": 17737107,
+      "PO": 4904587026,
+      "Date": "2024-12-11 00:00:00",
+      "Qty": 5,
+      "Store #": 9555
+    },
+    {
+      "Number": 17739178,
+      "PO": 4904588013,
+      "Date": "2024-12-12 00:00:00",
+      "Qty": 2,
+      "Store #": "4SAX"
+    },
+    {
+      "Number": 17739187,
+      "PO": 4904587424,
+      "Date": "2024-12-12 00:00:00",
+      "Qty": 1,
+      "Store #": "658F"
+    },
+    {
+      "Number": 17742440,
+      "PO": 4904588740,
+      "Date": "2024-12-13 00:00:00",
+      "Qty": 1,
+      "Store #": 4414
+    },
+    {
+      "Number": 17750881,
+      "PO": 4904597064,
+      "Date": "2024-12-17 00:00:00",
+      "Qty": 1,
+      "Store #": 5422
+    },
+    {
+      "Number": 17755646,
+      "PO": 4904599646,
+      "Date": "2024-12-18 00:00:00",
+      "Qty": 2,
+      "Store #": "490F"
+    },
+    {
+      "Number": 17755651,
+      "PO": 4904599885,
+      "Date": "2024-12-18 00:00:00",
+      "Qty": 1,
+      "Store #": "2C70"
+    },
+    {
+      "Number": 17755671,
+      "PO": 4904597967,
+      "Date": "2024-12-18 00:00:00",
+      "Qty": 1,
+      "Store #": 8154
+    },
+    {
+      "Number": 17763566,
+      "PO": 4904608116,
+      "Date": "2024-12-20 00:00:00",
+      "Qty": 1,
+      "Store #": 7841
+    },
+    {
+      "Number": 17766466,
+      "PO": 4904612538,
+      "Date": "2024-12-23 00:00:00",
+      "Qty": 1,
+      "Store #": 2987
+    },
+    {
+      "Number": 17766557,
+      "PO": 4904613275,
+      "Date": "2024-12-23 00:00:00",
+      "Qty": 1,
+      "Store #": 2571
+    },
+    {
+      "Number": 17766625,
+      "PO": 4904613608,
+      "Date": "2024-12-23 00:00:00",
+      "Qty": 1,
+      "Store #": "2SJO"
+    },
+    {
+      "Number": 17766657,
+      "PO": 4904613897,
+      "Date": "2024-12-23 00:00:00",
+      "Qty": 1,
+      "Store #": 8927
+    },
+    {
+      "Number": 17766660,
+      "PO": 4904613697,
+      "Date": "2024-12-23 00:00:00",
+      "Qty": 1,
+      "Store #": "631F"
+    },
+    {
+      "Number": 17768562,
+      "PO": 4904617011,
+      "Date": "2024-12-24 00:00:00",
+      "Qty": 1,
+      "Store #": "514F"
+    },
+    {
+      "Number": 17776897,
+      "PO": 4904623751,
+      "Date": "2024-12-30 00:00:00",
+      "Qty": 1,
+      "Store #": 7702
+    },
+    {
+      "Number": 17784864,
+      "PO": 4904628699,
+      "Date": "2025-01-03 00:00:00",
+      "Qty": 1,
+      "Store #": "3SCF"
+    },
+    {
+      "Number": 17784881,
+      "PO": 4904629148,
+      "Date": "2025-01-03 00:00:00",
+      "Qty": 2,
+      "Store #": "1SBS"
+    },
+    {
+      "Number": 17784883,
+      "PO": 4904629046,
+      "Date": "2025-01-03 00:00:00",
+      "Qty": 2,
+      "Store #": 7807
+    },
+    {
+      "Number": 17789540,
+      "PO": 4904627997,
+      "Date": "2025-01-06 00:00:00",
+      "Qty": 2,
+      "Store #": "1SDH"
+    },
+    {
+      "Number": 17789569,
+      "PO": 4904631413,
+      "Date": "2025-01-06 00:00:00",
+      "Qty": 2,
+      "Store #": "2SON"
+    },
+    {
+      "Number": 17789630,
+      "PO": 4904632602,
+      "Date": "2025-01-06 00:00:00",
+      "Qty": 2,
+      "Store #": 8443
+    },
+    {
+      "Number": 17792903,
+      "PO": 4904635269,
+      "Date": "2025-01-07 00:00:00",
+      "Qty": 3,
+      "Store #": "2SCB"
+    },
+    {
+      "Number": 17796790,
+      "PO": 4904637925,
+      "Date": "2025-01-08 00:00:00",
+      "Qty": 2,
+      "Store #": 4044
+    },
+    {
+      "Number": 17798209,
+      "PO": 4904638619,
+      "Date": "2025-01-08 00:00:00",
+      "Qty": 2,
+      "Store #": 9982
+    },
+    {
+      "Number": 17802768,
+      "PO": 4904643298,
+      "Date": "2025-01-10 00:00:00",
+      "Qty": 4,
+      "Store #": "2SCC"
+    },
+    {
+      "Number": 17811366,
+      "PO": 4904648297,
+      "Date": "2025-01-14 00:00:00",
+      "Qty": 8,
+      "Store #": "823F"
+    },
+    {
+      "Number": 17811402,
+      "PO": 4904648800,
+      "Date": "2025-01-14 00:00:00",
+      "Qty": 3,
+      "Store #": 5509
+    },
+    {
+      "Number": 17815517,
+      "PO": 4904651941,
+      "Date": "2025-01-15 00:00:00",
+      "Qty": 1,
+      "Store #": 7702
+    },
+    {
+      "Number": 17820980,
+      "PO": 4904657313,
+      "Date": "2025-01-16 00:00:00",
+      "Qty": 1,
+      "Store #": 4565
+    },
+    {
+      "Number": 17821208,
+      "PO": 4904658462,
+      "Date": "2025-01-16 00:00:00",
+      "Qty": 1,
+      "Store #": "707F"
+    },
+    {
+      "Number": 17830069,
+      "PO": 4904665187,
+      "Date": "2025-01-21 00:00:00",
+      "Qty": 1,
+      "Store #": 436
+    },
+    {
+      "Number": 17832853,
+      "PO": 4904665670,
+      "Date": "2025-01-22 00:00:00",
+      "Qty": 4,
+      "Store #": 2631
+    },
+    {
+      "Number": 17836836,
+      "PO": 4904669426,
+      "Date": "2025-01-23 00:00:00",
+      "Qty": 1,
+      "Store #": 7553
+    },
+    {
+      "Number": 17836851,
+      "PO": 4904670024,
+      "Date": "2025-01-23 00:00:00",
+      "Qty": 1,
+      "Store #": "1C49"
+    },
+    {
+      "Number": 17842155,
+      "PO": 4904671918,
+      "Date": "2025-01-24 00:00:00",
+      "Qty": 1,
+      "Store #": "2SBY"
+    },
+    {
+      "Number": 17851713,
+      "PO": 4904677273,
+      "Date": "2025-01-28 00:00:00",
+      "Qty": 2,
+      "Store #": 1300
+    },
+    {
+      "Number": 17851861,
+      "PO": 4904680205,
+      "Date": "2025-01-28 00:00:00",
+      "Qty": 1,
+      "Store #": "1SQA"
+    },
+    {
+      "Number": 17855409,
+      "PO": 4904683130,
+      "Date": "2025-01-29 00:00:00",
+      "Qty": 1,
+      "Store #": 8586
+    },
+    {
+      "Number": 17865168,
+      "PO": 4904691945,
+      "Date": "2025-01-31 00:00:00",
+      "Qty": 2,
+      "Store #": 9515
+    },
+    {
+      "Number": 17873145,
+      "PO": 4904698315,
+      "Date": "2025-02-04 00:00:00",
+      "Qty": 2,
+      "Store #": "591F"
+    },
+    {
+      "Number": 17873161,
+      "PO": 4904698277,
+      "Date": "2025-02-04 00:00:00",
+      "Qty": 1,
+      "Store #": 6510
+    },
+    {
+      "Number": 17875352,
+      "PO": 4904701049,
+      "Date": "2025-02-05 00:00:00",
+      "Qty": 1,
+      "Store #": "4C77"
+    },
+    {
+      "Number": 17879187,
+      "PO": 4904702558,
+      "Date": "2025-02-06 00:00:00",
+      "Qty": 1,
+      "Store #": 7404
+    },
+    {
+      "Number": 17879234,
+      "PO": 4904702858,
+      "Date": "2025-02-06 00:00:00",
+      "Qty": 1,
+      "Store #": "2SBY"
+    },
+    {
+      "Number": 17881945,
+      "PO": 4904703240,
+      "Date": "2025-02-06 00:00:00",
+      "Qty": 4,
+      "Store #": 7685
+    },
+    {
+      "Number": 17885674,
+      "PO": 4904706018,
+      "Date": "2025-02-07 00:00:00",
+      "Qty": 5,
+      "Store #": 106
+    },
+    {
+      "Number": 17891747,
+      "PO": 4904707502,
+      "Date": "2025-02-11 00:00:00",
+      "Qty": 4,
+      "Store #": 7832
+    },
+    {
+      "Number": 17891836,
+      "PO": 4904709006,
+      "Date": "2025-02-11 00:00:00",
+      "Qty": 2,
+      "Store #": "2SDB"
+    },
+    {
+      "Number": 17891916,
+      "PO": 4904706795,
+      "Date": "2025-02-11 00:00:00",
+      "Qty": 2,
+      "Store #": 4900
+    },
+    {
+      "Number": 17891981,
+      "PO": 4904709055,
+      "Date": "2025-02-11 00:00:00",
+      "Qty": 1,
+      "Store #": 4724
+    },
+    {
+      "Number": 17892520,
+      "PO": 4904715289,
+      "Date": "2025-02-11 00:00:00",
+      "Qty": 1,
+      "Store #": "1SAZ"
+    },
+    {
+      "Number": 17892546,
+      "PO": 4904715806,
+      "Date": "2025-02-11 00:00:00",
+      "Qty": 2,
+      "Store #": "785F"
+    },
+    {
+      "Number": 17895104,
+      "PO": 4904718658,
+      "Date": "2025-02-12 00:00:00",
+      "Qty": 1,
+      "Store #": "465F"
+    },
+    {
+      "Number": 17899317,
+      "PO": 4904721569,
+      "Date": "2025-02-13 00:00:00",
+      "Qty": 1,
+      "Store #": "1SGO"
+    },
+    {
+      "Number": 17908183,
+      "PO": 4904727478,
+      "Date": "2025-02-17 00:00:00",
+      "Qty": 2,
+      "Store #": "4SCD"
+    },
+    {
+      "Number": 17908243,
+      "PO": 4904728540,
+      "Date": "2025-02-17 00:00:00",
+      "Qty": 2,
+      "Store #": 5521
+    },
+    {
+      "Number": 17908253,
+      "PO": 4904727996,
+      "Date": "2025-02-17 00:00:00",
+      "Qty": 2,
+      "Store #": 3452
+    },
+    {
+      "Number": 17908303,
+      "PO": 4904727274,
+      "Date": "2025-02-17 00:00:00",
+      "Qty": 1,
+      "Store #": "716F"
+    },
+    {
+      "Number": 17919333,
+      "PO": 4904738129,
+      "Date": "2025-02-20 00:00:00",
+      "Qty": 1,
+      "Store #": 4055
+    },
+    {
+      "Number": 17923505,
+      "PO": 4904739082,
+      "Date": "2025-02-21 00:00:00",
+      "Qty": 2,
+      "Store #": 1313
+    },
+    {
+      "Number": 17933003,
+      "PO": 4904746428,
+      "Date": "2025-02-25 00:00:00",
+      "Qty": 1,
+      "Store #": 9316
+    },
+    {
+      "Number": 17935626,
+      "PO": 4904750807,
+      "Date": "2025-02-25 00:00:00",
+      "Qty": 1,
+      "Store #": "4SCO"
+    },
+    {
+      "Number": 17950435,
+      "PO": 4904764105,
+      "Date": "2025-03-03 00:00:00",
+      "Qty": 1,
+      "Store #": "583F"
+    },
+    {
+      "Number": 17953033,
+      "PO": 4904764724,
+      "Date": "2025-03-04 00:00:00",
+      "Qty": 2,
+      "Store #": "2SGT"
+    },
+    {
+      "Number": 17963901,
+      "PO": 4904774557,
+      "Date": "2025-03-07 00:00:00",
+      "Qty": 3,
+      "Store #": 5491
+    },
+    {
+      "Number": 17969477,
+      "PO": 4904778106,
+      "Date": "2025-03-10 00:00:00",
+      "Qty": 2,
+      "Store #": "539F"
+    },
+    {
+      "Number": 17973446,
+      "PO": 4904780569,
+      "Date": "2025-03-11 00:00:00",
+      "Qty": 1,
+      "Store #": "3SRI"
+    },
+    {
+      "Number": 17973531,
+      "PO": 4904781675,
+      "Date": "2025-03-11 00:00:00",
+      "Qty": 1,
+      "Store #": "2SGT"
+    },
+    {
+      "Number": 17980423,
+      "PO": 4904788924,
+      "Date": "2025-03-13 00:00:00",
+      "Qty": 1,
+      "Store #": 6510
+    },
+    {
+      "Number": 17984048,
+      "PO": 4904793240,
+      "Date": "2025-03-14 00:00:00",
+      "Qty": 1,
+      "Store #": "542E"
+    },
+    {
+      "Number": 17993196,
+      "PO": 4904796323,
+      "Date": "2025-03-18 00:00:00",
+      "Qty": 2,
+      "Store #": "2SAE"
+    },
+    {
+      "Number": 17993219,
+      "PO": 4904796370,
+      "Date": "2025-03-18 00:00:00",
+      "Qty": 2,
+      "Store #": "4SJO"
+    },
+    {
+      "Number": 17996467,
+      "PO": 4904803601,
+      "Date": "2025-03-18 00:00:00",
+      "Qty": 2,
+      "Store #": 9916
+    },
+    {
+      "Number": 18003563,
+      "PO": 4904808689,
+      "Date": "2025-03-20 00:00:00",
+      "Qty": 2,
+      "Store #": 1313
+    },
+    {
+      "Number": 18003582,
+      "PO": 4904808062,
+      "Date": "2025-03-20 00:00:00",
+      "Qty": 1,
+      "Store #": "2SCQ"
+    },
+    {
+      "Number": 18003610,
+      "PO": 4904810876,
+      "Date": "2025-03-20 00:00:00",
+      "Qty": 1,
+      "Store #": 1370
+    },
+    {
+      "Number": 18004459,
+      "PO": 4904811510,
+      "Date": "2025-03-21 00:00:00",
+      "Qty": 1,
+      "Store #": "586F"
+    },
+    {
+      "Number": 18004465,
+      "PO": 4904811134,
+      "Date": "2025-03-21 00:00:00",
+      "Qty": 3,
+      "Store #": "586F"
+    },
+    {
+      "Number": 18011118,
+      "PO": 4904817430,
+      "Date": "2025-03-24 00:00:00",
+      "Qty": 1,
+      "Store #": "985E"
+    },
+    {
+      "Number": 18011138,
+      "PO": 4904819485,
+      "Date": "2025-03-24 00:00:00",
+      "Qty": 5,
+      "Store #": "458F"
+    },
+    {
+      "Number": 18016774,
+      "PO": 4904822298,
+      "Date": "2025-03-25 00:00:00",
+      "Qty": 2,
+      "Store #": "627F"
+    },
+    {
+      "Number": 18016793,
+      "PO": 4904825390,
+      "Date": "2025-03-25 00:00:00",
+      "Qty": 5,
+      "Store #": "2SIS"
+    },
+    {
+      "Number": 18027154,
+      "PO": 4904840233,
+      "Date": "2025-03-28 00:00:00",
+      "Qty": 2,
+      "Store #": "791F"
+    },
+    {
+      "Number": 18032965,
+      "PO": 4904844385,
+      "Date": "2025-04-01 00:00:00",
+      "Qty": 1,
+      "Store #": "3SLO"
+    },
+    {
+      "Number": 18033018,
+      "PO": 4904845302,
+      "Date": "2025-04-01 00:00:00",
+      "Qty": 2,
+      "Store #": "1SRD"
+    },
+    {
+      "Number": 18036483,
+      "PO": 4904847860,
+      "Date": "2025-04-02 00:00:00",
+      "Qty": 1,
+      "Store #": "631F"
+    },
+    {
+      "Number": 18036515,
+      "PO": 4904849823,
+      "Date": "2025-04-02 00:00:00",
+      "Qty": 5,
+      "Store #": "1B25"
+    },
+    {
+      "Number": 18040036,
+      "PO": 4904849857,
+      "Date": "2025-04-03 00:00:00",
+      "Qty": 1,
+      "Store #": "471G"
+    },
+    {
+      "Number": 18044033,
+      "PO": 4904851874,
+      "Date": "2025-04-04 00:00:00",
+      "Qty": 1,
+      "Store #": 9238
+    },
+    {
+      "Number": 18045484,
+      "PO": 4904854522,
+      "Date": "2025-04-04 00:00:00",
+      "Qty": 3,
+      "Store #": "353F"
+    },
+    {
+      "Number": 18049295,
+      "PO": 4904857806,
+      "Date": "2025-04-07 00:00:00",
+      "Qty": 1,
+      "Store #": "1SDE"
+    },
+    {
+      "Number": 18049344,
+      "PO": 4904858275,
+      "Date": "2025-04-07 00:00:00",
+      "Qty": 2,
+      "Store #": "599F"
+    },
+    {
+      "Number": 18062433,
+      "PO": 4904869761,
+      "Date": "2025-04-10 00:00:00",
+      "Qty": 2,
+      "Store #": "777F"
+    },
+    {
+      "Number": 18069668,
+      "PO": 4904875203,
+      "Date": "2025-04-14 00:00:00",
+      "Qty": 2,
+      "Store #": "3SRL"
+    },
+    {
+      "Number": 18071442,
+      "PO": 4904877767,
+      "Date": "2025-04-14 00:00:00",
+      "Qty": 1,
+      "Store #": "4SDN"
+    },
+    {
+      "Number": 18075719,
+      "PO": 4904879521,
+      "Date": "2025-04-15 00:00:00",
+      "Qty": 1,
+      "Store #": 9123
+    },
+    {
+      "Number": 18079908,
+      "PO": 4904883241,
+      "Date": "2025-04-16 00:00:00",
+      "Qty": 1,
+      "Store #": 8732
+    },
+    {
+      "Number": 18079933,
+      "PO": 4904884544,
+      "Date": "2025-04-16 00:00:00",
+      "Qty": 3,
+      "Store #": "1SEU"
+    },
+    {
+      "Number": 18083639,
+      "PO": 4904883943,
+      "Date": "2025-04-17 00:00:00",
+      "Qty": 2,
+      "Store #": "1SGW"
+    },
+    {
+      "Number": 18083648,
+      "PO": 4904883753,
+      "Date": "2025-04-17 00:00:00",
+      "Qty": 1,
+      "Store #": 7661
+    },
+    {
+      "Number": 18083654,
+      "PO": 4904887637,
+      "Date": "2025-04-17 00:00:00",
+      "Qty": 2,
+      "Store #": "1SHL"
+    },
+    {
+      "Number": 18086065,
+      "PO": 4904890745,
+      "Date": "2025-04-18 00:00:00",
+      "Qty": 2,
+      "Store #": "493F"
+    },
+    {
+      "Number": 18089877,
+      "PO": 4904894602,
+      "Date": "2025-04-21 00:00:00",
+      "Qty": 2,
+      "Store #": 422
+    },
+    {
+      "Number": 18091267,
+      "PO": 4904895565,
+      "Date": "2025-04-21 00:00:00",
+      "Qty": 2,
+      "Store #": "3SRN"
+    },
+    {
+      "Number": 18094475,
+      "PO": 4904898538,
+      "Date": "2025-04-22 00:00:00",
+      "Qty": 1,
+      "Store #": "643F"
+    },
+    {
+      "Number": 18108177,
+      "PO": 4904908897,
+      "Date": "2025-04-25 00:00:00",
+      "Qty": 1,
+      "Store #": "617F"
+    },
+    {
+      "Number": 18110895,
+      "PO": 4904908645,
+      "Date": "2025-04-28 00:00:00",
+      "Qty": 1,
+      "Store #": 6853
+    },
+    {
+      "Number": 18111009,
+      "PO": 4904910253,
+      "Date": "2025-04-28 00:00:00",
+      "Qty": 1,
+      "Store #": "694F"
+    },
+    {
+      "Number": 18113521,
+      "PO": 4904911816,
+      "Date": "2025-04-28 00:00:00",
+      "Qty": 4,
+      "Store #": "1SDC"
+    },
+    {
+      "Number": 18116860,
+      "PO": 4904911838,
+      "Date": "2025-04-29 00:00:00",
+      "Qty": 1,
+      "Store #": "747F"
+    },
+    {
+      "Number": 18122282,
+      "PO": 4904915577,
+      "Date": "2025-04-30 00:00:00",
+      "Qty": 1,
+      "Store #": 7785
+    },
+    {
+      "Number": 18122371,
+      "PO": 4904916142,
+      "Date": "2025-04-30 00:00:00",
+      "Qty": 1,
+      "Store #": 8353
+    },
+    {
+      "Number": 18128264,
+      "PO": 4904923111,
+      "Date": "2025-05-02 00:00:00",
+      "Qty": 3,
+      "Store #": "314F"
+    },
+    {
+      "Number": 18138268,
+      "PO": 4904931617,
+      "Date": "2025-05-06 00:00:00",
+      "Qty": 3,
+      "Store #": "1SCN"
+    },
+    {
+      "Number": 18141945,
+      "PO": 4904933362,
+      "Date": "2025-05-07 00:00:00",
+      "Qty": 7,
+      "Store #": "814F"
+    },
+    {
+      "Number": 18142746,
+      "PO": 4904933977,
+      "Date": "2025-05-08 00:00:00",
+      "Qty": 2,
+      "Store #": "2SAU"
+    },
+    {
+      "Number": 18159333,
+      "PO": 4904948050,
+      "Date": "2025-05-14 00:00:00",
+      "Qty": 1,
+      "Store #": "631F"
+    },
+    {
+      "Number": 18159413,
+      "PO": 4904947895,
+      "Date": "2025-05-14 00:00:00",
+      "Qty": 1,
+      "Store #": "1SIC"
+    },
+    {
+      "Number": 18164488,
+      "PO": 4904950061,
+      "Date": "2025-05-15 00:00:00",
+      "Qty": 1,
+      "Store #": 8925
+    },
+    {
+      "Number": 18164633,
+      "PO": 4904951902,
+      "Date": "2025-05-15 00:00:00",
+      "Qty": 1,
+      "Store #": "576F"
+    },
+    {
+      "Number": 18164671,
+      "PO": 4904951594,
+      "Date": "2025-05-15 00:00:00",
+      "Qty": 1,
+      "Store #": 7841
+    },
+    {
+      "Number": 18169486,
+      "PO": 4904956514,
+      "Date": "2025-05-16 00:00:00",
+      "Qty": 2,
+      "Store #": 6000
+    },
+    {
+      "Number": 18174387,
+      "PO": 4904957259,
+      "Date": "2025-05-19 00:00:00",
+      "Qty": 4,
+      "Store #": 9281
+    },
+    {
+      "Number": 18174616,
+      "PO": 4904958019,
+      "Date": "2025-05-19 00:00:00",
+      "Qty": 1,
+      "Store #": "574G"
+    },
+    {
+      "Number": 18174628,
+      "PO": 4904958405,
+      "Date": "2025-05-19 00:00:00",
+      "Qty": 2,
+      "Store #": 7566
+    },
+    {
+      "Number": 18174676,
+      "PO": 4904959110,
+      "Date": "2025-05-19 00:00:00",
+      "Qty": 4,
+      "Store #": 8053
+    },
+    {
+      "Number": 18174678,
+      "PO": 4904958803,
+      "Date": "2025-05-19 00:00:00",
+      "Qty": 3,
+      "Store #": "2SCI"
+    },
+    {
+      "Number": 18174732,
+      "PO": 4904960389,
+      "Date": "2025-05-19 00:00:00",
+      "Qty": 2,
+      "Store #": "3SHW"
+    },
+    {
+      "Number": 18182368,
+      "PO": 4904967148,
+      "Date": "2025-05-21 00:00:00",
+      "Qty": 3,
+      "Store #": "3SGG"
+    },
+    {
+      "Number": 18193624,
+      "PO": 4904976420,
+      "Date": "2025-05-27 00:00:00",
+      "Qty": 20,
+      "Store #": "1SOX"
+    },
+    {
+      "Number": 18193685,
+      "PO": 4904976395,
+      "Date": "2025-05-27 00:00:00",
+      "Qty": 1,
+      "Store #": 8611
+    },
+    {
+      "Number": 18193711,
+      "PO": 4904977444,
+      "Date": "2025-05-27 00:00:00",
+      "Qty": 1,
+      "Store #": 7559
+    },
+    {
+      "Number": 18193737,
+      "PO": 4904977345,
+      "Date": "2025-05-27 00:00:00",
+      "Qty": 1,
+      "Store #": "1SLF"
+    },
+    {
+      "Number": 18193751,
+      "PO": 4904979266,
+      "Date": "2025-05-27 00:00:00",
+      "Qty": 8,
+      "Store #": "2SOF"
+    },
+    {
+      "Number": 18197078,
+      "PO": 4904977679,
+      "Date": "2025-05-28 00:00:00",
+      "Qty": 1,
+      "Store #": 4435
+    },
+    {
+      "Number": 18212690,
+      "PO": 4904995529,
+      "Date": "2025-06-02 00:00:00",
+      "Qty": 1,
+      "Store #": "514F"
+    },
+    {
+      "Number": 18212653,
+      "PO": 4904992980,
+      "Date": "2025-06-02 00:00:00",
+      "Qty": 3,
+      "Store #": "476G"
+    },
+    {
+      "Number": 18210145,
+      "PO": 4904992567,
+      "Date": "2025-06-02 00:00:00",
+      "Qty": 3,
+      "Store #": 7369
+    },
+    {
+      "Number": 18210120,
+      "PO": 4904988097,
+      "Date": "2025-06-02 00:00:00",
+      "Qty": 5,
+      "Store #": 106
+    },
+    {
+      "Number": 18210101,
+      "PO": 4904991698,
+      "Date": "2025-06-02 00:00:00",
+      "Qty": 1,
+      "Store #": "383G"
+    },
+    {
+      "Number": 18210041,
+      "PO": 4904992019,
+      "Date": "2025-06-02 00:00:00",
+      "Qty": 4,
+      "Store #": 9905
+    },
+    {
+      "Number": 18216608,
+      "PO": 4904997612,
+      "Date": "2025-06-03 00:00:00",
+      "Qty": 1,
+      "Store #": 3755
+    },
+    {
+      "Number": 18221447,
+      "PO": 4905000251,
+      "Date": "2025-06-05 00:00:00",
+      "Qty": 6,
+      "Store #": "381F"
+    },
+    {
+      "Number": 18227877,
+      "PO": 4905006788,
+      "Date": "2025-06-06 00:00:00",
+      "Qty": 2,
+      "Store #": "1SRT"
+    },
+    {
+      "Number": 18233222,
+      "PO": 4905005890,
+      "Date": "2025-06-09 00:00:00",
+      "Qty": 2,
+      "Store #": 8929
+    },
+    {
+      "Number": 18230775,
+      "PO": 4905008903,
+      "Date": "2025-06-09 00:00:00",
+      "Qty": 1,
+      "Store #": 8029
+    },
+    {
+      "Number": 18242165,
+      "PO": 4905019753,
+      "Date": "2025-06-12 00:00:00",
+      "Qty": 2,
+      "Store #": "2C82"
+    },
+    {
+      "Number": 18245773,
+      "PO": 4905023074,
+      "Date": "2025-06-13 00:00:00",
+      "Qty": 3,
+      "Store #": "578F"
+    },
+    {
+      "Number": 18249886,
+      "PO": 4905025279,
+      "Date": "2025-06-16 00:00:00",
+      "Qty": 1,
+      "Store #": "439G"
+    },
+    {
+      "Number": 18249823,
+      "PO": 4905026348,
+      "Date": "2025-06-16 00:00:00",
+      "Qty": 1,
+      "Store #": 8010
+    },
+    {
+      "Number": 18260429,
+      "PO": 4905039612,
+      "Date": "2025-06-18 00:00:00",
+      "Qty": 1,
+      "Store #": 8705
+    },
+    {
+      "Number": 18272862,
+      "PO": 4905045782,
+      "Date": "2025-06-24 00:00:00",
+      "Qty": 2,
+      "Store #": "1SPP"
+    },
+    {
+      "Number": 18311117,
+      "PO": 4905087670,
+      "Date": "2025-07-08 00:00:00",
+      "Qty": 2,
+      "Store #": "302G"
+    },
+    {
+      "Number": 18311178,
+      "PO": 4905090794,
+      "Date": "2025-07-08 00:00:00",
+      "Qty": 2,
+      "Store #": "707F"
+    },
+    {
+      "Number": 18318389,
+      "PO": 4905092812,
+      "Date": "2025-07-09 00:00:00",
+      "Qty": 1,
+      "Store #": 8980
+    },
+    {
+      "Number": 18318393,
+      "PO": 4905093150,
+      "Date": "2025-07-09 00:00:00",
+      "Qty": 1,
+      "Store #": "462F"
+    },
+    {
+      "Number": 18328165,
+      "PO": 4905104467,
+      "Date": "2025-07-14 00:00:00",
+      "Qty": 1,
+      "Store #": 8057
+    },
+    {
+      "Number": 18356864,
+      "PO": 4905137235,
+      "Date": "2025-07-22 00:00:00",
+      "Qty": 1,
+      "Store #": 7559
+    },
+    {
+      "Number": 18361118,
+      "PO": 4905139373,
+      "Date": "2025-07-24 00:00:00",
+      "Qty": 1,
+      "Store #": "4SGA"
+    },
+    {
+      "Number": 18382153,
+      "PO": 4905147997,
+      "Date": "2025-07-31 00:00:00",
+      "Qty": 1,
+      "Store #": "1SGZ"
+    },
+    {
+      "Number": 18391293,
+      "PO": 4905163663,
+      "Date": "2025-08-04 00:00:00",
+      "Qty": 6,
+      "Store #": 8353
+    },
+    {
+      "Number": 18393796,
+      "PO": 4905163369,
+      "Date": "2025-08-04 00:00:00",
+      "Qty": 1,
+      "Store #": "3SAP"
+    },
+    {
+      "Number": 18394385,
+      "PO": 4905167812,
+      "Date": "2025-08-04 00:00:00",
+      "Qty": 1,
+      "Store #": "462F"
+    },
+    {
+      "Number": 18407504,
+      "PO": 4905178806,
+      "Date": "2025-08-08 00:00:00",
+      "Qty": 1,
+      "Store #": 8726
+    },
+    {
+      "Number": 18411049,
+      "PO": 4905184248,
+      "Date": "2025-08-11 00:00:00",
+      "Qty": 2,
+      "Store #": 8979
+    },
+    {
+      "Number": 18411052,
+      "PO": 4905184249,
+      "Date": "2025-08-11 00:00:00",
+      "Qty": 1,
+      "Store #": 8979
+    },
+    {
+      "Number": 18414413,
+      "PO": 4905189934,
+      "Date": "2025-08-11 00:00:00",
+      "Qty": 1,
+      "Store #": 8611
+    },
+    {
+      "Number": 18417536,
+      "PO": 4905196364,
+      "Date": "2025-08-12 00:00:00",
+      "Qty": 1,
+      "Store #": 7763
+    },
+    {
+      "Number": 18427038,
+      "PO": 4905204393,
+      "Date": "2025-08-15 00:00:00",
+      "Qty": 1,
+      "Store #": "4SFW"
+    },
+    {
+      "Number": 18462781,
+      "PO": 4905237927,
+      "Date": "2025-08-27 00:00:00",
+      "Qty": 1,
+      "Store #": 5862
+    },
+    {
+      "Number": 18462502,
+      "PO": 4905236920,
+      "Date": "2025-08-27 00:00:00",
+      "Qty": 3,
+      "Store #": 8934
+    },
+    {
+      "Number": 18477242,
+      "PO": 4905249820,
+      "Date": "2025-09-02 00:00:00",
+      "Qty": 1,
+      "Store #": 9125
+    },
+    {
+      "Number": 18482682,
+      "PO": 4905255923,
+      "Date": "2025-09-03 00:00:00",
+      "Qty": 2,
+      "Store #": "567F"
+    },
+    {
+      "Number": 18494041,
+      "PO": 4905263996,
+      "Date": "2025-09-08 00:00:00",
+      "Qty": 6,
+      "Store #": "213G"
+    },
+    {
+      "Number": 18507982,
+      "PO": 4905272696,
+      "Date": "2025-09-12 00:00:00",
+      "Qty": 4,
+      "Store #": 1466
+    },
+    {
+      "Number": 18513128,
+      "PO": 4905280245,
+      "Date": "2025-09-15 00:00:00",
+      "Qty": 1,
+      "Store #": "1B79"
+    },
+    {
+      "Number": 18556295,
+      "PO": 4905315457,
+      "Date": "2025-09-29 00:00:00",
+      "Qty": 1,
+      "Store #": 2735
+    },
+    {
+      "Number": 18556297,
+      "PO": 4905315582,
+      "Date": "2025-09-29 00:00:00",
+      "Qty": 3,
+      "Store #": 7904
+    },
+    {
+      "Number": 18559333,
+      "PO": 4905322574,
+      "Date": "2025-09-29 00:00:00",
+      "Qty": 3,
+      "Store #": 1295
+    },
+    {
+      "Number": 18564136,
+      "PO": 4905329891,
+      "Date": "2025-10-01 00:00:00",
+      "Qty": 1,
+      "Store #": "4SJL"
+    },
+    {
+      "Number": 18565290,
+      "PO": 4905330878,
+      "Date": "2025-10-01 00:00:00",
+      "Qty": 1,
+      "Store #": "4SIH"
+    },
+    {
+      "Number": 18567229,
+      "PO": 4905332184,
+      "Date": "2025-10-01 00:00:00",
+      "Qty": 1,
+      "Store #": "531F"
+    },
+    {
+      "Number": 18571525,
+      "PO": 4905335547,
+      "Date": "2025-10-03 00:00:00",
+      "Qty": 1,
+      "Store #": "2SHQ"
+    },
+    {
+      "Number": 18571527,
+      "PO": 4905336316,
+      "Date": "2025-10-03 00:00:00",
+      "Qty": 1,
+      "Store #": "4B39"
+    },
+    {
+      "Number": 18579039,
+      "PO": 4905340847,
+      "Date": "2025-10-06 00:00:00",
+      "Qty": 3,
+      "Store #": 7813
+    },
+    {
+      "Number": 18579843,
+      "PO": 4905341859,
+      "Date": "2025-10-07 00:00:00",
+      "Qty": 3,
+      "Store #": "657F"
+    },
+    {
+      "Number": 18582921,
+      "PO": 4905342973,
+      "Date": "2025-10-07 00:00:00",
+      "Qty": 2,
+      "Store #": "1SRQ"
+    },
+    {
+      "Number": 18591975,
+      "PO": 4905351914,
+      "Date": "2025-10-10 00:00:00",
+      "Qty": 1,
+      "Store #": 8018
+    },
+    {
+      "Number": 18599196,
+      "PO": 4905357973,
+      "Date": "2025-10-13 00:00:00",
+      "Qty": 2,
+      "Store #": "3SRP"
+    },
+    {
+      "Number": 18599205,
+      "PO": 4905357891,
+      "Date": "2025-10-13 00:00:00",
+      "Qty": 5,
+      "Store #": 8501
+    },
+    {
+      "Number": 18599218,
+      "PO": 4905358230,
+      "Date": "2025-10-13 00:00:00",
+      "Qty": 15,
+      "Store #": 8837
+    },
+    {
+      "Number": 18635215,
+      "PO": 4905387531,
+      "Date": "2025-10-24 00:00:00",
+      "Qty": 1,
+      "Store #": "245F"
+    },
+    {
+      "Number": 18657161,
+      "PO": 4905396101,
+      "Date": "2025-11-03 00:00:00",
+      "Qty": 1,
+      "Store #": 9271
+    },
+    {
+      "Number": 18684849,
+      "PO": 4905424132,
+      "Date": "2025-11-12 00:00:00",
+      "Qty": 1,
+      "Store #": 8528
+    },
+    {
+      "Number": 18702526,
+      "PO": 4905434751,
+      "Date": "2025-11-18 00:00:00",
+      "Qty": 10,
+      "Store #": 9933
+    },
+    {
+      "Number": 18702535,
+      "PO": 4905434930,
+      "Date": "2025-11-18 00:00:00",
+      "Qty": 1,
+      "Store #": 7515
+    },
+    {
+      "Number": 18721593,
+      "PO": 4905446857,
+      "Date": "2025-11-24 00:00:00",
+      "Qty": 1,
+      "Store #": "585F"
+    },
+    {
+      "Number": 18726634,
+      "PO": 4905453074,
+      "Date": "2025-11-26 00:00:00",
+      "Qty": 1,
+      "Store #": 8985
+    },
+    {
+      "Number": 18735562,
+      "PO": 4905457330,
+      "Date": "2025-12-01 00:00:00",
+      "Qty": 3,
+      "Store #": 7975
+    },
+    {
+      "Number": 18736301,
+      "PO": 4905459248,
+      "Date": "2025-12-01 00:00:00",
+      "Qty": 4,
+      "Store #": 5641
+    },
+    {
+      "Number": 18746816,
+      "PO": 4905463238,
+      "Date": "2025-12-04 00:00:00",
+      "Qty": 2,
+      "Store #": 7639
+    },
+    {
+      "Number": 18758998,
+      "PO": 4905469770,
+      "Date": "2025-12-09 00:00:00",
+      "Qty": 1,
+      "Store #": 9932
+    },
+    {
+      "Number": 18759041,
+      "PO": 4905471268,
+      "Date": "2025-12-09 00:00:00",
+      "Qty": 1,
+      "Store #": "1SII"
+    },
+    {
+      "Number": 18759073,
+      "PO": 4905472936,
+      "Date": "2025-12-09 00:00:00",
+      "Qty": 3,
+      "Store #": 7373
+    },
+    {
+      "Number": 18779637,
+      "PO": 4905488320,
+      "Date": "2025-12-16 00:00:00",
+      "Qty": 2,
+      "Store #": 8693
+    },
+    {
+      "Number": 18795601,
+      "PO": 4905499654,
+      "Date": "2025-12-22 00:00:00",
+      "Qty": 3,
+      "Store #": "3SAQ"
+    },
+    {
+      "Number": 18798145,
+      "PO": 4905501751,
+      "Date": "2025-12-23 00:00:00",
+      "Qty": 1,
+      "Store #": 7513
+    }
+  ],
+  "inventory totals": [
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD CL1",
+      "Total On Hand": 85,
+      "Total On Order": 0,
+      "Depot On Hand": 85,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD CL2",
+      "Total On Hand": 1,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD E235",
+      "Total On Hand": 4551,
+      "Total On Order": 680,
+      "Depot On Hand": 2380,
+      "Depot On Order": 0,
+      "Deployment On Hand": 1792,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 333,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 46,
+      "Saftey On Order": 372,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 308,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD Battery",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD Case",
+      "Total On Hand": 113,
+      "Total On Order": 0,
+      "Depot On Hand": 113,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MPD Case Gen 2",
+      "Total On Hand": 14625,
+      "Total On Order": 0,
+      "Depot On Hand": 2938,
+      "Depot On Order": 0,
+      "Deployment On Hand": 6907,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 760,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 4020,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 1
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 1",
+      "Total On Hand": 6,
+      "Total On Order": 0,
+      "Depot On Hand": 6,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 2",
+      "Total On Hand": 32,
+      "Total On Order": 0,
+      "Depot On Hand": 32,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 3",
+      "Total On Hand": 891,
+      "Total On Order": 0,
+      "Depot On Hand": 681,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 210,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Gen 4",
+      "Total On Hand": 1653,
+      "Total On Order": 0,
+      "Depot On Hand": 1235,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 128,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 290,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Air Gen4",
+      "Total On Hand": 6819,
+      "Total On Order": 0,
+      "Depot On Hand": 2063,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 203,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 4550,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Air Gen5",
+      "Total On Hand": 8851,
+      "Total On Order": 0,
+      "Depot On Hand": 150,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 208,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 8493,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 350,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 2
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 1",
+      "Total On Hand": 25,
+      "Total On Order": 0,
+      "Depot On Hand": 25,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 2",
+      "Total On Hand": 246,
+      "Total On Order": 0,
+      "Depot On Hand": 246,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 3",
+      "Total On Hand": 6163,
+      "Total On Order": 0,
+      "Depot On Hand": 4741,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 129,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1293,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "iPad Case Gen 4",
+      "Total On Hand": 15947,
+      "Total On Order": 0,
+      "Depot On Hand": 2101,
+      "Depot On Order": 0,
+      "Deployment On Hand": 4,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 375,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 13467,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 2130,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Metronet iPad Air Gen5",
+      "Total On Hand": 43,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 4,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 39,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "MetronetiPad Case M3",
+      "Total On Hand": 41,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 4,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 37,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 3
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Belt Clip",
+      "Total On Hand": 1412,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 331,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 1078,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 1750,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Stylus",
+      "Total On Hand": 15797,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 331,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 15466,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 1243,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Tech Sling",
+      "Total On Hand": 40,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 40,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 4241,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "REMO Kit",
+      "Device": "Fanny Pack",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 1185,
+      "Vendor On Order": 0,
+      "Bundle #s": 1,
+      "Device #s": 5
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone 16",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 3700,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone SE V3",
+      "Total On Hand": 6946,
+      "Total On Order": 0,
+      "Depot On Hand": 1024,
+      "Depot On Order": 0,
+      "Deployment On Hand": 603,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 5319,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone SE V2",
+      "Total On Hand": 697,
+      "Total On Order": 0,
+      "Depot On Hand": 631,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 66,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "iPhone 8",
+      "Total On Hand": 10,
+      "Total On Order": 0,
+      "Depot On Hand": 10,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner",
+      "Total On Hand": 10246,
+      "Total On Order": 0,
+      "Depot On Hand": 1841,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 120,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 8282,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner Case",
+      "Total On Hand": 10010,
+      "Total On Order": 0,
+      "Depot On Hand": 3101,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 35,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 6871,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Charger Dock",
+      "Total On Hand": 7574,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 3,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 120,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 7451,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner V2",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 3700,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Scanner Case V2",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 3700,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "TIMO Kit",
+      "Device": "Charger Dock V2",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 3700,
+      "Vendor On Order": 0,
+      "Bundle #s": 4,
+      "Device #s": 6
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Mac Mini M2",
+      "Total On Hand": 209,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 1,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 208,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Mac Mini 2020",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Mac Mini 2018",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 1 HC",
+      "Total On Hand": 61,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 2,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 59,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 HC",
+      "Total On Hand": 422,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 2,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 420,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": " Gen 1 Cabinet",
+      "Total On Hand": 700,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 24,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 676,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 Cabinet",
+      "Total On Hand": 106,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 106,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 1 2-Drawer Cart",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 2-Drawer Cart",
+      "Total On Hand": 44,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 44,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 1 3-Drawer Cart",
+      "Total On Hand": 0,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "Gen 2 3-drawer Cart",
+      "Total On Hand": 66,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 66,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "iPad Cable Gen 1",
+      "Total On Hand": 19129,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 5664,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 13465,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 202,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "iPad Cable Gen 2",
+      "Total On Hand": 59,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 59,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 155,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "HC Bundle",
+      "Device": "MPD Cable Gen 1",
+      "Total On Hand": 32,
+      "Total On Order": 0,
+      "Depot On Hand": 0,
+      "Depot On Order": 0,
+      "Deployment On Hand": 32,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 5,
+      "Device #s": 7
+    },
+    {
+      "Bundle /Kit": "SSR",
+      "Device": "SSR Tablet iPad Air G3",
+      "Total On Hand": 85,
+      "Total On Order": 0,
+      "Depot On Hand": 85,
+      "Depot On Order": 0,
+      "Deployment On Hand": 0,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 7,
+      "Device #s": 9
+    },
+    {
+      "Bundle /Kit": "HSI",
+      "Device": "HSI iPad Gen 9",
+      "Total On Hand": 593,
+      "Total On Order": 0,
+      "Depot On Hand": 242,
+      "Depot On Order": 0,
+      "Deployment On Hand": 351,
+      " Deployment On Order": 0,
+      "New/Remodel On Hand": 0,
+      "New/Remodel On Order": 0,
+      "Saftey On Hand": 0,
+      "Saftey On Order": 0,
+      "Vendor On Hand": 0,
+      "Vendor On Order": 0,
+      "Bundle #s": 7,
+      "Device #s": 9
+    }
+  ]
+}

@@ -1288,9 +1288,9 @@ function processQuery(query) {
     }
 
     // Get data
-    const connectionData = inventoryData['Connection Data by Item'] || [];
-    const prosysData = inventoryData['prosys report - by kit'] || [];
-    const totalsData = inventoryData['inventory totals'] || [];
+    const connectionData = inventoryData['inventory totals'] || [];
+    const prosysData = inventoryData['Prosys Spare Pool'] || [];
+    const connectionDepot = inventoryData['Connection Depot On Hand'] || [];
     const procurementData = inventoryData['REMO Case Procurement Data'] || [];
 
     // Check if we have data

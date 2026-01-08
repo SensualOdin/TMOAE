@@ -1196,4 +1196,221 @@ initInventoryControls = function() {
     });
 };
 
+// ===================================
+// Chatbot Assistant
+// ===================================
+
+function toggleChatbot() {
+    const container = document.getElementById('chatbotContainer');
+    const toggle = document.getElementById('chatbotToggle');
+
+    if (container.classList.contains('active')) {
+        container.classList.remove('active');
+        toggle.style.display = 'flex';
+    } else {
+        container.classList.add('active');
+        toggle.style.display = 'none';
+        // Auto-scroll to bottom
+        const messages = document.getElementById('chatbotMessages');
+        messages.scrollTop = messages.scrollHeight;
+    }
+}
+
+function sendChatMessage() {
+    const input = document.getElementById('chatbotInput');
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    // Add user message
+    addMessage(message, 'user');
+    input.value = '';
+
+    // Show typing indicator
+    showTypingIndicator();
+
+    // Process message and respond
+    setTimeout(() => {
+        const response = processQuery(message);
+        hideTypingIndicator();
+        addMessage(response, 'bot');
+    }, 800);
+}
+
+function addMessage(content, type) {
+    const messagesContainer = document.getElementById('chatbotMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = type === 'user' ? 'user-message' : 'bot-message';
+
+    const avatar = type === 'user' ? '👤' : '🤖';
+
+    messageDiv.innerHTML = `
+        <div class="message-avatar">${avatar}</div>
+        <div class="message-content">${content}</div>
+    `;
+
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function showTypingIndicator() {
+    const messagesContainer = document.getElementById('chatbotMessages');
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'bot-message';
+    typingDiv.id = 'typingIndicator';
+
+    typingDiv.innerHTML = `
+        <div class="message-avatar">🤖</div>
+        <div class="message-content">
+            <div class="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+    `;
+
+    messagesContainer.appendChild(typingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function hideTypingIndicator() {
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
+}
+
+function processQuery(query) {
+    const lowerQuery = query.toLowerCase();
+
+    // Get data
+    const connectionData = inventoryData['Connection Data by Item'] || [];
+    const prosysData = inventoryData['prosys report - by kit'] || [];
+    const totalsData = inventoryData['inventory totals'] || [];
+    const procurementData = inventoryData['REMO Case Procurement Data'] || [];
+
+    // Calculate total inventory
+    const calculateTotal = (items, field) => {
+        return items.reduce((sum, item) => sum + (parseInt(item[field]) || 0), 0);
+    };
+
+    // Total inventory queries
+    if (lowerQuery.includes('total') && (lowerQuery.includes('inventory') || lowerQuery.includes('units'))) {
+        const total = calculateTotal(connectionData, 'Total On Hand');
+        return `<p>We currently have <strong>${total.toLocaleString()} total units</strong> in our inventory.</p>
+                <p>This includes all equipment across depot, deployment, new/remodel, and safety pools.</p>`;
+    }
+
+    // Depot queries
+    if (lowerQuery.includes('depot')) {
+        const depotTotal = calculateTotal(connectionData, 'Depot');
+        return `<p>The depot currently holds <strong>${depotTotal.toLocaleString()} units</strong>.</p>
+                <p>Depot stock represents equipment ready for deployment.</p>`;
+    }
+
+    // Deployment queries
+    if (lowerQuery.includes('deployment') || lowerQuery.includes('deployed')) {
+        const deploymentTotal = calculateTotal(connectionData, 'Deployment');
+        return `<p>We have <strong>${deploymentTotal.toLocaleString()} units</strong> currently in deployment.</p>
+                <p>These are devices actively in use at store locations.</p>`;
+    }
+
+    // Safety pool queries
+    if (lowerQuery.includes('safety')) {
+        const safetyTotal = calculateTotal(connectionData, 'Safety');
+        return `<p>The safety pool contains <strong>${safetyTotal.toLocaleString()} units</strong>.</p>
+                <p>Safety stock acts as a buffer for unexpected demand.</p>`;
+    }
+
+    // Low stock queries
+    if (lowerQuery.includes('low') && lowerQuery.includes('stock')) {
+        const lowStockItems = connectionData.filter(item => {
+            const total = parseInt(item['Total On Hand']) || 0;
+            const safety = parseInt(item['Safety']) || 0;
+            return total < safety;
+        });
+
+        if (lowStockItems.length === 0) {
+            return `<p>Great news! <strong>No items are below safety stock levels</strong>.</p>
+                    <p>All inventory levels are healthy.</p>`;
+        }
+
+        const itemList = lowStockItems.slice(0, 5).map(item =>
+            `<li>${item.Device || item['Bundle /Kit']} - ${item['Total On Hand']} units (needs ${item.Safety})</li>`
+        ).join('');
+
+        return `<p>We have <strong>${lowStockItems.length} items below safety stock</strong>:</p>
+                <ul>${itemList}${lowStockItems.length > 5 ? '<li>...and ' + (lowStockItems.length - 5) + ' more</li>' : ''}</ul>`;
+    }
+
+    // On order queries
+    if (lowerQuery.includes('on order') || lowerQuery.includes('order')) {
+        const onOrderTotal = calculateTotal(connectionData, 'On Order');
+        return `<p>We have <strong>${onOrderTotal.toLocaleString()} units on order</strong>.</p>
+                <p>These units are pending delivery from vendors.</p>`;
+    }
+
+    // REMO case queries
+    if (lowerQuery.includes('remo') || lowerQuery.includes('case')) {
+        const recentOrders = procurementData.slice(-10);
+        const totalCases = recentOrders.reduce((sum, order) => sum + (parseInt(order.Qty) || 0), 0);
+
+        return `<p>Recent REMO Case activity:</p>
+                <p><strong>${totalCases} cases</strong> ordered in the last ${recentOrders.length} transactions.</p>
+                <p>Latest order: ${recentOrders[recentOrders.length - 1]?.Date} - Store #${recentOrders[recentOrders.length - 1]?.['Store #']} (${recentOrders[recentOrders.length - 1]?.Qty} cases)</p>
+                <p>Use the search filter in the Analytics section to view specific store histories!</p>`;
+    }
+
+    // Top items queries
+    if (lowerQuery.includes('top') || lowerQuery.includes('most') || lowerQuery.includes('highest')) {
+        const sortedItems = [...connectionData]
+            .sort((a, b) => (parseInt(b['Total On Hand']) || 0) - (parseInt(a['Total On Hand']) || 0))
+            .slice(0, 5);
+
+        const itemList = sortedItems.map((item, i) =>
+            `<li>${i + 1}. ${item.Device || item['Bundle /Kit']} - ${(parseInt(item['Total On Hand']) || 0).toLocaleString()} units</li>`
+        ).join('');
+
+        return `<p>Top 5 items by quantity:</p><ul>${itemList}</ul>`;
+    }
+
+    // Vendor queries
+    if (lowerQuery.includes('vendor') || lowerQuery.includes('supplier')) {
+        const vendors = [...new Set(connectionData.map(item => item.Vendor).filter(Boolean))];
+        return `<p>We work with <strong>${vendors.length} vendors</strong>:</p>
+                <p>${vendors.join(', ')}</p>`;
+    }
+
+    // Device queries
+    if (lowerQuery.includes('device') && lowerQuery.includes('how many')) {
+        const deviceCount = connectionData.length;
+        return `<p>We track <strong>${deviceCount} different devices/kits</strong> in our inventory system.</p>`;
+    }
+
+    // Help queries
+    if (lowerQuery.includes('help') || lowerQuery.includes('what can you')) {
+        return `<p>I can help you with:</p>
+                <ul>
+                    <li>Total inventory counts</li>
+                    <li>Depot, deployment, and safety pool levels</li>
+                    <li>Low stock alerts</li>
+                    <li>On-order quantities</li>
+                    <li>REMO case procurement data</li>
+                    <li>Top items by quantity</li>
+                    <li>Vendor information</li>
+                </ul>
+                <p>Just ask me a question in plain English!</p>`;
+    }
+
+    // Default fallback
+    return `<p>I'm not sure how to answer that. Try asking about:</p>
+            <ul>
+                <li>"What's our total inventory?"</li>
+                <li>"Which items are low in stock?"</li>
+                <li>"How much is in the depot?"</li>
+                <li>"Show me REMO case orders"</li>
+                <li>"What are the top items?"</li>
+            </ul>
+            <p>Or say "help" to see all my capabilities!</p>`;
+}
+
 console.log('✓ T-Mobile A/E Inventory Dashboard initialized');

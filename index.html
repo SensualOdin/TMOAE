@@ -367,6 +367,45 @@
         </div>
     </footer>
 
+    <!-- AI Chatbot Assistant -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <span class="chatbot-icon">🤖</span>
+                <span>Inventory Assistant</span>
+            </div>
+            <button class="chatbot-close" onclick="toggleChatbot()">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Hi! I'm your Inventory Assistant. I can answer questions about your A/E inventory data.</p>
+                    <p>Try asking me things like:</p>
+                    <ul>
+                        <li>"What's our total inventory?"</li>
+                        <li>"Which items are low in stock?"</li>
+                        <li>"Show me REMO case orders"</li>
+                        <li>"What's in the depot?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask me anything about the inventory..." onkeypress="if(event.key==='Enter') sendChatMessage()">
+            <button class="chatbot-send" onclick="sendChatMessage()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <button class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+        <span class="chatbot-toggle-icon">💬</span>
+        <span class="chatbot-toggle-text">Ask Assistant</span>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

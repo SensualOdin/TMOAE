@@ -1,13 +1,13 @@
-# GitLab Pages configuration for static HTML site
-image: alpine:latest
-
 pages:
   stage: deploy
   script:
     - mkdir -p public
-    - cp -r *.html *.css *.js *.xlsx public/ 2>/dev/null || true
+    - cp *.html public/ || true
+    - cp *.css public/ || true
+    - cp *.js public/ || true
+    - cp *.xlsx public/ || true
   artifacts:
     paths:
       - public
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  only:
+    - master

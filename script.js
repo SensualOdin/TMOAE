@@ -252,13 +252,38 @@ function displayProsysData() {
 
     tableBody.innerHTML = '';
 
-    prosysData.forEach(item => {
+    // Sort data by kit (REMO Kit first) then by device name
+    const sortedData = [...prosysData].sort((a, b) => {
+        const kitA = a.kit || 'zzz';
+        const kitB = b.kit || 'zzz';
+
+        if (kitA === 'REMO Kit' && kitB !== 'REMO Kit') return -1;
+        if (kitA !== 'REMO Kit' && kitB === 'REMO Kit') return 1;
+
+        const kitCompare = kitA.localeCompare(kitB);
+        if (kitCompare !== 0) return kitCompare;
+
+        return a.device.localeCompare(b.device);
+    });
+
+    // Add rows with kit group headers
+    let currentKit = null;
+    sortedData.forEach(item => {
+        if (item.kit !== currentKit) {
+            currentKit = item.kit;
+            const headerRow = createKitGroupHeader(currentKit, sortedData.filter(i => i.kit === currentKit).length, 10);
+            tableBody.appendChild(headerRow);
+        }
+
         const row = createProsysRow(item);
         tableBody.appendChild(row);
     });
 
     // Update stats
     updateProsysStats();
+
+    // Populate kit filter dropdown
+    populateProsysKitFilter();
 }
 
 function createProsysRow(item) {
@@ -292,13 +317,38 @@ function displayConnectionData() {
 
     tableBody.innerHTML = '';
 
-    connectionData.forEach(item => {
+    // Sort data by kit (REMO Kit first) then by device name
+    const sortedData = [...connectionData].sort((a, b) => {
+        const kitA = a.kit || 'zzz';
+        const kitB = b.kit || 'zzz';
+
+        if (kitA === 'REMO Kit' && kitB !== 'REMO Kit') return -1;
+        if (kitA !== 'REMO Kit' && kitB === 'REMO Kit') return 1;
+
+        const kitCompare = kitA.localeCompare(kitB);
+        if (kitCompare !== 0) return kitCompare;
+
+        return a.device.localeCompare(b.device);
+    });
+
+    // Add rows with kit group headers
+    let currentKit = null;
+    sortedData.forEach(item => {
+        if (item.kit !== currentKit) {
+            currentKit = item.kit;
+            const headerRow = createKitGroupHeader(currentKit, sortedData.filter(i => i.kit === currentKit).length, 10);
+            tableBody.appendChild(headerRow);
+        }
+
         const row = createConnectionRow(item);
         tableBody.appendChild(row);
     });
 
     // Update stats
     updateConnectionStats();
+
+    // Populate kit filter dropdown
+    populateConnectionKitFilter();
 }
 
 function createConnectionRow(item) {
@@ -386,11 +436,80 @@ function populateKitFilter() {
     });
 }
 
-function filterByKitDropdown() {
-    const kitFilterSelect = document.getElementById('kitFilter');
+function populateProsysKitFilter() {
+    const kitFilterSelect = document.getElementById('prosysKitFilter');
     if (!kitFilterSelect) return;
 
-    const selectedKit = kitFilterSelect.value;
+    // Get unique kits from prosys data
+    const uniqueKits = [...new Set(prosysData.map(item => item.kit).filter(kit => kit && kit.trim() !== ''))];
+
+    // Sort kits: REMO Kit first, then alphabetically
+    uniqueKits.sort((a, b) => {
+        if (a === 'REMO Kit') return -1;
+        if (b === 'REMO Kit') return 1;
+        return a.localeCompare(b);
+    });
+
+    // Clear existing options except the first "All Kits"
+    kitFilterSelect.innerHTML = '<option value="">All Kits</option>';
+
+    // Add kit options
+    uniqueKits.forEach(kit => {
+        const option = document.createElement('option');
+        option.value = kit;
+        option.textContent = kit;
+        kitFilterSelect.appendChild(option);
+    });
+}
+
+function populateConnectionKitFilter() {
+    const kitFilterSelect = document.getElementById('connectionKitFilter');
+    if (!kitFilterSelect) return;
+
+    // Get unique kits from connection data
+    const uniqueKits = [...new Set(connectionData.map(item => item.kit).filter(kit => kit && kit.trim() !== ''))];
+
+    // Sort kits: REMO Kit first, then alphabetically
+    uniqueKits.sort((a, b) => {
+        if (a === 'REMO Kit') return -1;
+        if (b === 'REMO Kit') return 1;
+        return a.localeCompare(b);
+    });
+
+    // Clear existing options except the first "All Kits"
+    kitFilterSelect.innerHTML = '<option value="">All Kits</option>';
+
+    // Add kit options
+    uniqueKits.forEach(kit => {
+        const option = document.createElement('option');
+        option.value = kit;
+        option.textContent = kit;
+        kitFilterSelect.appendChild(option);
+    });
+}
+
+function filterByKitDropdown() {
+    const currentPage = getCurrentPage();
+    let kitFilterSelect, selectedKit;
+
+    // Get the appropriate select element based on current page
+    switch(currentPage) {
+        case 'prosys':
+            kitFilterSelect = document.getElementById('prosysKitFilter');
+            break;
+        case 'connection':
+            kitFilterSelect = document.getElementById('connectionKitFilter');
+            break;
+        case 'totals':
+            kitFilterSelect = document.getElementById('kitFilter');
+            break;
+        default:
+            return;
+    }
+
+    if (!kitFilterSelect) return;
+
+    selectedKit = kitFilterSelect.value;
 
     if (selectedKit === '') {
         // Show all data
@@ -535,7 +654,7 @@ function getKitColor(kitName) {
     return colors[kitName] || colors['default'];
 }
 
-function createKitGroupHeader(kitName, itemCount) {
+function createKitGroupHeader(kitName, itemCount, colspan = 7) {
     const row = document.createElement('tr');
     row.classList.add('kit-group-header');
 
@@ -543,7 +662,7 @@ function createKitGroupHeader(kitName, itemCount) {
     const colorScheme = getKitColor(kitName);
 
     row.innerHTML = `
-        <td colspan="7" style="background: ${colorScheme.bg}; padding: 16px 20px; border-top: 2px solid ${colorScheme.border}; border-bottom: 2px solid ${colorScheme.border};">
+        <td colspan="${colspan}" style="background: ${colorScheme.bg}; padding: 16px 20px; border-top: 2px solid ${colorScheme.border}; border-bottom: 2px solid ${colorScheme.border};">
             <div style="display: flex; align-items: center; gap: 12px;">
                 <span class="badge ${colorScheme.badge}" style="font-size: 15px; font-weight: 700; padding: 8px 16px;">${displayName}</span>
                 <span style="color: var(--text-tertiary); font-size: 14px; font-weight: 600;">${itemCount} ${itemCount === 1 ? 'device' : 'devices'}</span>
@@ -664,7 +783,30 @@ function displayFilteredProsysData(data) {
     if (!tableBody) return;
 
     tableBody.innerHTML = '';
-    data.forEach(item => {
+
+    // Sort data by kit (REMO Kit first) then by device name
+    const sortedData = [...data].sort((a, b) => {
+        const kitA = a.kit || 'zzz';
+        const kitB = b.kit || 'zzz';
+
+        if (kitA === 'REMO Kit' && kitB !== 'REMO Kit') return -1;
+        if (kitA !== 'REMO Kit' && kitB === 'REMO Kit') return 1;
+
+        const kitCompare = kitA.localeCompare(kitB);
+        if (kitCompare !== 0) return kitCompare;
+
+        return a.device.localeCompare(b.device);
+    });
+
+    // Add rows with kit group headers
+    let currentKit = null;
+    sortedData.forEach(item => {
+        if (item.kit !== currentKit) {
+            currentKit = item.kit;
+            const headerRow = createKitGroupHeader(currentKit, sortedData.filter(i => i.kit === currentKit).length, 10);
+            tableBody.appendChild(headerRow);
+        }
+
         const row = createProsysRow(item);
         tableBody.appendChild(row);
     });
@@ -675,7 +817,30 @@ function displayFilteredConnectionData(data) {
     if (!tableBody) return;
 
     tableBody.innerHTML = '';
-    data.forEach(item => {
+
+    // Sort data by kit (REMO Kit first) then by device name
+    const sortedData = [...data].sort((a, b) => {
+        const kitA = a.kit || 'zzz';
+        const kitB = b.kit || 'zzz';
+
+        if (kitA === 'REMO Kit' && kitB !== 'REMO Kit') return -1;
+        if (kitA !== 'REMO Kit' && kitB === 'REMO Kit') return 1;
+
+        const kitCompare = kitA.localeCompare(kitB);
+        if (kitCompare !== 0) return kitCompare;
+
+        return a.device.localeCompare(b.device);
+    });
+
+    // Add rows with kit group headers
+    let currentKit = null;
+    sortedData.forEach(item => {
+        if (item.kit !== currentKit) {
+            currentKit = item.kit;
+            const headerRow = createKitGroupHeader(currentKit, sortedData.filter(i => i.kit === currentKit).length, 10);
+            tableBody.appendChild(headerRow);
+        }
+
         const row = createConnectionRow(item);
         tableBody.appendChild(row);
     });
@@ -906,10 +1071,20 @@ function resetFilters() {
         pageSearch.value = '';
     }
 
-    // Reset kit filter dropdown
+    // Reset kit filter dropdowns for all pages
     const kitFilter = document.getElementById('kitFilter');
     if (kitFilter) {
         kitFilter.value = '';
+    }
+
+    const prosysKitFilter = document.getElementById('prosysKitFilter');
+    if (prosysKitFilter) {
+        prosysKitFilter.value = '';
+    }
+
+    const connectionKitFilter = document.getElementById('connectionKitFilter');
+    if (connectionKitFilter) {
+        connectionKitFilter.value = '';
     }
 }
 

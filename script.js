@@ -1,1426 +1,926 @@
-// ===================================
-// T-Mobile A/E Inventory Dashboard
-// Interactive Features & Data Visualization
-// ===================================
+// T-Mobile A/E Inventory Hub - Main JavaScript
 
-let inventoryData = null;
-let currentView = 'connection';
-let lastRefreshTime = new Date();
-let currentSort = { column: null, direction: null };
-let tableDensity = 'comfortable'; // comfortable, compact, spacious
-let hiddenColumns = [];
-let activeFilters = {
-    search: '',
-    kit: 'all',
-    device: 'all'
-};
+// Global data storage
+let prosysData = [];
+let connectionData = [];
 
-// ===================================
 // Initialize on page load
-// ===================================
-
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadData();
-    initCustomCursor();
-    initScrollReveal();
-    initNavigation();
-    initInventoryControls();
-    renderPoolLegend();
-    renderInventoryTable();
-    renderCharts();
-    animateStats();
-    updateRefreshTime();
-    generateExecutiveSummary();
-    calculateHealthMetrics();
-    initColumnSettings();
-    updateFilterTags();
+document.addEventListener('DOMContentLoaded', function() {
+    initializeTheme();
+    initializeEventListeners();
+    loadInventoryData();
+    updateLastUpdated();
 });
 
-// ===================================
-// Load Inventory Data
-// ===================================
+// ==========================================
+// Theme Management
+// ==========================================
 
-async function loadData() {
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// ==========================================
+// Event Listeners
+// ==========================================
+
+function initializeEventListeners() {
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    // Global search
+    const globalSearch = document.getElementById('globalSearch');
+    if (globalSearch) {
+        globalSearch.addEventListener('input', handleGlobalSearch);
+    }
+
+    // Page-specific search
+    const pageSearch = document.getElementById('pageSearch');
+    if (pageSearch) {
+        pageSearch.addEventListener('input', handlePageSearch);
+    }
+}
+
+// ==========================================
+// Excel Data Loading
+// ==========================================
+
+async function loadInventoryData() {
     try {
-        const response = await fetch('inventory_data.json');
-        inventoryData = await response.json();
-        console.log('✓ Data loaded successfully');
+        // Load Prosys data
+        const prosysFile = 'Mobility Hardware Report 01.16.2026.xlsx';
+        prosysData = await loadExcelFile(prosysFile, 'Prosys');
+
+        // Load Connection data
+        const connectionFile = 'T-Mobile Formatted Inventory Report 1.20.26.xlsx';
+        connectionData = await loadExcelFile(connectionFile, 'Connection');
+
+        console.log('Inventory data loaded successfully');
+        updatePageData();
     } catch (error) {
-        console.error('Error loading data:', error);
-        // Fallback: show error message
-        document.body.innerHTML = '<div style="color: white; padding: 2rem; text-align: center;"><h1>Error loading inventory data</h1><p>Please ensure inventory_data.json exists.</p></div>';
+        console.error('Error loading inventory data:', error);
     }
 }
 
-// ===================================
-// Custom Cursor - DISABLED
-// ===================================
+async function loadExcelFile(filename, vendor) {
+    try {
+        const response = await fetch(filename);
+        const arrayBuffer = await response.arrayBuffer();
+        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
 
-function initCustomCursor() {
-    // Custom cursor disabled
-    return;
-}
-
-// ===================================
-// Scroll Reveal Animations
-// ===================================
-
-function initScrollReveal() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-
-    document.querySelectorAll('[data-scroll-reveal]').forEach(el => {
-        observer.observe(el);
-    });
-}
-
-// ===================================
-// Smooth Navigation
-// ===================================
-
-function initNavigation() {
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-}
-
-function scrollToInventory() {
-    document.getElementById('inventory').scrollIntoView({ behavior: 'smooth' });
-}
-
-function scrollToAnalytics() {
-    document.getElementById('analytics').scrollIntoView({ behavior: 'smooth' });
-}
-
-// ===================================
-// Inventory Controls
-// ===================================
-
-function initInventoryControls() {
-    // Search functionality
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', (e) => {
-        renderInventoryTable(e.target.value);
-    });
-
-    // Kit filter
-    const kitFilter = document.getElementById('kitFilter');
-    kitFilter.addEventListener('change', () => {
-        renderInventoryTable();
-    });
-
-    // Device filter
-    const deviceFilter = document.getElementById('deviceFilter');
-    deviceFilter.addEventListener('change', () => {
-        renderInventoryTable();
-    });
-
-    // View toggle
-    document.querySelectorAll('.toggle-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            currentView = e.target.dataset.view;
-            renderInventoryTable();
-        });
-    });
-}
-
-// ===================================
-// Render Pool Legend
-// ===================================
-
-function renderPoolLegend() {
-    if (!inventoryData || !inventoryData['Spare Pool Legend']) return;
-
-    const poolsGrid = document.querySelector('.pools-grid');
-    const pools = inventoryData['Spare Pool Legend'];
-
-    const poolIcons = {
-        'Depot Pool': '🏢',
-        'Deployment Pool': '🚀',
-        'New/Remodel Pool': '🏗️',
-        'Safety Pool': '🛡️',
-        'Total Count': '📊',
-        'Vendor Owned': '📦'
-    };
-
-    poolsGrid.innerHTML = pools.map(pool => `
-        <div class="pool-card">
-            <div class="pool-header">
-                <div class="pool-icon">${poolIcons[pool['Pool Type '].trim()] || '📦'}</div>
-                <h3 class="pool-title">${pool['Pool Type ']}</h3>
-            </div>
-            <p class="pool-definition">${pool.Definition}</p>
-        </div>
-    `).join('');
-}
-
-// ===================================
-// Render Inventory Table
-// ===================================
-
-function renderInventoryTable(searchTerm = '') {
-    if (!inventoryData) return;
-
-    const tableBody = document.getElementById('inventoryTableBody');
-    const kitFilter = document.getElementById('kitFilter').value;
-    const deviceFilter = document.getElementById('deviceFilter').value;
-
-    // Select data source based on current view
-    let dataSource;
-    if (currentView === 'connection') {
-        dataSource = inventoryData['Connection Depot On Hand'] || [];
-    } else if (currentView === 'prosys') {
-        dataSource = inventoryData['Prosys Spare Pool'] || [];
-    } else {
-        dataSource = inventoryData['inventory totals'] || [];
-    }
-
-    // Filter data
-    let filteredData = dataSource.filter(item => {
-        const matchesSearch = searchTerm === '' ||
-            item.Device?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item['Bundle /Kit']?.toLowerCase().includes(searchTerm.toLowerCase());
-
-        const matchesKit = kitFilter === 'all' || item['Bundle /Kit'] === kitFilter;
-
-        const matchesDevice = deviceFilter === 'all' || String(item['Device #s']) === deviceFilter;
-
-        return matchesSearch && matchesKit && matchesDevice;
-    });
-
-    // Sort by Bundle #s and Device #s for grouping
-    filteredData.sort((a, b) => {
-        const bundleCompare = (a['Bundle #s'] || 0) - (b['Bundle #s'] || 0);
-        if (bundleCompare !== 0) return bundleCompare;
-        return (a['Device #s'] || 0) - (b['Device #s'] || 0);
-    });
-
-    // Render rows with device type grouping
-    let currentDeviceType = null;
-    let deviceTypeColor = 0;
-    const deviceTypeColors = ['device-group-1', 'device-group-2', 'device-group-3'];
-
-    tableBody.innerHTML = filteredData.map(item => {
-        const deviceType = item['Device #s'];
-
-        // Change color when device type changes
-        if (deviceType !== currentDeviceType) {
-            currentDeviceType = deviceType;
-            deviceTypeColor = (deviceTypeColor + 1) % deviceTypeColors.length;
+        if (vendor === 'Prosys') {
+            return parseProsysData(workbook);
+        } else if (vendor === 'Connection') {
+            return parseConnectionData(workbook);
         }
+    } catch (error) {
+        console.error(`Error loading ${filename}:`, error);
+        return [];
+    }
+}
 
-        const totalOnHand = item['Total On Hand'] || 0;
-        const quantityClass = totalOnHand > 5000 ? 'quantity-high' :
-                             totalOnHand > 1000 ? 'quantity-medium' :
-                             'quantity-low';
+function parseProsysData(workbook) {
+    const sheetName = 'Report';
+    const worksheet = workbook.Sheets[sheetName];
 
-        return `
-            <tr class="${deviceTypeColors[deviceTypeColor]}" data-device-type="${deviceType}">
-                <td>${item['Bundle /Kit'] || '-'}</td>
-                <td><strong>${item.Device || '-'}</strong></td>
-                <td><span class="quantity-badge ${quantityClass}">${formatNumber(totalOnHand)}</span></td>
-                <td>${formatNumber(item['Total On Order'] || 0)}</td>
-                <td>${formatNumber(item['Depot On Hand'] || 0)}</td>
-                <td>${formatNumber(item['Deployment On Hand'] || 0)}</td>
-                <td>${formatNumber(item['New/Remodel On Hand'] || 0)}</td>
-                <td>${formatNumber(item['Saftey On Hand'] || 0)}</td>
-                <td>${formatNumber(item['Vendor On Hand'] || 0)}</td>
-            </tr>
-        `;
-    }).join('');
+    if (!worksheet) {
+        console.error('Sheet "Report" not found in Prosys file');
+        return [];
+    }
+
+    // Convert to JSON, starting from row 10 (header rows are 9-10, data starts at 11)
+    // Using range: 8 means start from row 9 (0-indexed), which will use row 9 as headers
+    const jsonData = XLSX.utils.sheet_to_json(worksheet, {
+        range: 8, // Start from row 9 (0-indexed: 8) - this is the header row
+        defval: ''
+    });
+
+    return jsonData.map(row => {
+        const mapped = {
+            kit: row['Kit'] || '',
+            device: row['Device'] || '',
+            deviceType: row['Computacenter Device Type'] || '',
+            manufacturer: row['MFR'] || '',
+            partNumber: row['Part#'] || '',
+            description: row['Description'] || '',
+            // Based on console logs, __EMPTY columns are the "On Order" sub-headers
+            totalOnHand: parseNumber(row['Total Count']) || 0,
+            totalOnOrder: parseNumber(row['__EMPTY']) || 0,
+            depotOnHand: parseNumber(row['Depot Pool']) || 0,
+            depotOnOrder: parseNumber(row['__EMPTY_1']) || 0,
+            deploymentOnHand: parseNumber(row['Deployment Pool']) || 0,
+            deploymentOnOrder: parseNumber(row['__EMPTY_2']) || 0,
+            newRemodelOnHand: parseNumber(row['New/Remodel Pool']) || 0,
+            newRemodelOnOrder: parseNumber(row['__EMPTY_3']) || 0,
+            safetyOnHand: parseNumber(row['Safety Pool']) || 0,
+            safetyOnOrder: parseNumber(row['__EMPTY_4']) || 0,
+            vendorOnHand: parseNumber(row['Vendor Owned']) || 0,
+            vendorOnOrder: parseNumber(row['__EMPTY_5']) || 0,
+            refurbOnHand: parseNumber(row['Refurbished Pool']) || 0,
+            refurbOnOrder: parseNumber(row['__EMPTY_6']) || 0,
+            dateReceived: row['Date Vendor Stock Received'] || '',
+            comments: row['Comments/Repairs Processing'] || '',
+            vendor: 'Prosys'
+        };
+        return mapped;
+    }).filter(item => {
+        // Filter out rows with no device name or CDC kit items
+        if (!item.device || item.device.trim() === '') return false;
+        if (item.kit && item.kit.toUpperCase() === 'CDC') return false;
+        return true;
+    });
+}
+
+function parseConnectionData(workbook) {
+    const sheetName = 'Formatted Report';
+    const worksheet = workbook.Sheets[sheetName];
+
+    if (!worksheet) {
+        console.error('Sheet "Formatted Report" not found in Connection file');
+        return [];
+    }
+
+    // Convert to JSON, starting from row 1 (header row)
+    const jsonData = XLSX.utils.sheet_to_json(worksheet, {
+        range: 1,
+        defval: ''
+    });
+
+    return jsonData.map(row => ({
+        kit: row['Bundle /Kit'] || '',
+        device: row['Device'] || '',
+        totalOnHand: parseNumber(row['On Hand']) || 0,
+        totalOnOrder: parseNumber(row['On Order']) || 0,
+        depotCOR: parseNumber(row['COR']) || 0,
+        depotMetro: parseNumber(row['Metro']) || 0,
+        depotOnOrder: parseNumber(row['On Order__1']) || 0,
+        safetyOnHand: parseNumber(row['On Hand__1']) || 0,
+        safetyOnOrder: parseNumber(row['On Order__2']) || 0,
+        refurbOnHand: parseNumber(row['On Hand__2']) || 0,
+        refurbPrice: parseNumber(row['Refurb Price']) || 0,
+        vendorOnHand: parseNumber(row['On Hand__3']) || 0,
+        vendorOnOrder: parseNumber(row['On Order__3']) || 0,
+        mobilityDevice: row['Device__1'] || '',
+        mobilityQty: parseNumber(row['Qty']) || 0,
+        mobilityNotes: row['Notes'] || '',
+        constructionDevice: row['Device__2'] || '',
+        constructionOnHand: parseNumber(row['Qty On Hand']) || 0,
+        constructionProjected: parseNumber(row['Qty Projected']) || 0,
+        vendor: 'Connection'
+    })).filter(item => {
+        // Filter out rows with no device name or CDC kit items
+        if (!item.device || item.device.trim() === '') return false;
+        if (item.kit && item.kit.toUpperCase() === 'CDC') return false;
+        return true;
+    });
+}
+
+function parseNumber(value) {
+    if (value === null || value === undefined || value === '') {
+        return 0;
+    }
+    const num = parseFloat(value);
+    return isNaN(num) ? 0 : num;
+}
+
+// ==========================================
+// Data Display Functions
+// ==========================================
+
+function updatePageData() {
+    const currentPage = getCurrentPage();
+
+    switch(currentPage) {
+        case 'prosys':
+            displayProsysData();
+            break;
+        case 'connection':
+            displayConnectionData();
+            break;
+        case 'totals':
+            displayTotalsData();
+            break;
+        default:
+            // Home page - update stats
+            updateHomeStats();
+    }
+}
+
+function getCurrentPage() {
+    const path = window.location.pathname;
+    if (path.includes('prosys.html')) return 'prosys';
+    if (path.includes('connection.html')) return 'connection';
+    if (path.includes('totals.html')) return 'totals';
+    return 'home';
+}
+
+function updateHomeStats() {
+    // Update stats on home page
+    const totalDevices = prosysData.length + connectionData.length;
+    const remoKits = prosysData.filter(item => item.kit === 'REMO Kit').length +
+                     connectionData.filter(item => item.kit === 'REMO Kit').length;
+
+    const totalOnOrder = prosysData.reduce((sum, item) => sum + item.totalOnOrder, 0) +
+                        connectionData.reduce((sum, item) => sum + item.totalOnOrder, 0);
+
+    updateElement('totalDevices', totalDevices);
+    updateElement('remoKits', remoKits);
+    updateElement('onOrder', formatNumber(totalOnOrder));
+}
+
+function displayProsysData() {
+    const tableBody = document.getElementById('prosysTableBody');
+    if (!tableBody) return;
+
+    console.log('Displaying Prosys data:', prosysData.length, 'items');
+
+    if (prosysData.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="10" class="text-center" style="padding: 40px;">No data available</td></tr>';
+        return;
+    }
+
+    tableBody.innerHTML = '';
+
+    prosysData.forEach(item => {
+        const row = createProsysRow(item);
+        tableBody.appendChild(row);
+    });
+
+    // Update stats
+    updateProsysStats();
+}
+
+function createProsysRow(item) {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td><span class="badge ${item.kit === 'REMO Kit' ? 'badge-magenta' : ''}">${item.kit}</span></td>
+        <td><strong>${item.device}</strong></td>
+        <td>${item.manufacturer}</td>
+        <td>${item.partNumber}</td>
+        <td class="text-right">${formatNumber(item.totalOnHand)}</td>
+        <td class="text-right">${formatNumber(item.totalOnOrder)}</td>
+        <td class="text-right">${formatNumber(item.depotOnHand)}</td>
+        <td class="text-right">${formatNumber(item.deploymentOnHand)}</td>
+        <td class="text-right">${formatNumber(item.safetyOnHand)}</td>
+        <td class="text-right">${formatNumber(item.refurbOnHand)}</td>
+    `;
+    row.classList.add('fade-in');
+    return row;
+}
+
+function displayConnectionData() {
+    const tableBody = document.getElementById('connectionTableBody');
+    if (!tableBody) return;
+
+    console.log('Displaying Connection data:', connectionData.length, 'items');
+
+    if (connectionData.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="10" class="text-center" style="padding: 40px;">No data available</td></tr>';
+        return;
+    }
+
+    tableBody.innerHTML = '';
+
+    connectionData.forEach(item => {
+        const row = createConnectionRow(item);
+        tableBody.appendChild(row);
+    });
+
+    // Update stats
+    updateConnectionStats();
+}
+
+function createConnectionRow(item) {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td><span class="badge ${item.kit === 'REMO Kit' ? 'badge-magenta' : ''}">${item.kit}</span></td>
+        <td><strong>${item.device}</strong></td>
+        <td class="text-right">${formatNumber(item.totalOnHand)}</td>
+        <td class="text-right">${formatNumber(item.totalOnOrder)}</td>
+        <td class="text-right">${formatNumber(item.depotCOR + item.depotMetro)}</td>
+        <td class="text-right">${formatNumber(item.safetyOnHand)}</td>
+        <td class="text-right">${formatNumber(item.refurbOnHand)}</td>
+        <td class="text-right">${formatNumber(item.vendorOnHand)}</td>
+        <td class="text-right">${formatNumber(item.mobilityQty)}</td>
+        <td class="text-right">${formatNumber(item.constructionOnHand)}</td>
+    `;
+    row.classList.add('fade-in');
+    return row;
+}
+
+function displayTotalsData() {
+    const tableBody = document.getElementById('totalsTableBody');
+    if (!tableBody) return;
+
+    tableBody.innerHTML = '';
+
+    // Create aggregated totals by device
+    const aggregatedData = aggregateInventoryData();
+
+    // Filter out rows with zero inventory from both vendors
+    const filteredData = aggregatedData.filter(item =>
+        item.totalOnHand > 0 || item.totalOnOrder > 0
+    );
 
     if (filteredData.length === 0) {
-        tableBody.innerHTML = `
-            <tr>
-                <td colspan="9" style="text-align: center; padding: 3rem; color: var(--text-secondary);">
-                    No results found
-                </td>
-            </tr>
-        `;
-    }
-}
-
-function formatNumber(num) {
-    return num ? num.toLocaleString() : '0';
-}
-
-// ===================================
-// Animate Statistics
-// ===================================
-
-function animateStats() {
-    if (!inventoryData || !inventoryData['inventory totals']) return;
-
-    const totals = inventoryData['inventory totals'];
-
-    // Calculate totals
-    const totalUnits = totals.reduce((sum, item) => sum + (item['Total On Hand'] || 0), 0);
-    const depotStock = totals.reduce((sum, item) => sum + (item['Depot On Hand'] || 0), 0);
-    const deployment = totals.reduce((sum, item) => sum + (item['Deployment On Hand'] || 0), 0);
-    const safety = totals.reduce((sum, item) => sum + (item['Saftey On Hand'] || 0), 0);
-
-    // Animate counters
-    const statCards = document.querySelectorAll('.stat-number');
-    const targets = [totalUnits, depotStock, deployment, safety];
-
-    statCards.forEach((card, index) => {
-        card.setAttribute('data-target', targets[index]);
-        animateCounter(card, targets[index]);
-    });
-}
-
-function animateCounter(element, target) {
-    const duration = 2000;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    let step = 0;
-
-    const timer = setInterval(() => {
-        current += increment;
-        step++;
-        element.textContent = Math.floor(current).toLocaleString();
-
-        if (step >= steps) {
-            clearInterval(timer);
-            element.textContent = target.toLocaleString();
-        }
-    }, duration / steps);
-}
-
-// ===================================
-// Render Charts
-// ===================================
-
-function renderCharts() {
-    if (!inventoryData) return;
-
-    renderPoolDistributionChart();
-    renderTopDevicesChart();
-    renderProcurementChart();
-}
-
-// Pool Distribution Chart
-function renderPoolDistributionChart() {
-    const totals = inventoryData['inventory totals'] || [];
-
-    const depotTotal = totals.reduce((sum, item) => sum + (item['Depot On Hand'] || 0), 0);
-    const deploymentTotal = totals.reduce((sum, item) => sum + (item['Deployment On Hand'] || 0), 0);
-    const newRemodelTotal = totals.reduce((sum, item) => sum + (item['New/Remodel On Hand'] || 0), 0);
-    const safetyTotal = totals.reduce((sum, item) => sum + (item['Saftey On Hand'] || 0), 0);
-    const vendorTotal = totals.reduce((sum, item) => sum + (item['Vendor On Hand'] || 0), 0);
-
-    const ctx = document.getElementById('poolChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Depot', 'Deployment', 'New/Remodel', 'Safety', 'Vendor'],
-            datasets: [{
-                data: [depotTotal, deploymentTotal, newRemodelTotal, safetyTotal, vendorTotal],
-                backgroundColor: [
-                    'rgba(226, 0, 116, 0.8)',
-                    'rgba(0, 255, 255, 0.8)',
-                    'rgba(255, 200, 0, 0.8)',
-                    'rgba(0, 255, 100, 0.8)',
-                    'rgba(150, 100, 255, 0.8)'
-                ],
-                borderColor: '#1C1C24',
-                borderWidth: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        color: '#A0A0B0',
-                        font: { size: 14, family: 'Inter' },
-                        padding: 20
-                    }
-                }
-            }
-        }
-    });
-}
-
-// Top Devices Chart
-function renderTopDevicesChart() {
-    const totals = inventoryData['inventory totals'] || [];
-
-    // Get top 10 devices by total on hand
-    const topDevices = totals
-        .filter(item => item['Total On Hand'] > 0)
-        .sort((a, b) => (b['Total On Hand'] || 0) - (a['Total On Hand'] || 0))
-        .slice(0, 10);
-
-    const ctx = document.getElementById('deviceChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: topDevices.map(item => item.Device),
-            datasets: [{
-                label: 'Quantity',
-                data: topDevices.map(item => item['Total On Hand']),
-                backgroundColor: 'rgba(226, 0, 116, 0.8)',
-                borderRadius: 8
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            indexAxis: 'y',
-            plugins: {
-                legend: { display: false }
-            },
-            scales: {
-                x: {
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                    ticks: { color: '#A0A0B0', font: { family: 'Inter' } }
-                },
-                y: {
-                    grid: { display: false },
-                    ticks: { color: '#A0A0B0', font: { family: 'Inter' } }
-                }
-            }
-        }
-    });
-}
-
-// Procurement Timeline Chart
-let procurementChartInstance = null;
-let allProcurementOrders = [];
-
-function renderProcurementChart(filterStoreNum = null) {
-    const procurementData = inventoryData['REMO Case Procurement Data'] || [];
-
-    // Get last 100 orders
-    const recentOrders = procurementData.slice(-100);
-    allProcurementOrders = recentOrders;
-
-    // Filter by store if specified (case-insensitive)
-    let ordersToDisplay = recentOrders;
-    if (filterStoreNum) {
-        ordersToDisplay = recentOrders.filter(order =>
-            String(order['Store #']).toLowerCase().includes(filterStoreNum.toLowerCase())
-        );
+        tableBody.innerHTML = '<tr><td colspan="7" class="text-center" style="padding: 40px;">No data available</td></tr>';
+        return;
     }
 
-    // Keep individual order data with store numbers
-    const chartData = ordersToDisplay.map(order => ({
-        x: order.Date,
-        y: order.Qty || 0,
-        storeNum: order['Store #'],
-        date: order.Date,
-        qty: order.Qty || 0
-    }));
+    // Add rows with kit group headers
+    let currentKit = null;
+    filteredData.forEach(item => {
+        // Add group header when kit changes
+        if (item.kit !== currentKit) {
+            currentKit = item.kit;
+            const headerRow = createKitGroupHeader(currentKit, filteredData.filter(i => i.kit === currentKit).length);
+            tableBody.appendChild(headerRow);
+        }
 
-    // Sort by date
-    chartData.sort((a, b) => {
-        if (a.x < b.x) return -1;
-        if (a.x > b.x) return 1;
-        return 0;
+        const row = createAggregatedTotalsRow(item);
+        tableBody.appendChild(row);
     });
 
-    const ctx = document.getElementById('procurementChart').getContext('2d');
+    // Update summary cards
+    updateTotalsStats();
 
-    // Destroy previous chart instance if it exists
-    if (procurementChartInstance) {
-        procurementChartInstance.destroy();
-    }
+    // Populate kit filter dropdown
+    populateKitFilter();
+}
 
-    // Update chart title with filter status
-    const chartTitle = document.querySelector('.chart-header h3');
-    if (filterStoreNum) {
-        chartTitle.innerHTML = `REMO Case Store Orders <span style="color: #00FFFF; font-weight: 600;">(Filtered: ${ordersToDisplay.length} orders for stores matching "${filterStoreNum}")</span>`;
+function populateKitFilter() {
+    const kitFilterSelect = document.getElementById('kitFilter');
+    if (!kitFilterSelect) return;
+
+    // Get unique kits from both vendors
+    const allData = [...prosysData, ...connectionData];
+    const uniqueKits = [...new Set(allData.map(item => item.kit).filter(kit => kit && kit.trim() !== ''))];
+
+    // Sort kits: REMO Kit first, then alphabetically
+    uniqueKits.sort((a, b) => {
+        if (a === 'REMO Kit') return -1;
+        if (b === 'REMO Kit') return 1;
+        return a.localeCompare(b);
+    });
+
+    // Clear existing options except the first "All Kits"
+    kitFilterSelect.innerHTML = '<option value="">All Kits</option>';
+
+    // Add kit options
+    uniqueKits.forEach(kit => {
+        const option = document.createElement('option');
+        option.value = kit;
+        option.textContent = kit;
+        kitFilterSelect.appendChild(option);
+    });
+}
+
+function filterByKitDropdown() {
+    const kitFilterSelect = document.getElementById('kitFilter');
+    if (!kitFilterSelect) return;
+
+    const selectedKit = kitFilterSelect.value;
+
+    if (selectedKit === '') {
+        // Show all data
+        resetFilters();
     } else {
-        chartTitle.textContent = 'REMO Case Store Orders (Last 100)';
+        // Filter by selected kit
+        filterByKit(selectedKit);
     }
+}
 
-    // Determine if we should use bar chart for sparse data (5 or fewer points)
-    const isSparseData = chartData.length <= 5;
-    const chartType = isSparseData ? 'bar' : 'line';
+function createTotalsRow(item) {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td><span class="badge badge-${item.vendor.toLowerCase()}">${item.vendor}</span></td>
+        <td><span class="badge ${item.kit === 'REMO Kit' ? 'badge-magenta' : ''}">${item.kit}</span></td>
+        <td><strong>${item.device}</strong></td>
+        <td class="text-right">${formatNumber(item.totalOnHand)}</td>
+        <td class="text-right">${formatNumber(item.totalOnOrder)}</td>
+        <td class="text-right">${formatNumber(getDepotTotal(item))}</td>
+        <td class="text-right">${formatNumber(getSafetyTotal(item))}</td>
+        <td class="text-right">${formatNumber(getRefurbTotal(item))}</td>
+    `;
+    row.classList.add('fade-in');
+    return row;
+}
 
-    procurementChartInstance = new Chart(ctx, {
-        type: chartType,
-        data: {
-            datasets: [{
-                label: 'REMO Cases Ordered',
-                data: chartData,
-                borderColor: filterStoreNum ? 'rgba(0, 255, 255, 1)' : 'rgba(226, 0, 116, 1)',
-                backgroundColor: filterStoreNum ? 'rgba(0, 255, 255, 0.8)' : 'rgba(226, 0, 116, 0.8)',
-                borderWidth: isSparseData ? 2 : 3,
-                fill: !isSparseData,
-                tension: 0.4,
-                pointRadius: isSparseData ? 0 : 5,
-                pointHoverRadius: isSparseData ? 0 : 7,
-                pointBackgroundColor: filterStoreNum ? 'rgba(0, 255, 255, 1)' : 'rgba(226, 0, 116, 1)',
-                pointBorderColor: '#1C1C24',
-                pointBorderWidth: 2,
-                pointHoverBackgroundColor: 'rgba(226, 0, 116, 1)',
-                pointHoverBorderColor: '#1C1C24',
-                barThickness: isSparseData ? 40 : undefined,
-                maxBarThickness: 60
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#A0A0B0',
-                        font: { size: 14, family: 'Inter' }
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(28, 28, 36, 0.95)',
-                    titleColor: '#FFFFFF',
-                    bodyColor: '#A0A0B0',
-                    borderColor: 'rgba(226, 0, 116, 0.5)',
-                    borderWidth: 2,
-                    padding: 12,
-                    displayColors: false,
-                    callbacks: {
-                        title: function(tooltipItems) {
-                            const item = tooltipItems[0];
-                            const dataPoint = item.raw;
-                            return `Store #${dataPoint.storeNum}`;
-                        },
-                        label: function(context) {
-                            const dataPoint = context.raw;
-                            return [
-                                `Date: ${dataPoint.date}`,
-                                `Quantity: ${dataPoint.qty} cases`
-                            ];
-                        }
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    type: 'category',
-                    grid: {
-                        color: 'rgba(255, 255, 255, 0.05)',
-                        display: !isSparseData
-                    },
-                    offset: isSparseData,
-                    ticks: {
-                        color: '#A0A0B0',
-                        font: { family: 'Inter', size: 11 },
-                        maxRotation: isSparseData ? 0 : 45,
-                        minRotation: isSparseData ? 0 : 45,
-                        callback: function(value, index, values) {
-                            // Show all labels for sparse data
-                            if (isSparseData) {
-                                const dateStr = chartData[index]?.date || value;
-                                if (dateStr && dateStr.includes('T')) {
-                                    const date = new Date(dateStr);
-                                    return `${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}/${date.getFullYear()}`;
-                                } else if (dateStr && dateStr.includes('-')) {
-                                    const parts = dateStr.split('-');
-                                    if (parts.length === 3) {
-                                        return `${parts[1]}/${parts[2]}/${parts[0]}`;
-                                    }
-                                }
-                                return dateStr;
-                            }
+function getDepotTotal(item) {
+    if (item.vendor === 'Prosys') {
+        return item.depotOnHand || 0;
+    } else {
+        return (item.depotCOR || 0) + (item.depotMetro || 0);
+    }
+}
 
-                            // Show every nth label to avoid crowding
-                            const skipFactor = chartData.length > 50 ? 5 : chartData.length > 30 ? 3 : 2;
-                            if (chartData.length > 20 && index % skipFactor !== 0) {
-                                return '';
-                            }
-                            // Format date to be shorter (MM/DD/YY instead of full timestamp)
-                            const dateStr = chartData[index]?.date || value;
-                            if (dateStr && dateStr.includes('T')) {
-                                const date = new Date(dateStr);
-                                return `${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}`;
-                            } else if (dateStr && dateStr.includes('-')) {
-                                // Handle YYYY-MM-DD format
-                                const parts = dateStr.split('-');
-                                if (parts.length === 3) {
-                                    return `${parts[1]}/${parts[2]}`;
-                                }
-                            }
-                            return dateStr;
-                        }
-                    }
-                },
-                y: {
-                    beginAtZero: true,
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                    ticks: {
-                        color: '#A0A0B0',
-                        font: { family: 'Inter' },
-                        precision: 0
-                    },
-                    title: {
-                        display: true,
-                        text: 'Cases Ordered',
-                        color: '#A0A0B0',
-                        font: { family: 'Inter', size: 12 }
-                    }
-                }
-            }
+function getSafetyTotal(item) {
+    return item.safetyOnHand || 0;
+}
+
+function getRefurbTotal(item) {
+    return item.refurbOnHand || 0;
+}
+
+// ==========================================
+// Data Aggregation for Totals Page
+// ==========================================
+
+// Helper function to normalize device names for grouping
+function normalizeDeviceName(deviceName) {
+    return deviceName
+        .toLowerCase()
+        .replace(/\s+/g, '') // Remove all spaces
+        .trim();
+}
+
+function aggregateInventoryData() {
+    // Create a map to aggregate data by device name
+    const deviceMap = new Map();
+
+    // Process Connection data first (prefer Connection's naming with spaces)
+    connectionData.forEach(item => {
+        const key = normalizeDeviceName(item.device);
+        if (!deviceMap.has(key)) {
+            deviceMap.set(key, {
+                device: item.device,
+                kit: item.kit,
+                prosysOnHand: 0,
+                prosysOnOrder: 0,
+                connectionOnHand: 0,
+                connectionOnOrder: 0,
+                totalOnHand: 0,
+                totalOnOrder: 0,
+                depotTotal: 0,
+                safetyTotal: 0,
+                refurbTotal: 0
+            });
         }
+        const aggregated = deviceMap.get(key);
+        aggregated.connectionOnHand += item.totalOnHand || 0;
+        aggregated.connectionOnOrder += item.totalOnOrder || 0;
+        aggregated.totalOnHand += item.totalOnHand || 0;
+        aggregated.totalOnOrder += item.totalOnOrder || 0;
+        aggregated.depotTotal += (item.depotCOR || 0) + (item.depotMetro || 0);
+        aggregated.safetyTotal += item.safetyOnHand || 0;
+        aggregated.refurbTotal += item.refurbOnHand || 0;
     });
 
-    // Set up search input event listener
-    const storeSearchInput = document.getElementById('storeSearchInput');
-    if (storeSearchInput && !storeSearchInput.hasAttribute('data-listener-attached')) {
-        storeSearchInput.setAttribute('data-listener-attached', 'true');
-        storeSearchInput.addEventListener('input', debounce((e) => {
-            const searchValue = e.target.value.trim();
-            renderProcurementChart(searchValue || null);
-        }, 300));
-    }
+    // Process Prosys data
+    prosysData.forEach(item => {
+        const key = normalizeDeviceName(item.device);
+        if (!deviceMap.has(key)) {
+            deviceMap.set(key, {
+                device: item.device,
+                kit: item.kit,
+                prosysOnHand: 0,
+                prosysOnOrder: 0,
+                connectionOnHand: 0,
+                connectionOnOrder: 0,
+                totalOnHand: 0,
+                totalOnOrder: 0,
+                depotTotal: 0,
+                safetyTotal: 0,
+                refurbTotal: 0
+            });
+        }
+        const aggregated = deviceMap.get(key);
+        aggregated.prosysOnHand += item.totalOnHand || 0;
+        aggregated.prosysOnOrder += item.totalOnOrder || 0;
+        aggregated.totalOnHand += item.totalOnHand || 0;
+        aggregated.totalOnOrder += item.totalOnOrder || 0;
+        aggregated.depotTotal += item.depotOnHand || 0;
+        aggregated.safetyTotal += item.safetyOnHand || 0;
+        aggregated.refurbTotal += item.refurbOnHand || 0;
+    });
+
+    // Convert map to array and sort by kit first, then by device name
+    return Array.from(deviceMap.values()).sort((a, b) => {
+        // Sort by kit first (REMO Kit at top, then alphabetically by kit)
+        const kitA = a.kit || 'zzz'; // Push empty kits to bottom
+        const kitB = b.kit || 'zzz';
+
+        // Prioritize REMO Kit at the top
+        if (kitA === 'REMO Kit' && kitB !== 'REMO Kit') return -1;
+        if (kitA !== 'REMO Kit' && kitB === 'REMO Kit') return 1;
+
+        // Then sort by kit name
+        const kitCompare = kitA.localeCompare(kitB);
+        if (kitCompare !== 0) return kitCompare;
+
+        // Then by device name within the same kit
+        return a.device.localeCompare(b.device);
+    });
 }
 
-function resetProcurementFilter() {
-    const storeSearchInput = document.getElementById('storeSearchInput');
-    if (storeSearchInput) {
-        storeSearchInput.value = '';
-    }
-    renderProcurementChart(null);
-}
-
-// ===================================
-// Utility Functions
-// ===================================
-
-// Debounce function for search
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+function getKitColor(kitName) {
+    const colors = {
+        'REMO Kit': { bg: 'rgba(226, 0, 116, 0.08)', border: '#E20074', badge: 'badge-magenta' },
+        'HC Bundle': { bg: 'rgba(102, 126, 234, 0.08)', border: '#667eea', badge: '' },
+        'SSR': { bg: 'rgba(249, 147, 251, 0.08)', border: '#f093fb', badge: '' },
+        'TIMO Kit': { bg: 'rgba(0, 166, 81, 0.08)', border: '#00A651', badge: '' },
+        'default': { bg: 'rgba(150, 150, 150, 0.08)', border: '#999', badge: '' }
     };
+    return colors[kitName] || colors['default'];
 }
 
-// Export data functionality (bonus feature)
-function exportToCSV() {
-    if (!inventoryData) return;
+function createKitGroupHeader(kitName, itemCount) {
+    const row = document.createElement('tr');
+    row.classList.add('kit-group-header');
 
-    const data = inventoryData['inventory totals'] || [];
-    const csv = [
-        ['Bundle/Kit', 'Device', 'Total On Hand', 'Total On Order', 'Depot', 'Deployment', 'New/Remodel', 'Safety', 'Vendor'],
-        ...data.map(item => [
-            item['Bundle /Kit'],
-            item.Device,
-            item['Total On Hand'],
-            item['Total On Order'],
-            item['Depot On Hand'],
-            item['Deployment On Hand'],
-            item['New/Remodel On Hand'],
-            item['Saftey On Hand'],
-            item['Vendor On Hand']
-        ])
-    ].map(row => row.join(',')).join('\n');
+    const displayName = kitName || 'Other Devices';
+    const colorScheme = getKitColor(kitName);
 
+    row.innerHTML = `
+        <td colspan="7" style="background: ${colorScheme.bg}; padding: 16px 20px; border-top: 2px solid ${colorScheme.border}; border-bottom: 2px solid ${colorScheme.border};">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="badge ${colorScheme.badge}" style="font-size: 15px; font-weight: 700; padding: 8px 16px;">${displayName}</span>
+                <span style="color: var(--text-tertiary); font-size: 14px; font-weight: 600;">${itemCount} ${itemCount === 1 ? 'device' : 'devices'}</span>
+            </div>
+        </td>
+    `;
+
+    return row;
+}
+
+function createAggregatedTotalsRow(item) {
+    const row = document.createElement('tr');
+
+    // Determine vendor badges
+    const badges = [];
+    if (item.prosysOnHand > 0) {
+        badges.push('<span class="badge badge-prosys">Prosys</span>');
+    }
+    if (item.connectionOnHand > 0) {
+        badges.push('<span class="badge badge-connection">Connection</span>');
+    }
+    const vendorBadges = badges.length > 0 ? badges.join('') : '<span class="badge">-</span>';
+
+    row.innerHTML = `
+        <td><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">${vendorBadges}</div></td>
+        <td><strong>${item.device}</strong></td>
+        <td class="text-right"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
+        <td class="text-right">${item.totalOnOrder > 0 ? formatNumber(item.totalOnOrder) : '-'}</td>
+        <td class="text-right">${item.depotTotal > 0 ? formatNumber(item.depotTotal) : '-'}</td>
+        <td class="text-right">${item.safetyTotal > 0 ? formatNumber(item.safetyTotal) : '-'}</td>
+        <td class="text-right">${item.refurbTotal > 0 ? formatNumber(item.refurbTotal) : '-'}</td>
+    `;
+    row.classList.add('fade-in');
+    return row;
+}
+
+function updateProsysStats() {
+    const totalOnHand = prosysData.reduce((sum, item) => sum + item.totalOnHand, 0);
+    const totalOnOrder = prosysData.reduce((sum, item) => sum + item.totalOnOrder, 0);
+    const remoCount = prosysData.filter(item => item.kit === 'REMO Kit').length;
+
+    updateElement('prosysDeviceCount', prosysData.length);
+    updateElement('prosysRemoCount', remoCount);
+    updateElement('prosysOnHandTotal', formatNumber(totalOnHand));
+    updateElement('prosysOnOrderTotal', formatNumber(totalOnOrder));
+}
+
+function updateConnectionStats() {
+    const totalOnHand = connectionData.reduce((sum, item) => sum + item.totalOnHand, 0);
+    const totalOnOrder = connectionData.reduce((sum, item) => sum + item.totalOnOrder, 0);
+    const remoCount = connectionData.filter(item => item.kit === 'REMO Kit').length;
+
+    updateElement('connectionDeviceCount', connectionData.length);
+    updateElement('connectionRemoCount', remoCount);
+    updateElement('connectionOnHandTotal', formatNumber(totalOnHand));
+    updateElement('connectionOnOrderTotal', formatNumber(totalOnOrder));
+}
+
+function updateTotalsStats() {
+    const allData = [...prosysData, ...connectionData];
+
+    const prosysTotal = prosysData.reduce((sum, item) => sum + item.totalOnHand, 0);
+    const connectionTotal = connectionData.reduce((sum, item) => sum + item.totalOnHand, 0);
+    const grandTotal = prosysTotal + connectionTotal;
+
+    updateElement('prosysTotal', formatNumber(prosysTotal));
+    updateElement('connectionTotal', formatNumber(connectionTotal));
+    updateElement('grandTotal', formatNumber(grandTotal));
+    updateElement('totalItems', allData.length);
+}
+
+// ==========================================
+// Search Functions
+// ==========================================
+
+function handleGlobalSearch(event) {
+    const query = event.target.value.toLowerCase();
+    console.log('Global search:', query);
+    // Implement global search across all data
+}
+
+function handlePageSearch(event) {
+    const query = event.target.value.toLowerCase();
+    const currentPage = getCurrentPage();
+
+    let filteredData = [];
+
+    switch(currentPage) {
+        case 'prosys':
+            filteredData = prosysData.filter(item =>
+                item.device.toLowerCase().includes(query) ||
+                item.kit.toLowerCase().includes(query) ||
+                item.manufacturer.toLowerCase().includes(query)
+            );
+            displayFilteredProsysData(filteredData);
+            break;
+        case 'connection':
+            filteredData = connectionData.filter(item =>
+                item.device.toLowerCase().includes(query) ||
+                item.kit.toLowerCase().includes(query)
+            );
+            displayFilteredConnectionData(filteredData);
+            break;
+        case 'totals':
+            const allData = [...prosysData, ...connectionData];
+            filteredData = allData.filter(item =>
+                item.device.toLowerCase().includes(query) ||
+                item.kit.toLowerCase().includes(query) ||
+                item.vendor.toLowerCase().includes(query)
+            );
+            displayFilteredTotalsData(filteredData);
+            break;
+    }
+}
+
+function displayFilteredProsysData(data) {
+    const tableBody = document.getElementById('prosysTableBody');
+    if (!tableBody) return;
+
+    tableBody.innerHTML = '';
+    data.forEach(item => {
+        const row = createProsysRow(item);
+        tableBody.appendChild(row);
+    });
+}
+
+function displayFilteredConnectionData(data) {
+    const tableBody = document.getElementById('connectionTableBody');
+    if (!tableBody) return;
+
+    tableBody.innerHTML = '';
+    data.forEach(item => {
+        const row = createConnectionRow(item);
+        tableBody.appendChild(row);
+    });
+}
+
+function displayFilteredTotalsData(data) {
+    const tableBody = document.getElementById('totalsTableBody');
+    if (!tableBody) return;
+
+    // For totals page, we need to aggregate the filtered data too
+    // Create a temporary aggregation
+    const deviceMap = new Map();
+
+    data.forEach(item => {
+        const key = normalizeDeviceName(item.device);
+        if (!deviceMap.has(key)) {
+            deviceMap.set(key, {
+                device: item.device,
+                kit: item.kit,
+                vendor: item.vendor,
+                prosysOnHand: 0,
+                connectionOnHand: 0,
+                totalOnHand: 0,
+                totalOnOrder: 0,
+                depotTotal: 0,
+                safetyTotal: 0,
+                refurbTotal: 0
+            });
+        }
+        const aggregated = deviceMap.get(key);
+        if (item.vendor === 'Prosys') {
+            aggregated.prosysOnHand += item.totalOnHand || 0;
+        } else {
+            aggregated.connectionOnHand += item.totalOnHand || 0;
+        }
+        aggregated.totalOnHand += item.totalOnHand || 0;
+        aggregated.totalOnOrder += item.totalOnOrder || 0;
+        aggregated.depotTotal += getDepotTotal(item);
+        aggregated.safetyTotal += getSafetyTotal(item);
+        aggregated.refurbTotal += getRefurbTotal(item);
+    });
+
+    const aggregatedData = Array.from(deviceMap.values())
+        .filter(item => item.totalOnHand > 0 || item.totalOnOrder > 0) // Filter zeros
+        .sort((a, b) => {
+            // Sort by kit first, then by device name (same logic as main aggregation)
+            const kitA = a.kit || 'zzz';
+            const kitB = b.kit || 'zzz';
+
+            if (kitA === 'REMO Kit' && kitB !== 'REMO Kit') return -1;
+            if (kitA !== 'REMO Kit' && kitB === 'REMO Kit') return 1;
+
+            const kitCompare = kitA.localeCompare(kitB);
+            if (kitCompare !== 0) return kitCompare;
+
+            return a.device.localeCompare(b.device);
+        });
+
+    tableBody.innerHTML = '';
+
+    // Add rows with kit group headers
+    let currentKit = null;
+    aggregatedData.forEach(item => {
+        // Add group header when kit changes
+        if (item.kit !== currentKit) {
+            currentKit = item.kit;
+            const headerRow = createKitGroupHeader(currentKit, aggregatedData.filter(i => i.kit === currentKit).length);
+            tableBody.appendChild(headerRow);
+        }
+
+        const row = createAggregatedTotalsRow(item);
+        tableBody.appendChild(row);
+    });
+}
+
+// ==========================================
+// Export Functions
+// ==========================================
+
+function exportAllData() {
+    const allData = [...prosysData, ...connectionData];
+    exportToCSV(allData, 'TMobile_Inventory_All_Data.csv');
+}
+
+function exportProsysData() {
+    exportToCSV(prosysData, 'TMobile_Inventory_Prosys.csv');
+}
+
+function exportConnectionData() {
+    exportToCSV(connectionData, 'TMobile_Inventory_Connection.csv');
+}
+
+function exportToCSV(data, filename) {
+    if (data.length === 0) {
+        alert('No data to export');
+        return;
+    }
+
+    // Get all unique keys
+    const keys = Object.keys(data[0]);
+
+    // Create CSV header
+    const csvHeader = keys.join(',') + '\n';
+
+    // Create CSV rows
+    const csvRows = data.map(row => {
+        return keys.map(key => {
+            const value = row[key];
+            // Escape values that contain commas or quotes
+            if (typeof value === 'string' && (value.includes(',') || value.includes('"'))) {
+                return `"${value.replace(/"/g, '""')}"`;
+            }
+            return value;
+        }).join(',');
+    }).join('\n');
+
+    const csv = csvHeader + csvRows;
+
+    // Download CSV
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'inventory_export.csv';
+    a.download = filename;
     a.click();
     window.URL.revokeObjectURL(url);
 }
 
-// ===================================
-// Data Refresh
-// ===================================
+// ==========================================
+// Quick Action Functions
+// ==========================================
 
-function updateRefreshTime() {
-    const timeEl = document.getElementById('lastRefreshTime');
+function viewREMOKits() {
+    const remoData = [...prosysData, ...connectionData].filter(item => item.kit === 'REMO Kit');
+    console.log('REMO Kit items:', remoData);
+    alert(`Found ${remoData.length} REMO Kit items across both vendors`);
+    // Could navigate to a filtered view
+}
+
+function compareVendors() {
+    window.location.href = 'totals.html';
+}
+
+function refreshData() {
+    loadInventoryData();
+    alert('Data refreshed successfully!');
+}
+
+// ==========================================
+// Utility Functions
+// ==========================================
+
+function updateElement(id, value) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.textContent = value;
+    }
+}
+
+function formatNumber(num) {
+    if (num === 0 || num === null || num === undefined) return '0';
+    return num.toLocaleString('en-US');
+}
+
+function formatCurrency(num) {
+    if (num === 0 || num === null || num === undefined) return '$0.00';
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    }).format(num);
+}
+
+function updateLastUpdated() {
     const now = new Date();
-    const diff = Math.floor((now - lastRefreshTime) / 1000);
-
-    let timeString;
-    if (diff < 60) {
-        timeString = 'Just now';
-    } else if (diff < 3600) {
-        const mins = Math.floor(diff / 60);
-        timeString = `${mins} min${mins > 1 ? 's' : ''} ago`;
-    } else {
-        const hours = Math.floor(diff / 3600);
-        timeString = `${hours} hour${hours > 1 ? 's' : ''} ago`;
-    }
-
-    timeEl.textContent = timeString;
-    setTimeout(updateRefreshTime, 10000); // Update every 10 seconds
-}
-
-async function refreshData() {
-    const btn = document.querySelector('.refresh-btn');
-    btn.classList.add('refreshing');
-
-    try {
-        await loadData();
-        renderInventoryTable();
-        renderCharts();
-        animateStats();
-        generateExecutiveSummary();
-        calculateHealthMetrics();
-        lastRefreshTime = new Date();
-        updateRefreshTime();
-    } catch (error) {
-        console.error('Error refreshing data:', error);
-    } finally {
-        setTimeout(() => btn.classList.remove('refreshing'), 1000);
-    }
-}
-
-// ===================================
-// Interactive Drill-Downs
-// ===================================
-
-function drillDownFromStat(filterType) {
-    // Scroll to inventory section
-    document.getElementById('inventory').scrollIntoView({ behavior: 'smooth' });
-
-    // Clear existing filters
-    document.getElementById('searchInput').value = '';
-    document.getElementById('kitFilter').value = 'all';
-    document.getElementById('deviceFilter').value = 'all';
-
-    activeFilters = {
-        search: '',
-        kit: 'all',
-        device: 'all',
-        drillDown: filterType
-    };
-
-    // Re-render table with drill-down context
-    setTimeout(() => {
-        renderInventoryTable();
-        updateFilterTags();
-    }, 500);
-}
-
-// ===================================
-// Filter Tags
-// ===================================
-
-function updateFilterTags() {
-    const activeFiltersEl = document.getElementById('activeFilters');
-    const filterTagsEl = document.getElementById('filterTags');
-    const tags = [];
-
-    if (activeFilters.search) {
-        tags.push({ type: 'search', label: `Search: "${activeFilters.search}"` });
-    }
-    if (activeFilters.kit !== 'all') {
-        tags.push({ type: 'kit', label: `Kit: ${activeFilters.kit}` });
-    }
-    if (activeFilters.device !== 'all') {
-        const deviceNames = {
-            '1': 'MPDs', '2': 'iPads', '3': 'iPad Cases',
-            '5': 'Accessories', '6': 'Phones/Scanners',
-            '7': 'Carts/Cables', '9': 'Tablets'
-        };
-        tags.push({ type: 'device', label: `Device: ${deviceNames[activeFilters.device]}` });
-    }
-    if (activeFilters.drillDown) {
-        const drillDownNames = {
-            'total': 'Total Units',
-            'depot': 'Depot Stock',
-            'deployment': 'In Deployment',
-            'safety': 'Safety Pool'
-        };
-        tags.push({ type: 'drillDown', label: `Focus: ${drillDownNames[activeFilters.drillDown]}` });
-    }
-
-    if (tags.length > 0) {
-        activeFiltersEl.style.display = 'flex';
-        filterTagsEl.innerHTML = tags.map(tag => `
-            <div class="filter-tag">
-                ${tag.label}
-                <button class="filter-tag-remove" onclick="removeFilter('${tag.type}')">&times;</button>
-            </div>
-        `).join('');
-    } else {
-        activeFiltersEl.style.display = 'none';
-    }
-}
-
-function removeFilter(type) {
-    if (type === 'search') {
-        document.getElementById('searchInput').value = '';
-        activeFilters.search = '';
-    } else if (type === 'kit') {
-        document.getElementById('kitFilter').value = 'all';
-        activeFilters.kit = 'all';
-    } else if (type === 'device') {
-        document.getElementById('deviceFilter').value = 'all';
-        activeFilters.device = 'all';
-    } else if (type === 'drillDown') {
-        delete activeFilters.drillDown;
-    }
-
-    renderInventoryTable();
-    updateFilterTags();
-}
-
-function clearAllFilters() {
-    document.getElementById('searchInput').value = '';
-    document.getElementById('kitFilter').value = 'all';
-    document.getElementById('deviceFilter').value = 'all';
-
-    activeFilters = {
-        search: '',
-        kit: 'all',
-        device: 'all'
-    };
-
-    renderInventoryTable();
-    updateFilterTags();
-}
-
-// ===================================
-// Table Sorting
-// ===================================
-
-function sortTable(column) {
-    // Update sort state
-    if (currentSort.column === column) {
-        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
-    } else {
-        currentSort.column = column;
-        currentSort.direction = 'asc';
-    }
-
-    // Update UI
-    document.querySelectorAll('.sortable').forEach(th => {
-        th.classList.remove('asc', 'desc');
-    });
-    const th = document.querySelector(`th[data-column="${column}"]`);
-    if (th) {
-        th.classList.add(currentSort.direction);
-    }
-
-    renderInventoryTable();
-}
-
-// ===================================
-// Table Density
-// ===================================
-
-function changeTableDensity() {
-    const densities = ['comfortable', 'compact', 'spacious'];
-    const currentIndex = densities.indexOf(tableDensity);
-    tableDensity = densities[(currentIndex + 1) % densities.length];
-
-    const table = document.getElementById('inventoryTable');
-    table.classList.remove('comfortable', 'compact', 'spacious');
-    table.classList.add(tableDensity);
-}
-
-// ===================================
-// Column Visibility
-// ===================================
-
-function initColumnSettings() {
-    const columns = [
-        { id: 'order', label: 'On Order' },
-        { id: 'depot', label: 'Depot' },
-        { id: 'deployment', label: 'Deployment' },
-        { id: 'remodel', label: 'New/Remodel' },
-        { id: 'safety', label: 'Safety' },
-        { id: 'vendor', label: 'Vendor' }
-    ];
-
-    const container = document.getElementById('columnSettingsBody');
-    container.innerHTML = columns.map(col => `
-        <div class="column-toggle-item">
-            <input type="checkbox" id="col-${col.id}" checked onchange="toggleColumn('${col.id}')">
-            <label for="col-${col.id}">${col.label}</label>
-        </div>
-    `).join('');
-}
-
-function toggleColumnSettings() {
-    const panel = document.getElementById('columnSettings');
-    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-}
-
-function toggleColumn(columnId) {
-    const checkbox = document.getElementById(`col-${columnId}`);
-    const headers = document.querySelectorAll(`th[data-column="${columnId}"]`);
-    const cells = document.querySelectorAll(`td[data-column="${columnId}"]`);
-
-    if (checkbox.checked) {
-        hiddenColumns = hiddenColumns.filter(col => col !== columnId);
-        headers.forEach(h => h.classList.remove('col-hidden'));
-        cells.forEach(c => c.classList.remove('col-hidden'));
-    } else {
-        hiddenColumns.push(columnId);
-        headers.forEach(h => h.classList.add('col-hidden'));
-        cells.forEach(c => c.classList.add('col-hidden'));
-    }
-}
-
-// ===================================
-// Executive Summary
-// ===================================
-
-function toggleExecutiveSummary() {
-    const content = document.getElementById('executiveContent');
-    const btn = document.querySelector('.collapse-btn');
-    content.classList.toggle('collapsed');
-    btn.classList.toggle('collapsed');
-}
-
-function generateExecutiveSummary() {
-    if (!inventoryData || !inventoryData['inventory totals']) return;
-
-    const totals = inventoryData['inventory totals'];
-    const totalUnits = totals.reduce((sum, item) => sum + (item['Total On Hand'] || 0), 0);
-    const totalOnOrder = totals.reduce((sum, item) => sum + (item['Total On Order'] || 0), 0);
-
-    // Calculate low stock items (less than 500 units)
-    const lowStockItems = totals.filter(item => item['Total On Hand'] > 0 && item['Total On Hand'] < 500);
-
-    // Find highest stock item
-    const highestStock = totals.reduce((max, item) =>
-        item['Total On Hand'] > max['Total On Hand'] ? item : max
-    , totals[0]);
-
-    // Status insight
-    const statusText = `Total inventory: ${totalUnits.toLocaleString()} units across ${totals.length} device types. Overall stock levels are ${totalUnits > 100000 ? 'strong' : 'moderate'}.`;
-    document.getElementById('insightStatus').textContent = statusText;
-
-    // Alerts
-    const alertsText = lowStockItems.length > 0
-        ? `${lowStockItems.length} items below 500 units threshold. Review procurement for ${lowStockItems.slice(0, 3).map(i => i.Device).join(', ')}.`
-        : 'All items are above minimum thresholds. No critical alerts.';
-    document.getElementById('insightAlerts').textContent = alertsText;
-
-    // Key insight
-    const keyText = highestStock
-        ? `${highestStock.Device} has highest inventory with ${highestStock['Total On Hand'].toLocaleString()} units.`
-        : 'Inventory is well distributed across device types.';
-    document.getElementById('insightKey').textContent = keyText;
-
-    // Recommended action
-    const actionText = totalOnOrder > 0
-        ? `${totalOnOrder.toLocaleString()} units pending delivery. Monitor depot capacity for incoming shipments.`
-        : 'Consider placing orders for items with declining stock levels.';
-    document.getElementById('insightAction').textContent = actionText;
-}
-
-// ===================================
-// Health Metrics
-// ===================================
-
-function calculateHealthMetrics() {
-    if (!inventoryData || !inventoryData['inventory totals']) return;
-
-    const totals = inventoryData['inventory totals'];
-    const safetyThreshold = 500;
-    const targetMax = 20000;
-
-    const lowStock = totals.filter(item => item['Total On Hand'] > 0 && item['Total On Hand'] < safetyThreshold).length;
-    const overstock = totals.filter(item => item['Total On Hand'] > targetMax).length;
-    const pendingOrders = totals.reduce((sum, item) => sum + (item['Total On Order'] || 0), 0);
-    const optimal = totals.filter(item =>
-        item['Total On Hand'] >= safetyThreshold && item['Total On Hand'] <= targetMax
-    ).length;
-
-    const total = totals.filter(item => item['Total On Hand'] > 0).length;
-
-    // Update counts
-    document.getElementById('lowStockCount').textContent = lowStock;
-    document.getElementById('overstockCount').textContent = overstock;
-    document.getElementById('pendingOrdersCount').textContent = pendingOrders.toLocaleString();
-    document.getElementById('optimalStockCount').textContent = optimal;
-
-    // Update bars
-    setTimeout(() => {
-        document.getElementById('lowStockBar').style.width = `${(lowStock / total) * 100}%`;
-        document.getElementById('overstockBar').style.width = `${(overstock / total) * 100}%`;
-        document.getElementById('pendingOrdersBar').style.width = `${Math.min((pendingOrders / 50000) * 100, 100)}%`;
-        document.getElementById('optimalStockBar').style.width = `${(optimal / total) * 100}%`;
-    }, 100);
-
-    // Update descriptions
-    document.getElementById('lowStockDesc').textContent = lowStock > 0
-        ? `${lowStock} items need restocking`
-        : 'All items above threshold';
-    document.getElementById('overstockDesc').textContent = overstock > 0
-        ? `${overstock} items exceed target`
-        : 'No overstock issues';
-    document.getElementById('pendingOrdersDesc').textContent = `${pendingOrders.toLocaleString()} units incoming`;
-    document.getElementById('optimalStockDesc').textContent = `${optimal} items in healthy range`;
-}
-
-// ===================================
-// Export Functions
-// ===================================
-
-async function exportToPDF() {
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
-
-    // Header
-    pdf.setFillColor(226, 0, 116);
-    pdf.rect(0, 0, pageWidth, 30, 'F');
-    pdf.setTextColor(255, 255, 255);
-    pdf.setFontSize(24);
-    pdf.text('T-Mobile A/E Inventory Report', pageWidth / 2, 15, { align: 'center' });
-    pdf.setFontSize(12);
-    pdf.text(new Date().toLocaleDateString(), pageWidth / 2, 23, { align: 'center' });
-
-    // Stats Summary
-    pdf.setTextColor(0, 0, 0);
-    pdf.setFontSize(16);
-    pdf.text('Inventory Summary', 15, 45);
-
-    if (inventoryData && inventoryData['inventory totals']) {
-        const totals = inventoryData['inventory totals'];
-        const totalUnits = totals.reduce((sum, item) => sum + (item['Total On Hand'] || 0), 0);
-        const depotStock = totals.reduce((sum, item) => sum + (item['Depot On Hand'] || 0), 0);
-        const deployment = totals.reduce((sum, item) => sum + (item['Deployment On Hand'] || 0), 0);
-        const safety = totals.reduce((sum, item) => sum + (item['Saftey On Hand'] || 0), 0);
-
-        pdf.setFontSize(12);
-        let yPos = 55;
-        pdf.text(`Total Units: ${totalUnits.toLocaleString()}`, 15, yPos);
-        pdf.text(`Depot Stock: ${depotStock.toLocaleString()}`, 15, yPos + 10);
-        pdf.text(`In Deployment: ${deployment.toLocaleString()}`, 15, yPos + 20);
-        pdf.text(`Safety Pool: ${safety.toLocaleString()}`, 15, yPos + 30);
-    }
-
-    // Save
-    pdf.save(`inventory-report-${new Date().toISOString().split('T')[0]}.pdf`);
-}
-
-async function exportToExcel() {
-    if (!inventoryData || !inventoryData['inventory totals']) return;
-
-    const data = inventoryData['inventory totals'];
-    const worksheet = XLSX.utils.json_to_sheet(data.map(item => ({
-        'Bundle/Kit': item['Bundle /Kit'],
-        'Device': item.Device,
-        'Total On Hand': item['Total On Hand'],
-        'Total On Order': item['Total On Order'],
-        'Depot': item['Depot On Hand'],
-        'Deployment': item['Deployment On Hand'],
-        'New/Remodel': item['New/Remodel On Hand'],
-        'Safety': item['Saftey On Hand'],
-        'Vendor': item['Vendor On Hand']
-    })));
-
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Inventory');
-
-    XLSX.writeFile(workbook, `inventory-export-${new Date().toISOString().split('T')[0]}.xlsx`);
-}
-
-// ===================================
-// Enhanced Inventory Table Rendering
-// ===================================
-
-// Update the existing renderInventoryTable function
-const originalRenderInventoryTable = renderInventoryTable;
-renderInventoryTable = function(searchTerm) {
-    if (!inventoryData) return;
-
-    const tableBody = document.getElementById('inventoryTableBody');
-    const kitFilter = document.getElementById('kitFilter').value;
-    const deviceFilter = document.getElementById('deviceFilter').value;
-
-    // Update active filters
-    activeFilters.search = searchTerm || document.getElementById('searchInput').value;
-    activeFilters.kit = kitFilter;
-    activeFilters.device = deviceFilter;
-
-    // Select data source based on current view
-    let dataSource;
-    if (currentView === 'connection') {
-        dataSource = inventoryData['Connection Depot On Hand'] || [];
-    } else if (currentView === 'prosys') {
-        dataSource = inventoryData['Prosys Spare Pool'] || [];
-    } else {
-        dataSource = inventoryData['inventory totals'] || [];
-    }
-
-    // Filter data
-    let filteredData = dataSource.filter(item => {
-        const matchesSearch = !activeFilters.search ||
-            item.Device?.toLowerCase().includes(activeFilters.search.toLowerCase()) ||
-            item['Bundle /Kit']?.toLowerCase().includes(activeFilters.search.toLowerCase());
-
-        const matchesKit = activeFilters.kit === 'all' || item['Bundle /Kit'] === activeFilters.kit;
-        const matchesDevice = activeFilters.device === 'all' || String(item['Device #s']) === activeFilters.device;
-
-        return matchesSearch && matchesKit && matchesDevice;
+    const formatted = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
     });
 
-    // Apply sorting
-    if (currentSort.column) {
-        filteredData.sort((a, b) => {
-            let aVal, bVal;
+    updateElement('lastUpdate', 'Just Now');
+    updateElement('footerDate', formatted);
+}
 
-            switch (currentSort.column) {
-                case 'bundle': aVal = a['Bundle /Kit'] || ''; bVal = b['Bundle /Kit'] || ''; break;
-                case 'device': aVal = a.Device || ''; bVal = b.Device || ''; break;
-                case 'total': aVal = a['Total On Hand'] || 0; bVal = b['Total On Hand'] || 0; break;
-                case 'order': aVal = a['Total On Order'] || 0; bVal = b['Total On Order'] || 0; break;
-                case 'depot': aVal = a['Depot On Hand'] || 0; bVal = b['Depot On Hand'] || 0; break;
-                case 'deployment': aVal = a['Deployment On Hand'] || 0; bVal = b['Deployment On Hand'] || 0; break;
-                case 'remodel': aVal = a['New/Remodel On Hand'] || 0; bVal = b['New/Remodel On Hand'] || 0; break;
-                case 'safety': aVal = a['Saftey On Hand'] || 0; bVal = b['Saftey On Hand'] || 0; break;
-                case 'vendor': aVal = a['Vendor On Hand'] || 0; bVal = b['Vendor On Hand'] || 0; break;
-                default: aVal = 0; bVal = 0;
-            }
+// ==========================================
+// Filter Functions
+// ==========================================
 
-            if (typeof aVal === 'string') {
-                return currentSort.direction === 'asc'
-                    ? aVal.localeCompare(bVal)
-                    : bVal.localeCompare(aVal);
-            } else {
-                return currentSort.direction === 'asc' ? aVal - bVal : bVal - aVal;
-            }
-        });
+function filterByKit(kitType) {
+    const currentPage = getCurrentPage();
+    let filteredData = [];
+
+    switch(currentPage) {
+        case 'prosys':
+            filteredData = prosysData.filter(item => item.kit === kitType);
+            displayFilteredProsysData(filteredData);
+            break;
+        case 'connection':
+            filteredData = connectionData.filter(item => item.kit === kitType);
+            displayFilteredConnectionData(filteredData);
+            break;
+        case 'totals':
+            const allData = [...prosysData, ...connectionData];
+            filteredData = allData.filter(item => item.kit === kitType);
+            displayFilteredTotalsData(filteredData);
+            break;
+    }
+}
+
+function resetFilters() {
+    const currentPage = getCurrentPage();
+
+    switch(currentPage) {
+        case 'prosys':
+            displayProsysData();
+            break;
+        case 'connection':
+            displayConnectionData();
+            break;
+        case 'totals':
+            displayTotalsData();
+            break;
     }
 
-    // Sort by Bundle #s and Device #s for grouping if not already sorted
-    if (!currentSort.column) {
-        filteredData.sort((a, b) => {
-            const bundleCompare = (a['Bundle #s'] || 0) - (b['Bundle #s'] || 0);
-            if (bundleCompare !== 0) return bundleCompare;
-            return (a['Device #s'] || 0) - (b['Device #s'] || 0);
-        });
+    // Clear search input
+    const pageSearch = document.getElementById('pageSearch');
+    if (pageSearch) {
+        pageSearch.value = '';
     }
 
-    // Render rows with device type grouping
-    let currentDeviceType = null;
-    let deviceTypeColor = 0;
-    const deviceTypeColors = ['device-group-1', 'device-group-2', 'device-group-3'];
-
-    tableBody.innerHTML = filteredData.map(item => {
-        const deviceType = item['Device #s'];
-
-        if (deviceType !== currentDeviceType) {
-            currentDeviceType = deviceType;
-            deviceTypeColor = (deviceTypeColor + 1) % deviceTypeColors.length;
-        }
-
-        const totalOnHand = item['Total On Hand'] || 0;
-        const quantityClass = totalOnHand > 5000 ? 'quantity-high' :
-                             totalOnHand > 1000 ? 'quantity-medium' :
-                             'quantity-low';
-
-        return `
-            <tr class="${deviceTypeColors[deviceTypeColor]}" data-device-type="${deviceType}">
-                <td class="sticky-col" data-label="Bundle/Kit">${item['Bundle /Kit'] || '-'}</td>
-                <td data-label="Device"><strong>${item.Device || '-'}</strong></td>
-                <td data-label="Total On Hand"><span class="quantity-badge ${quantityClass}">${formatNumber(totalOnHand)}</span></td>
-                <td class="col-toggle" data-column="order" data-label="On Order">${formatNumber(item['Total On Order'] || 0)}</td>
-                <td class="col-toggle" data-column="depot" data-label="Depot">${formatNumber(item['Depot On Hand'] || 0)}</td>
-                <td class="col-toggle" data-column="deployment" data-label="Deployment">${formatNumber(item['Deployment On Hand'] || 0)}</td>
-                <td class="col-toggle" data-column="remodel" data-label="New/Remodel">${formatNumber(item['New/Remodel On Hand'] || 0)}</td>
-                <td class="col-toggle" data-column="safety" data-label="Safety">${formatNumber(item['Saftey On Hand'] || 0)}</td>
-                <td class="col-toggle" data-column="vendor" data-label="Vendor">${formatNumber(item['Vendor On Hand'] || 0)}</td>
-            </tr>
-        `;
-    }).join('');
-
-    if (filteredData.length === 0) {
-        tableBody.innerHTML = `
-            <tr>
-                <td colspan="9" style="text-align: center; padding: 3rem; color: var(--text-secondary);">
-                    No results found
-                </td>
-            </tr>
-        `;
-    }
-
-    // Reapply hidden columns
-    hiddenColumns.forEach(col => {
-        document.querySelectorAll(`td[data-column="${col}"]`).forEach(cell => {
-            cell.classList.add('col-hidden');
-        });
-    });
-
-    updateFilterTags();
-};
-
-// Update controls to track filters
-const originalInitInventoryControls = initInventoryControls;
-initInventoryControls = function() {
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', (e) => {
-        renderInventoryTable(e.target.value);
-    });
-
+    // Reset kit filter dropdown
     const kitFilter = document.getElementById('kitFilter');
-    kitFilter.addEventListener('change', () => {
-        renderInventoryTable();
-    });
-
-    const deviceFilter = document.getElementById('deviceFilter');
-    deviceFilter.addEventListener('change', () => {
-        renderInventoryTable();
-    });
-
-    document.querySelectorAll('.toggle-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            currentView = e.target.dataset.view;
-            renderInventoryTable();
-        });
-    });
-};
-
-// ===================================
-// Chatbot Assistant
-// ===================================
-
-function toggleChatbot() {
-    const container = document.getElementById('chatbotContainer');
-    const toggle = document.getElementById('chatbotToggle');
-
-    if (container.classList.contains('active')) {
-        container.classList.remove('active');
-        toggle.style.display = 'flex';
-    } else {
-        container.classList.add('active');
-        toggle.style.display = 'none';
-        // Auto-scroll to bottom
-        const messages = document.getElementById('chatbotMessages');
-        messages.scrollTop = messages.scrollHeight;
+    if (kitFilter) {
+        kitFilter.value = '';
     }
 }
 
-function sendChatMessage() {
-    const input = document.getElementById('chatbotInput');
-    const message = input.value.trim();
-
-    if (!message) return;
-
-    // Add user message
-    addMessage(message, 'user');
-    input.value = '';
-
-    // Show typing indicator
-    showTypingIndicator();
-
-    // Process message and respond
-    setTimeout(() => {
-        const response = processQuery(message);
-        hideTypingIndicator();
-        addMessage(response, 'bot');
-    }, 800);
-}
-
-function addMessage(content, type) {
-    const messagesContainer = document.getElementById('chatbotMessages');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = type === 'user' ? 'user-message' : 'bot-message';
-
-    const avatar = type === 'user' ? '👤' : '🤖';
-
-    messageDiv.innerHTML = `
-        <div class="message-avatar">${avatar}</div>
-        <div class="message-content">${content}</div>
-    `;
-
-    messagesContainer.appendChild(messageDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-}
-
-function showTypingIndicator() {
-    const messagesContainer = document.getElementById('chatbotMessages');
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'bot-message';
-    typingDiv.id = 'typingIndicator';
-
-    typingDiv.innerHTML = `
-        <div class="message-avatar">🤖</div>
-        <div class="message-content">
-            <div class="typing-indicator">
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            </div>
-        </div>
-    `;
-
-    messagesContainer.appendChild(typingDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-}
-
-function hideTypingIndicator() {
-    const indicator = document.getElementById('typingIndicator');
-    if (indicator) indicator.remove();
-}
-
-function processQuery(query) {
-    const lowerQuery = query.toLowerCase();
-
-    // Check if data is loaded
-    if (!inventoryData) {
-        return `<p>⏳ Data is still loading... Please wait a moment and try again!</p>`;
-    }
-
-    // Get data
-    const connectionData = inventoryData['inventory totals'] || [];
-    const prosysData = inventoryData['Prosys Spare Pool'] || [];
-    const connectionDepot = inventoryData['Connection Depot On Hand'] || [];
-    const procurementData = inventoryData['REMO Case Procurement Data'] || [];
-
-    // Check if we have data
-    if (connectionData.length === 0) {
-        return `<p>❌ No inventory data found. Please check that the data file is loaded correctly.</p>`;
-    }
-
-    // Calculate total inventory
-    const calculateTotal = (items, field) => {
-        return items.reduce((sum, item) => sum + (parseInt(item[field]) || 0), 0);
-    };
-
-    // Total inventory queries
-    if (lowerQuery.includes('total') && (lowerQuery.includes('inventory') || lowerQuery.includes('units'))) {
-        const total = calculateTotal(connectionData, 'Total On Hand');
-        return `<p>We currently have <strong>${total.toLocaleString()} total units</strong> in our inventory.</p>
-                <p>This includes all equipment across depot, deployment, new/remodel, and safety pools.</p>`;
-    }
-
-    // Depot queries
-    if (lowerQuery.includes('depot')) {
-        const depotTotal = calculateTotal(connectionData, 'Depot');
-        return `<p>The depot currently holds <strong>${depotTotal.toLocaleString()} units</strong>.</p>
-                <p>Depot stock represents equipment ready for deployment.</p>`;
-    }
-
-    // Deployment queries
-    if (lowerQuery.includes('deployment') || lowerQuery.includes('deployed')) {
-        const deploymentTotal = calculateTotal(connectionData, 'Deployment');
-        return `<p>We have <strong>${deploymentTotal.toLocaleString()} units</strong> currently in deployment.</p>
-                <p>These are devices actively in use at store locations.</p>`;
-    }
-
-    // Safety pool queries
-    if (lowerQuery.includes('safety')) {
-        const safetyTotal = calculateTotal(connectionData, 'Safety');
-        return `<p>The safety pool contains <strong>${safetyTotal.toLocaleString()} units</strong>.</p>
-                <p>Safety stock acts as a buffer for unexpected demand.</p>`;
-    }
-
-    // Low stock queries
-    if (lowerQuery.includes('low') && lowerQuery.includes('stock')) {
-        const lowStockItems = connectionData.filter(item => {
-            const total = parseInt(item['Total On Hand']) || 0;
-            const safety = parseInt(item['Safety']) || 0;
-            return total < safety;
-        });
-
-        if (lowStockItems.length === 0) {
-            return `<p>Great news! <strong>No items are below safety stock levels</strong>.</p>
-                    <p>All inventory levels are healthy.</p>`;
-        }
-
-        const itemList = lowStockItems.slice(0, 5).map(item =>
-            `<li>${item.Device || item['Bundle /Kit']} - ${item['Total On Hand']} units (needs ${item.Safety})</li>`
-        ).join('');
-
-        return `<p>We have <strong>${lowStockItems.length} items below safety stock</strong>:</p>
-                <ul>${itemList}${lowStockItems.length > 5 ? '<li>...and ' + (lowStockItems.length - 5) + ' more</li>' : ''}</ul>`;
-    }
-
-    // On order queries
-    if (lowerQuery.includes('on order') || lowerQuery.includes('order')) {
-        const onOrderTotal = calculateTotal(connectionData, 'On Order');
-        return `<p>We have <strong>${onOrderTotal.toLocaleString()} units on order</strong>.</p>
-                <p>These units are pending delivery from vendors.</p>`;
-    }
-
-    // REMO case queries
-    if (lowerQuery.includes('remo') || lowerQuery.includes('case')) {
-        const recentOrders = procurementData.slice(-10);
-        const totalCases = recentOrders.reduce((sum, order) => sum + (parseInt(order.Qty) || 0), 0);
-
-        return `<p>Recent REMO Case activity:</p>
-                <p><strong>${totalCases} cases</strong> ordered in the last ${recentOrders.length} transactions.</p>
-                <p>Latest order: ${recentOrders[recentOrders.length - 1]?.Date} - Store #${recentOrders[recentOrders.length - 1]?.['Store #']} (${recentOrders[recentOrders.length - 1]?.Qty} cases)</p>
-                <p>Use the search filter in the Analytics section to view specific store histories!</p>`;
-    }
-
-    // Top items queries
-    if (lowerQuery.includes('top') || lowerQuery.includes('most') || lowerQuery.includes('highest')) {
-        const sortedItems = [...connectionData]
-            .sort((a, b) => (parseInt(b['Total On Hand']) || 0) - (parseInt(a['Total On Hand']) || 0))
-            .slice(0, 5);
-
-        const itemList = sortedItems.map((item, i) =>
-            `<li>${i + 1}. ${item.Device || item['Bundle /Kit']} - ${(parseInt(item['Total On Hand']) || 0).toLocaleString()} units</li>`
-        ).join('');
-
-        return `<p>Top 5 items by quantity:</p><ul>${itemList}</ul>`;
-    }
-
-    // Vendor queries
-    if (lowerQuery.includes('vendor') || lowerQuery.includes('supplier')) {
-        const vendors = [...new Set(connectionData.map(item => item.Vendor).filter(Boolean))];
-        return `<p>We work with <strong>${vendors.length} vendors</strong>:</p>
-                <p>${vendors.join(', ')}</p>`;
-    }
-
-    // Device queries
-    if (lowerQuery.includes('device') && lowerQuery.includes('how many')) {
-        const deviceCount = connectionData.length;
-        return `<p>We track <strong>${deviceCount} different devices/kits</strong> in our inventory system.</p>`;
-    }
-
-    // Help queries
-    if (lowerQuery.includes('help') || lowerQuery.includes('what can you')) {
-        return `<p>I can help you with:</p>
-                <ul>
-                    <li>Total inventory counts</li>
-                    <li>Depot, deployment, and safety pool levels</li>
-                    <li>Low stock alerts</li>
-                    <li>On-order quantities</li>
-                    <li>REMO case procurement data</li>
-                    <li>Top items by quantity</li>
-                    <li>Vendor information</li>
-                </ul>
-                <p>Just ask me a question in plain English!</p>`;
-    }
-
-    // Default fallback
-    return `<p>I'm not sure how to answer that. Try asking about:</p>
-            <ul>
-                <li>"What's our total inventory?"</li>
-                <li>"Which items are low in stock?"</li>
-                <li>"How much is in the depot?"</li>
-                <li>"Show me REMO case orders"</li>
-                <li>"What are the top items?"</li>
-            </ul>
-            <p>Or say "help" to see all my capabilities!</p>`;
-}
-
-console.log('✓ T-Mobile A/E Inventory Dashboard initialized');
+// Make functions available globally
+window.toggleTheme = toggleTheme;
+window.exportAllData = exportAllData;
+window.exportProsysData = exportProsysData;
+window.exportConnectionData = exportConnectionData;
+window.viewREMOKits = viewREMOKits;
+window.compareVendors = compareVendors;
+window.refreshData = refreshData;
+window.filterByKit = filterByKit;
+window.filterByKitDropdown = filterByKitDropdown;
+window.resetFilters = resetFilters;

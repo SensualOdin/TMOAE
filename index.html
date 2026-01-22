@@ -1,414 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-Mobile A/E Inventory Dashboard</title>
+    <title>T-Mobile A/E Inventory Hub</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="custom-cursor-dot"></div>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon">T</div>
+                <h1 class="logo-text">T-Mobile</h1>
+                <span class="logo-subtitle">A/E Inventory Hub</span>
+            </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
             <nav class="nav">
-                <div class="logo">
-                    <span class="logo-accent">T-Mobile</span>
-                    <span class="logo-text">A/E Inventory</span>
-                </div>
-                <div class="nav-right">
-                    <ul class="nav-menu">
-                        <li><a href="#executive" class="nav-link">Summary</a></li>
-                        <li><a href="#overview" class="nav-link">Overview</a></li>
-                        <li><a href="#inventory" class="nav-link">Inventory</a></li>
-                        <li><a href="#analytics" class="nav-link">Analytics</a></li>
-                    </ul>
-                    <div class="data-refresh">
-                        <span class="refresh-time" id="lastRefreshTime">Loading...</span>
-                        <button class="refresh-btn" onclick="refreshData()" title="Refresh data">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="prosys.html" class="nav-link">Prosys</a>
+                <a href="connection.html" class="nav-link">Connection</a>
+                <a href="totals.html" class="nav-link">Totals</a>
             </nav>
 
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="line">Equipment</span>
-                    <span class="line">Inventory</span>
-                    <span class="line gradient-text">Management</span>
-                </h1>
-                <p class="hero-subtitle">Real-time visibility into A/E equipment pools, deployment tracking, and procurement data</p>
-                <div class="hero-cta">
-                    <button class="btn btn-primary" onclick="scrollToInventory()">View Inventory</button>
-                    <button class="btn btn-secondary" onclick="scrollToAnalytics()">Analytics</button>
-                    <button class="btn btn-export" onclick="exportToPDF()">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-                        </svg>
-                        Export PDF
-                    </button>
-                    <button class="btn btn-export" onclick="exportToExcel()">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-                        </svg>
-                        Export Excel
-                    </button>
-                </div>
-            </div>
-
-            <div class="scroll-indicator">
-                <span>Scroll to explore</span>
-                <div class="scroll-line"></div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Executive Summary -->
-    <section id="executive" class="executive-section">
-        <div class="container">
-            <div class="executive-header">
-                <h2 class="section-title" data-scroll-reveal>Executive Summary</h2>
-                <button class="collapse-btn" onclick="toggleExecutiveSummary()">
-                    <svg class="collapse-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 15l-6-6-6 6"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="executive-content" id="executiveContent">
-                <div class="insights-grid" data-scroll-reveal>
-                    <div class="insight-card insight-primary">
-                        <div class="insight-icon">📊</div>
-                        <div class="insight-content">
-                            <h4>Inventory Status</h4>
-                            <p id="insightStatus">Analyzing inventory levels...</p>
-                        </div>
-                    </div>
-                    <div class="insight-card insight-warning">
-                        <div class="insight-icon">⚠️</div>
-                        <div class="insight-content">
-                            <h4>Critical Alerts</h4>
-                            <p id="insightAlerts">Checking for low stock items...</p>
-                        </div>
-                    </div>
-                    <div class="insight-card insight-success">
-                        <div class="insight-icon">✨</div>
-                        <div class="insight-content">
-                            <h4>Key Insight</h4>
-                            <p id="insightKey">Generating insights...</p>
-                        </div>
-                    </div>
-                    <div class="insight-card insight-info">
-                        <div class="insight-icon">🎯</div>
-                        <div class="insight-content">
-                            <h4>Recommended Action</h4>
-                            <p id="insightAction">Calculating recommendations...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Overview -->
-    <section id="overview" class="stats-section">
-        <div class="container">
-            <h2 class="section-title" data-scroll-reveal>Inventory Overview</h2>
-            <div class="stats-grid" data-scroll-reveal>
-                <div class="stat-card clickable" data-filter="total" onclick="drillDownFromStat('total')">
-                    <div class="stat-icon">📦</div>
-                    <div class="stat-number" data-target="0">0</div>
-                    <div class="stat-label">Total Units</div>
-                    <div class="stat-trend" id="trendTotal"></div>
-                </div>
-                <div class="stat-card clickable" data-filter="depot" onclick="drillDownFromStat('depot')">
-                    <div class="stat-icon">🏢</div>
-                    <div class="stat-number" data-target="0">0</div>
-                    <div class="stat-label">Depot Stock</div>
-                    <div class="stat-trend" id="trendDepot"></div>
-                </div>
-                <div class="stat-card clickable" data-filter="deployment" onclick="drillDownFromStat('deployment')">
-                    <div class="stat-icon">🚀</div>
-                    <div class="stat-number" data-target="0">0</div>
-                    <div class="stat-label">In Deployment</div>
-                    <div class="stat-trend" id="trendDeployment"></div>
-                </div>
-                <div class="stat-card clickable" data-filter="safety" onclick="drillDownFromStat('safety')">
-                    <div class="stat-icon">🛡️</div>
-                    <div class="stat-number" data-target="0">0</div>
-                    <div class="stat-label">Safety Pool</div>
-                    <div class="stat-trend" id="trendSafety"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Inventory Health Status -->
-    <section id="health" class="health-section">
-        <div class="container">
-            <h2 class="section-title" data-scroll-reveal>Inventory Health Status</h2>
-            <div class="health-grid" data-scroll-reveal>
-                <div class="health-card">
-                    <div class="health-header">
-                        <h3>Low Stock Alerts</h3>
-                        <span class="health-badge health-critical" id="lowStockCount">0</span>
-                    </div>
-                    <div class="health-bar">
-                        <div class="health-bar-fill health-critical" id="lowStockBar" style="width: 0%"></div>
-                    </div>
-                    <p class="health-desc" id="lowStockDesc">Items below safety threshold</p>
-                </div>
-                <div class="health-card">
-                    <div class="health-header">
-                        <h3>Overstock Items</h3>
-                        <span class="health-badge health-warning" id="overstockCount">0</span>
-                    </div>
-                    <div class="health-bar">
-                        <div class="health-bar-fill health-warning" id="overstockBar" style="width: 0%"></div>
-                    </div>
-                    <p class="health-desc" id="overstockDesc">Items exceeding target levels</p>
-                </div>
-                <div class="health-card">
-                    <div class="health-header">
-                        <h3>Pending Orders</h3>
-                        <span class="health-badge health-info" id="pendingOrdersCount">0</span>
-                    </div>
-                    <div class="health-bar">
-                        <div class="health-bar-fill health-info" id="pendingOrdersBar" style="width: 0%"></div>
-                    </div>
-                    <p class="health-desc" id="pendingOrdersDesc">Units on order</p>
-                </div>
-                <div class="health-card">
-                    <div class="health-header">
-                        <h3>Optimal Stock</h3>
-                        <span class="health-badge health-success" id="optimalStockCount">0</span>
-                    </div>
-                    <div class="health-bar">
-                        <div class="health-bar-fill health-success" id="optimalStockBar" style="width: 0%"></div>
-                    </div>
-                    <p class="health-desc" id="optimalStockDesc">Items at healthy levels</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pool Legend -->
-    <section id="pools" class="pools-section">
-        <div class="container">
-            <h2 class="section-title" data-scroll-reveal>Pool Definitions</h2>
-            <div class="pools-grid" data-scroll-reveal>
-                <!-- Will be populated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Inventory Table -->
-    <section id="inventory" class="inventory-section">
-        <div class="container">
-            <h2 class="section-title" data-scroll-reveal>Inventory Breakdown</h2>
-
-            <div class="controls-bar" data-scroll-reveal>
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search devices..." class="search-input">
-                    <span class="search-icon">🔍</span>
-                </div>
-
-                <div class="filter-group">
-                    <label for="kitFilter">Kit Type:</label>
-                    <select id="kitFilter" class="filter-select">
-                        <option value="all">All Kits</option>
-                        <option value="HC Bundle">HC Bundle</option>
-                        <option value="HSI">HSI</option>
-                        <option value="REMO Kit">REMO Kit</option>
-                        <option value="SSR">SSR</option>
-                        <option value="TIMO Kit">TIMO Kit</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="deviceFilter">Device Type:</label>
-                    <select id="deviceFilter" class="filter-select">
-                        <option value="all">All Devices</option>
-                        <option value="1">MPDs</option>
-                        <option value="2">iPads</option>
-                        <option value="3">iPad Cases</option>
-                        <option value="5">Accessories</option>
-                        <option value="6">Phones/Scanners</option>
-                        <option value="7">Carts/Cables</option>
-                        <option value="9">Tablets</option>
-                    </select>
-                </div>
-
-                <div class="view-toggle">
-                    <button class="toggle-btn active" data-view="connection">Connection</button>
-                    <button class="toggle-btn" data-view="prosys">Prosys</button>
-                    <button class="toggle-btn" data-view="totals">Totals</button>
-                </div>
-
-                <div class="table-controls">
-                    <button class="control-btn" onclick="toggleColumnSettings()" title="Column Visibility">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                    <button class="control-btn" onclick="changeTableDensity()" title="Table Density" id="densityBtn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Active Filters Display -->
-            <div class="active-filters" id="activeFilters" style="display: none;">
-                <span class="filters-label">Active Filters:</span>
-                <div class="filter-tags" id="filterTags"></div>
-                <button class="clear-filters-btn" onclick="clearAllFilters()">Clear All</button>
-            </div>
-
-            <!-- Column Settings Panel -->
-            <div class="column-settings" id="columnSettings" style="display: none;">
-                <div class="column-settings-header">
-                    <h4>Show/Hide Columns</h4>
-                    <button class="close-btn" onclick="toggleColumnSettings()">×</button>
-                </div>
-                <div class="column-settings-body" id="columnSettingsBody">
-                    <!-- Populated by JavaScript -->
-                </div>
-            </div>
-
-            <div class="table-container" data-scroll-reveal id="tableContainer">
-                <table id="inventoryTable" class="inventory-table">
-                    <thead>
-                        <tr id="tableHeaderRow">
-                            <th class="sortable sticky-col" data-column="bundle" onclick="sortTable('bundle')">
-                                Bundle/Kit <span class="sort-arrow"></span>
-                            </th>
-                            <th class="sortable" data-column="device" onclick="sortTable('device')">
-                                Device <span class="sort-arrow"></span>
-                            </th>
-                            <th class="sortable" data-column="total" onclick="sortTable('total')">
-                                Total On Hand <span class="sort-arrow"></span>
-                            </th>
-                            <th class="sortable col-toggle" data-column="order" onclick="sortTable('order')">
-                                On Order <span class="sort-arrow"></span>
-                            </th>
-                            <th class="sortable col-toggle" data-column="depot" onclick="sortTable('depot')">
-                                Depot <span class="sort-arrow"></span>
-                            </th>
-                            <th class="sortable col-toggle" data-column="deployment" onclick="sortTable('deployment')">
-                                Deployment <span class="sort-arrow"></span>
-                            </th>
-                            <th class="sortable col-toggle" data-column="remodel" onclick="sortTable('remodel')">
-                                New/Remodel <span class="sort-arrow"></span>
-                            </th>
-                            <th class="sortable col-toggle" data-column="safety" onclick="sortTable('safety')">
-                                Safety <span class="sort-arrow"></span>
-                            </th>
-                            <th class="sortable col-toggle" data-column="vendor" onclick="sortTable('vendor')">
-                                Vendor <span class="sort-arrow"></span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="inventoryTableBody">
-                        <!-- Will be populated by JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Analytics Section -->
-    <section id="analytics" class="analytics-section">
-        <div class="container">
-            <h2 class="section-title" data-scroll-reveal>Analytics & Insights</h2>
-
-            <div class="charts-grid" data-scroll-reveal>
-                <div class="chart-card">
-                    <h3>Pool Distribution</h3>
-                    <canvas id="poolChart"></canvas>
-                </div>
-                <div class="chart-card">
-                    <h3>Top Devices by Quantity</h3>
-                    <canvas id="deviceChart"></canvas>
-                </div>
-            </div>
-
-            <div class="chart-card full-width" data-scroll-reveal>
-                <div class="chart-header">
-                    <h3>REMO Case Store Orders (Last 100)</h3>
-                    <div class="chart-controls">
-                        <input type="text" id="storeSearchInput" placeholder="Search by store #..." class="store-search-input">
-                        <button class="chart-reset-btn" onclick="resetProcurementFilter()">Show All</button>
-                    </div>
-                </div>
-                <canvas id="procurementChart"></canvas>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 T-Mobile A/E Inventory Dashboard</p>
-                <p class="footer-note">Data updated in real-time from A-E Report Data</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- AI Chatbot Assistant -->
-    <div class="chatbot-container" id="chatbotContainer">
-        <div class="chatbot-header">
-            <div class="chatbot-title">
-                <span class="chatbot-icon">🤖</span>
-                <span>Inventory Assistant</span>
-            </div>
-            <button class="chatbot-close" onclick="toggleChatbot()">×</button>
-        </div>
-        <div class="chatbot-messages" id="chatbotMessages">
-            <div class="bot-message">
-                <div class="message-avatar">🤖</div>
-                <div class="message-content">
-                    <p>Hi! I'm your Inventory Assistant. I can answer questions about your A/E inventory data.</p>
-                    <p>Try asking me things like:</p>
-                    <ul>
-                        <li>"What's our total inventory?"</li>
-                        <li>"Which items are low in stock?"</li>
-                        <li>"Show me REMO case orders"</li>
-                        <li>"What's in the depot?"</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="chatbot-input-container">
-            <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask me anything about the inventory..." onkeypress="if(event.key==='Enter') sendChatMessage()">
-            <button class="chatbot-send" onclick="sendChatMessage()">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
                 </svg>
             </button>
         </div>
-    </div>
+    </header>
 
-    <button class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
-        <span class="chatbot-toggle-icon">💬</span>
-        <span class="chatbot-toggle-text">Ask Assistant</span>
-    </button>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Enterprise Inventory <span class="text-magenta">Dashboard</span></h2>
+                <p class="hero-description">Real-time visibility into Prosys and Connection vendor inventory. Track REMO kits, deployment pools, and manage your A/E hardware across multiple vendors.</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search devices, REMO kits, vendors..." id="globalSearch">
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(226, 0, 116, 0.1);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E20074" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="totalDevices">118</div>
+                        <div class="stat-label">Total Devices</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(0, 166, 81, 0.1);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A651" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="remoKits">23</div>
+                        <div class="stat-label">REMO Kit Items</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(245, 166, 35, 0.1);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="onOrder">-</div>
+                        <div class="stat-label">Items On Order</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(0, 112, 192, 0.1);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0070C0" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="lastUpdate">Just Now</div>
+                        <div class="stat-label">Last Updated</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vendor Cards Section -->
+        <section class="vendor-section">
+            <h3 class="section-title">Vendor Dashboards</h3>
+
+            <div class="vendor-grid">
+                <!-- Prosys Card -->
+                <a href="prosys.html" class="vendor-card">
+                    <div class="vendor-header">
+                        <div class="vendor-icon prosys-icon">P</div>
+                        <span class="vendor-badge">Computacenter</span>
+                    </div>
+                    <h4 class="vendor-title">Prosys</h4>
+                    <p class="vendor-description">Access complete inventory from Mobility Hardware Report with depot pools, deployment tracking, and disposal lists.</p>
+
+                    <div class="vendor-stats">
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-value">88</span>
+                            <span class="vendor-stat-label">Devices</span>
+                        </div>
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-value">16</span>
+                            <span class="vendor-stat-label">REMO Kits</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-footer">
+                        <span class="vendor-link-text">View Dashboard</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Connection Card -->
+                <a href="connection.html" class="vendor-card">
+                    <div class="vendor-header">
+                        <div class="vendor-icon connection-icon">C</div>
+                        <span class="vendor-badge">Connection</span>
+                    </div>
+                    <h4 class="vendor-title">Connection</h4>
+                    <p class="vendor-description">View formatted inventory reports with depot breakdowns, safety pools, refurbished inventory, and construction allocations.</p>
+
+                    <div class="vendor-stats">
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-value">30</span>
+                            <span class="vendor-stat-label">Devices</span>
+                        </div>
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-value">7</span>
+                            <span class="vendor-stat-label">REMO Kits</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-footer">
+                        <span class="vendor-link-text">View Dashboard</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Totals Card (Featured) -->
+                <a href="totals.html" class="vendor-card vendor-card--featured">
+                    <div class="vendor-header">
+                        <div class="vendor-icon totals-icon">Σ</div>
+                        <span class="vendor-badge magenta">Combined View</span>
+                    </div>
+                    <h4 class="vendor-title">Combined Totals</h4>
+                    <p class="vendor-description">Unified dashboard aggregating inventory from both Prosys and Connection. Compare pools, track combined REMO kits, and export comprehensive reports.</p>
+
+                    <div class="vendor-stats">
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-value">118</span>
+                            <span class="vendor-stat-label">Total Devices</span>
+                        </div>
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-value">23</span>
+                            <span class="vendor-stat-label">Combined REMO</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-footer">
+                        <span class="vendor-link-text">View Combined Dashboard</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 T-Mobile. A/E Inventory Management System.</p>
+            <p class="footer-meta">Last updated: <span id="footerDate">January 22, 2026</span></p>
+        </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="script.js"></script>
 </body>

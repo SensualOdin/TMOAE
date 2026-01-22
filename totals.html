@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Totals | T-Mobile A/E Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon">T</div>
+                <h1 class="logo-text">T-Mobile</h1>
+                <span class="logo-subtitle">A/E Inventory Hub</span>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="prosys.html" class="nav-link">Prosys</a>
+                <a href="connection.html" class="nav-link">Connection</a>
+                <a href="totals.html" class="nav-link active">Totals</a>
+            </nav>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <div class="page-title-area">
+                    <div class="vendor-icon totals-icon" style="width: 64px; height: 64px; font-size: 32px;">Σ</div>
+                    <div>
+                        <h2 class="page-title">Combined <span class="text-magenta">Totals</span></h2>
+                        <p class="page-subtitle">Unified view across all vendors</p>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container" style="max-width: 500px;">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search across all vendors..." id="pageSearch">
+                </div>
+            </div>
+        </section>
+
+        <!-- Vendor Comparison Stats -->
+        <section class="comparison-section" style="margin-bottom: 40px;">
+            <h3 class="section-title">Vendor Comparison</h3>
+            <div class="stats-grid">
+                <div class="stat-card" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, transparent 100%);">
+                    <div class="stat-icon prosys-icon">P</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="prosysTotal">-</div>
+                        <div class="stat-label">Prosys Total Units</div>
+                    </div>
+                </div>
+
+                <div class="stat-card" style="background: linear-gradient(135deg, rgba(249, 147, 251, 0.05) 0%, transparent 100%);">
+                    <div class="stat-icon connection-icon">C</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="connectionTotal">-</div>
+                        <div class="stat-label">Connection Total Units</div>
+                    </div>
+                </div>
+
+                <div class="stat-card" style="background: linear-gradient(135deg, rgba(226, 0, 116, 0.05) 0%, transparent 100%); border: 2px solid var(--accent-primary);">
+                    <div class="stat-icon totals-icon">Σ</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="grandTotal" style="color: var(--accent-primary);">-</div>
+                        <div class="stat-label">Grand Total Units</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(0, 166, 81, 0.1);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A651" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="totalItems">118</div>
+                        <div class="stat-label">Total Device Types</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Buttons -->
+        <section class="filter-section" style="margin-bottom: 24px;">
+            <div class="filter-buttons">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <label for="kitFilter" style="font-size: 14px; font-weight: 500; color: var(--text-secondary);">Filter by Kit:</label>
+                    <select id="kitFilter" class="kit-filter-select" onchange="filterByKitDropdown()">
+                        <option value="">All Kits</option>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+                <button class="btn btn-secondary" onclick="filterByKit('REMO Kit')">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z"/>
+                    </svg>
+                    REMO Kits Only
+                </button>
+                <button class="btn btn-secondary" onclick="resetFilters()">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                    </svg>
+                    Reset Filters
+                </button>
+                <button class="btn btn-primary" onclick="exportAllData()">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                    Export Combined Data
+                </button>
+            </div>
+        </section>
+
+        <!-- Combined Data Table -->
+        <div class="table-container">
+            <div class="table-header">
+                <h3 class="table-title">Combined Inventory - All Vendors</h3>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Vendor</th>
+                            <th>Device</th>
+                            <th class="text-right">Total On Hand</th>
+                            <th class="text-right">On Order</th>
+                            <th class="text-right">Depot Pool</th>
+                            <th class="text-right">Safety Pool</th>
+                            <th class="text-right">Refurbished</th>
+                        </tr>
+                    </thead>
+                    <tbody id="totalsTableBody">
+                        <!-- Data will be populated by JavaScript -->
+                        <tr>
+                            <td colspan="7" class="text-center" style="padding: 60px 20px; color: var(--text-tertiary);">
+                                <div class="loading-state">
+                                    <div class="spinner"></div>
+                                    <p>Loading combined inventory data...</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pool Comparison -->
+        <section class="pool-comparison" style="margin-top: 60px;">
+            <h3 class="section-title">Pool Distribution</h3>
+            <div class="vendor-grid">
+                <div class="vendor-card">
+                    <div class="vendor-header">
+                        <h4 style="font-size: 18px; color: var(--text-primary);">Depot Pool</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <p class="vendor-description">Primary depot storage including COR and Metro locations</p>
+                    <div class="vendor-stats">
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-label">Function</span>
+                            <span class="vendor-stat-value" style="font-size: 14px;">Storage & Distribution</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vendor-card">
+                    <div class="vendor-header">
+                        <h4 style="font-size: 18px; color: var(--text-primary);">Safety Pool</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tm-success)" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <p class="vendor-description">Buffer stock maintained for emergency allocations</p>
+                    <div class="vendor-stats">
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-label">Function</span>
+                            <span class="vendor-stat-value" style="font-size: 14px;">Emergency Reserve</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vendor-card">
+                    <div class="vendor-header">
+                        <h4 style="font-size: 18px; color: var(--text-primary);">Refurbished Pool</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tm-warning)" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <p class="vendor-description">Refurbished units ready for redeployment</p>
+                    <div class="vendor-stats">
+                        <div class="vendor-stat">
+                            <span class="vendor-stat-label">Function</span>
+                            <span class="vendor-stat-value" style="font-size: 14px;">Reconditioned Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights Section -->
+        <section class="info-cards" style="margin-top: 40px;">
+            <div class="info-card">
+                <h4>Combined Inventory Insights</h4>
+                <p>This dashboard aggregates data from both <strong>Prosys/Computacenter</strong> and <strong>Connection</strong> vendors, providing a unified view of your complete A/E hardware inventory.</p>
+                <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">118</div>
+                        <div style="font-size: 14px; color: var(--text-secondary);">Total Device Types</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">23</div>
+                        <div style="font-size: 14px; color: var(--text-secondary);">REMO Kit Items</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">2</div>
+                        <div style="font-size: 14px; color: var(--text-secondary);">Active Vendors</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--accent-primary);">Multiple</div>
+                        <div style="font-size: 14px; color: var(--text-secondary);">Pool Categories</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 T-Mobile. A/E Inventory Management System.</p>
+            <p class="footer-meta">Combined Data - Prosys & Connection - Last updated: <span id="footerDate">January 22, 2026</span></p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

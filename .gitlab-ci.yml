@@ -1,10 +1,13 @@
-# The Docker image that will be used to build your app
+# GitLab Pages configuration for static HTML site
 image: alpine:latest
-create-pages:
-  pages:
-    # The folder that contains the files to be exposed at the Page URL
-    publish: master
+
+pages:
+  stage: deploy
+  script:
+    - mkdir -p public
+    - cp -r *.html *.css *.js *.xlsx public/ 2>/dev/null || true
+  artifacts:
+    paths:
+      - public
   rules:
-    # This ensures that only pushes to the default branch will trigger
-    # a pages deploy
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH

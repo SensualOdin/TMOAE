@@ -873,6 +873,11 @@ body {
   gap: 24px;
 }
 
+.page-header-content .search-container {
+  max-width: 100%;
+  width: 100%;
+}
+
 .page-title-area {
   display: flex;
   align-items: center;

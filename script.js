@@ -1006,7 +1006,7 @@ function formatCurrency(num) {
     }).format(num);
 }
 
-function updateLastUpdated() {
+async function updateLastUpdated() {
     const now = new Date();
     const formatted = now.toLocaleDateString('en-US', {
         year: 'numeric',
@@ -1014,8 +1014,82 @@ function updateLastUpdated() {
         day: 'numeric'
     });
 
-    updateElement('lastUpdate', 'Just Now');
     updateElement('footerDate', formatted);
+
+    // Fetch last commit date from GitLab for the Excel files
+    try {
+        const lastCommitDate = await getLastGitLabCommitDate();
+        const timeAgo = getTimeAgo(lastCommitDate);
+        updateElement('lastUpdate', timeAgo);
+    } catch (error) {
+        console.error('Failed to fetch last commit date:', error);
+        updateElement('lastUpdate', 'Just Now');
+    }
+}
+
+async function getLastGitLabCommitDate() {
+    const project = 'George.Gewinner%2Fae-inventory';
+    const files = [
+        'Mobility%20Hardware%20Report%2001.16.2026.xlsx',
+        'T-Mobile%20Formatted%20Inventory%20Report%201.20.26.xlsx'
+    ];
+
+    let latestDate = null;
+
+    for (const file of files) {
+        const url = `https://gitlab.com/api/v4/projects/${project}/repository/files/${file}?ref=master`;
+
+        try {
+            const response = await fetch(url);
+            if (response.ok) {
+                const data = await response.json();
+                const commitDate = new Date(data.last_commit_id ? data.last_commit_id : Date.now());
+
+                // Get commit details for accurate date
+                if (data.last_commit_id) {
+                    const commitUrl = `https://gitlab.com/api/v4/projects/${project}/repository/commits/${data.last_commit_id}`;
+                    const commitResponse = await fetch(commitUrl);
+                    if (commitResponse.ok) {
+                        const commitData = await commitResponse.json();
+                        const actualDate = new Date(commitData.committed_date);
+                        if (!latestDate || actualDate > latestDate) {
+                            latestDate = actualDate;
+                        }
+                    }
+                }
+            }
+        } catch (error) {
+            console.error(`Error fetching commit for ${file}:`, error);
+        }
+    }
+
+    return latestDate || new Date();
+}
+
+function getTimeAgo(date) {
+    const now = new Date();
+    const secondsAgo = Math.floor((now - date) / 1000);
+
+    if (secondsAgo < 60) return 'Just Now';
+    if (secondsAgo < 3600) {
+        const minutes = Math.floor(secondsAgo / 60);
+        return `${minutes} min${minutes > 1 ? 's' : ''} ago`;
+    }
+    if (secondsAgo < 86400) {
+        const hours = Math.floor(secondsAgo / 3600);
+        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    }
+    if (secondsAgo < 604800) {
+        const days = Math.floor(secondsAgo / 86400);
+        return `${days} day${days > 1 ? 's' : ''} ago`;
+    }
+
+    // For older dates, show the actual date
+    return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    });
 }
 
 // ==========================================

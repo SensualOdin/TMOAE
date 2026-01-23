@@ -44,8 +44,8 @@ REPO_PATH = r"c:\Users\GGewinn\OneDrive - T-Mobile USA\Desktop\GitHub\AE Invento
 
 # Local file names (where to save in repo)
 LOCAL_FILES = {
-    "prosys": "Mobility Hardware Report 01.16.2026.xlsx",
-    "connection": "T-Mobile Formatted Inventory Report 1.20.26.xlsx"
+    "prosys": "Mobility-Hardware-Report.xlsx",
+    "connection": "T-Mobile-Formatted-Inventory-Report.xlsx"
 }
 
 # Git settings - supports both GitHub and GitLab

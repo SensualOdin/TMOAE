@@ -59,11 +59,11 @@ function initializeEventListeners() {
 async function loadInventoryData() {
     try {
         // Load Prosys data
-        const prosysFile = 'Mobility Hardware Report 01.16.2026.xlsx';
+        const prosysFile = 'Mobility-Hardware-Report.xlsx';
         prosysData = await loadExcelFile(prosysFile, 'Prosys');
 
         // Load Connection data
-        const connectionFile = 'T-Mobile Formatted Inventory Report 1.20.26.xlsx';
+        const connectionFile = 'T-Mobile-Formatted-Inventory-Report.xlsx';
         connectionData = await loadExcelFile(connectionFile, 'Connection');
 
         console.log('Inventory data loaded successfully');
@@ -1030,8 +1030,8 @@ async function updateLastUpdated() {
 async function getLastGitLabCommitDate() {
     const project = 'George.Gewinner%2Fae-inventory';
     const files = [
-        'Mobility%20Hardware%20Report%2001.16.2026.xlsx',
-        'T-Mobile%20Formatted%20Inventory%20Report%201.20.26.xlsx'
+        'Mobility-Hardware-Report.xlsx',
+        'T-Mobile-Formatted-Inventory-Report.xlsx'
     ];
 
     let latestDate = null;

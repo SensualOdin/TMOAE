@@ -228,14 +228,11 @@ function getCurrentPage() {
 function updateHomeStats() {
     // Update stats on home page
     const totalDevices = prosysData.length + connectionData.length;
-    const remoKits = prosysData.filter(item => item.kit === 'REMO Kit').length +
-                     connectionData.filter(item => item.kit === 'REMO Kit').length;
 
     const totalOnOrder = prosysData.reduce((sum, item) => sum + item.totalOnOrder, 0) +
                         connectionData.reduce((sum, item) => sum + item.totalOnOrder, 0);
 
     updateElement('totalDevices', totalDevices);
-    updateElement('remoKits', remoKits);
     updateElement('onOrder', formatNumber(totalOnOrder));
 }
 
@@ -702,10 +699,8 @@ function createAggregatedTotalsRow(item) {
 function updateProsysStats() {
     const totalOnHand = prosysData.reduce((sum, item) => sum + item.totalOnHand, 0);
     const totalOnOrder = prosysData.reduce((sum, item) => sum + item.totalOnOrder, 0);
-    const remoCount = prosysData.filter(item => item.kit === 'REMO Kit').length;
 
     updateElement('prosysDeviceCount', prosysData.length);
-    updateElement('prosysRemoCount', remoCount);
     updateElement('prosysOnHandTotal', formatNumber(totalOnHand));
     updateElement('prosysOnOrderTotal', formatNumber(totalOnOrder));
 }
@@ -713,10 +708,8 @@ function updateProsysStats() {
 function updateConnectionStats() {
     const totalOnHand = connectionData.reduce((sum, item) => sum + item.totalOnHand, 0);
     const totalOnOrder = connectionData.reduce((sum, item) => sum + item.totalOnOrder, 0);
-    const remoCount = connectionData.filter(item => item.kit === 'REMO Kit').length;
 
     updateElement('connectionDeviceCount', connectionData.length);
-    updateElement('connectionRemoCount', remoCount);
     updateElement('connectionOnHandTotal', formatNumber(totalOnHand));
     updateElement('connectionOnOrderTotal', formatNumber(totalOnOrder));
 }

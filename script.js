@@ -60,11 +60,15 @@ async function loadInventoryData() {
     try {
         // Load Prosys data
         const prosysFile = 'Mobility-Hardware-Report.xlsx';
+        console.log('Loading Prosys data from:', prosysFile);
         prosysData = await loadExcelFile(prosysFile, 'Prosys');
+        console.log('Prosys data loaded:', prosysData.length, 'items');
 
         // Load Connection data
         const connectionFile = 'T-Mobile-Formatted-Inventory-Report.xlsx';
+        console.log('Loading Connection data from:', connectionFile);
         connectionData = await loadExcelFile(connectionFile, 'Connection');
+        console.log('Connection data loaded:', connectionData.length, 'items');
 
         console.log('Inventory data loaded successfully');
         updatePageData();
@@ -75,14 +79,27 @@ async function loadInventoryData() {
 
 async function loadExcelFile(filename, vendor) {
     try {
+        console.log(`Fetching ${vendor} file: ${filename}`);
         const response = await fetch(filename);
+
+        if (!response.ok) {
+            console.error(`Failed to fetch ${filename}: ${response.status} ${response.statusText}`);
+            return [];
+        }
+
+        console.log(`Successfully fetched ${filename}, parsing...`);
         const arrayBuffer = await response.arrayBuffer();
         const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+        console.log(`Workbook parsed, sheets:`, workbook.SheetNames);
 
         if (vendor === 'Prosys') {
-            return parseProsysData(workbook);
+            const data = parseProsysData(workbook);
+            console.log(`Parsed ${data.length} Prosys items`);
+            return data;
         } else if (vendor === 'Connection') {
-            return parseConnectionData(workbook);
+            const data = parseConnectionData(workbook);
+            console.log(`Parsed ${data.length} Connection items`);
+            return data;
         }
     } catch (error) {
         console.error(`Error loading ${filename}:`, error);
@@ -290,7 +307,7 @@ function createProsysRow(item) {
         <td><strong>${item.device}</strong></td>
         <td>${item.manufacturer}</td>
         <td>${item.partNumber}</td>
-        <td class="text-right">${formatNumber(item.totalOnHand)}</td>
+        <td class="text-right"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
         <td class="text-right">${formatNumber(item.totalOnOrder)}</td>
         <td class="text-right">${formatNumber(item.depotOnHand)}</td>
         <td class="text-right">${formatNumber(item.deploymentOnHand)}</td>
@@ -353,7 +370,7 @@ function createConnectionRow(item) {
     row.innerHTML = `
         <td><span class="badge ${item.kit === 'REMO Kit' ? 'badge-magenta' : ''}">${item.kit}</span></td>
         <td><strong>${item.device}</strong></td>
-        <td class="text-right">${formatNumber(item.totalOnHand)}</td>
+        <td class="text-right"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
         <td class="text-right">${formatNumber(item.totalOnOrder)}</td>
         <td class="text-right">${formatNumber(item.depotCOR + item.depotMetro)}</td>
         <td class="text-right">${formatNumber(item.safetyOnHand)}</td>
@@ -1043,7 +1060,6 @@ async function getLastGitLabCommitDate() {
             const response = await fetch(url);
             if (response.ok) {
                 const data = await response.json();
-                const commitDate = new Date(data.last_commit_id ? data.last_commit_id : Date.now());
 
                 // Get commit details for accurate date
                 if (data.last_commit_id) {

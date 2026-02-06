@@ -307,12 +307,12 @@ function createProsysRow(item) {
         <td><strong>${item.device}</strong></td>
         <td>${item.manufacturer}</td>
         <td>${item.partNumber}</td>
-        <td class="text-right"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
-        <td class="text-right">${formatNumber(item.totalOnOrder)}</td>
-        <td class="text-right">${formatNumber(item.depotOnHand)}</td>
-        <td class="text-right">${formatNumber(item.deploymentOnHand)}</td>
-        <td class="text-right">${formatNumber(item.safetyOnHand)}</td>
-        <td class="text-right">${formatNumber(item.refurbOnHand)}</td>
+        <td class="text-center"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
+        <td class="text-center">${formatNumber(item.totalOnOrder)}</td>
+        <td class="text-center">${formatNumber(item.depotOnHand)}</td>
+        <td class="text-center">${formatNumber(item.deploymentOnHand)}</td>
+        <td class="text-center">${formatNumber(item.safetyOnHand)}</td>
+        <td class="text-center">${formatNumber(item.refurbOnHand)}</td>
     `;
     row.classList.add('fade-in');
     return row;
@@ -370,14 +370,14 @@ function createConnectionRow(item) {
     row.innerHTML = `
         <td><span class="badge ${item.kit === 'REMO Kit' ? 'badge-magenta' : ''}">${item.kit}</span></td>
         <td><strong>${item.device}</strong></td>
-        <td class="text-right"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
-        <td class="text-right">${formatNumber(item.totalOnOrder)}</td>
-        <td class="text-right">${formatNumber(item.depotCOR + item.depotMetro)}</td>
-        <td class="text-right">${formatNumber(item.safetyOnHand)}</td>
-        <td class="text-right">${formatNumber(item.refurbOnHand)}</td>
-        <td class="text-right">${formatNumber(item.vendorOnHand)}</td>
-        <td class="text-right">${formatNumber(item.mobilityQty)}</td>
-        <td class="text-right">${formatNumber(item.constructionOnHand)}</td>
+        <td class="text-center"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
+        <td class="text-center">${formatNumber(item.totalOnOrder)}</td>
+        <td class="text-center">${formatNumber(item.depotCOR + item.depotMetro)}</td>
+        <td class="text-center">${formatNumber(item.safetyOnHand)}</td>
+        <td class="text-center">${formatNumber(item.refurbOnHand)}</td>
+        <td class="text-center">${formatNumber(item.vendorOnHand)}</td>
+        <td class="text-center">${formatNumber(item.mobilityQty)}</td>
+        <td class="text-center">${formatNumber(item.constructionOnHand)}</td>
     `;
     row.classList.add('fade-in');
     return row;
@@ -540,11 +540,11 @@ function createTotalsRow(item) {
         <td><span class="badge badge-${item.vendor.toLowerCase()}">${item.vendor}</span></td>
         <td><span class="badge ${item.kit === 'REMO Kit' ? 'badge-magenta' : ''}">${item.kit}</span></td>
         <td><strong>${item.device}</strong></td>
-        <td class="text-right">${formatNumber(item.totalOnHand)}</td>
-        <td class="text-right">${formatNumber(item.totalOnOrder)}</td>
-        <td class="text-right">${formatNumber(getDepotTotal(item))}</td>
-        <td class="text-right">${formatNumber(getSafetyTotal(item))}</td>
-        <td class="text-right">${formatNumber(getRefurbTotal(item))}</td>
+        <td class="text-center">${formatNumber(item.totalOnHand)}</td>
+        <td class="text-center">${formatNumber(item.totalOnOrder)}</td>
+        <td class="text-center">${formatNumber(getDepotTotal(item))}</td>
+        <td class="text-center">${formatNumber(getSafetyTotal(item))}</td>
+        <td class="text-center">${formatNumber(getRefurbTotal(item))}</td>
     `;
     row.classList.add('fade-in');
     return row;
@@ -703,11 +703,11 @@ function createAggregatedTotalsRow(item) {
     row.innerHTML = `
         <td><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">${vendorBadges}</div></td>
         <td><strong>${item.device}</strong></td>
-        <td class="text-right"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
-        <td class="text-right">${item.totalOnOrder > 0 ? formatNumber(item.totalOnOrder) : '-'}</td>
-        <td class="text-right">${item.depotTotal > 0 ? formatNumber(item.depotTotal) : '-'}</td>
-        <td class="text-right">${item.safetyTotal > 0 ? formatNumber(item.safetyTotal) : '-'}</td>
-        <td class="text-right">${item.refurbTotal > 0 ? formatNumber(item.refurbTotal) : '-'}</td>
+        <td class="text-center"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
+        <td class="text-center">${item.totalOnOrder > 0 ? formatNumber(item.totalOnOrder) : '-'}</td>
+        <td class="text-center">${item.depotTotal > 0 ? formatNumber(item.depotTotal) : '-'}</td>
+        <td class="text-center">${item.safetyTotal > 0 ? formatNumber(item.safetyTotal) : '-'}</td>
+        <td class="text-center">${item.refurbTotal > 0 ? formatNumber(item.refurbTotal) : '-'}</td>
     `;
     row.classList.add('fade-in');
     return row;

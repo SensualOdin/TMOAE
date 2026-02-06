@@ -1035,11 +1035,13 @@ body {
    Text Utilities
    ========================================== */
 
-.text-center {
+.text-center,
+.data-table th.text-center {
   text-align: center;
 }
 
-.text-right {
+.text-right,
+.data-table th.text-right {
   text-align: right;
 }
 

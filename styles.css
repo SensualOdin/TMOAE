@@ -330,6 +330,12 @@ body {
               0 0 20px rgba(226, 0, 116, 0.2);
 }
 
+.stat-card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .stat-icon {
   width: 56px;
   height: 56px;

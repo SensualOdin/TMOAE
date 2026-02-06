@@ -700,7 +700,7 @@ body {
 }
 
 .data-table th {
-  padding: 16px;
+  padding: 16px 16px 16px 24px;
   text-align: left;
   font-weight: 600;
   color: var(--text-primary);

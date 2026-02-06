@@ -691,6 +691,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
+  table-layout: fixed;
 }
 
 .data-table thead {
@@ -710,6 +711,8 @@ body {
   padding: 16px;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .data-table tbody tr:hover {
@@ -974,10 +977,11 @@ body {
 
 /* Vendor badge column styling */
 .data-table td:first-child {
-  min-width: 200px;
   white-space: nowrap;
   vertical-align: middle;
   padding-left: 16px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ==========================================

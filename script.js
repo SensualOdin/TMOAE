@@ -690,18 +690,16 @@ function createKitGroupHeader(kitName, itemCount, colspan = 7) {
 function createAggregatedTotalsRow(item) {
     const row = document.createElement('tr');
 
-    // Determine vendor badges
-    const badges = [];
-    if (item.prosysOnHand > 0) {
-        badges.push('<span class="badge badge-prosys">Prosys</span>');
-    }
-    if (item.connectionOnHand > 0) {
-        badges.push('<span class="badge badge-connection">Connection</span>');
-    }
-    const vendorBadges = badges.length > 0 ? badges.join('') : '<span class="badge">-</span>';
+    // Determine vendor badges - fixed positions: Prosys left, Connection right
+    const prosysBadge = item.prosysOnHand > 0
+        ? '<span class="badge badge-prosys">Prosys</span>'
+        : '<span class="badge badge-prosys badge-placeholder">Prosys</span>';
+    const connectionBadge = item.connectionOnHand > 0
+        ? '<span class="badge badge-connection">Connection</span>'
+        : '<span class="badge badge-connection badge-placeholder">Connection</span>';
 
     row.innerHTML = `
-        <td><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">${vendorBadges}</div></td>
+        <td><div style="display: flex; align-items: center; gap: 6px;">${prosysBadge}${connectionBadge}</div></td>
         <td><strong>${item.device}</strong></td>
         <td class="text-center"><strong style="color: var(--accent-primary);">${formatNumber(item.totalOnHand)}</strong></td>
         <td class="text-center">${item.totalOnOrder > 0 ? formatNumber(item.totalOnOrder) : '-'}</td>
